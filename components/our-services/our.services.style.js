@@ -2,8 +2,10 @@ import styled from "styled-components"
 
 export const SectionStyle = styled("section")`
     width: 100%;
-    background: rgb(232,34,143);
-    background: linear-gradient(156deg, rgba(232,34,143,1) 0%, rgba(217,20,128,1) 35%, rgba(136,1,75,1) 100%);
+    padding: 3rem 0;
+    background: rgb(2,73,117);
+    background: linear-gradient(72deg, rgba(2,73,117,1) 8%, rgba(8,105,166,1) 91%);
+    clip-path: polygon(0 0, 100% 8%, 100% 91%, 0% 100%);
 `
 
 export const Title = styled("h2")`
@@ -39,7 +41,7 @@ export const ContainerCards = styled("div")`
     grid-gap: 20px;
 `
 
-export const Cards = styled("div")`
+export const CardStyle = styled("div")`
     background-image: url(${({background}) => background});
     background-repeat: no-repeat;
     background-size: cover;
@@ -78,9 +80,11 @@ export const Cards = styled("div")`
             justify-content: center;
             z-index: 3;
             margin-top: 30px;
-            button{
+            .button{
                 width: 200px;
                 border-radius: 20px;
+                text-align: center;
+                text-decoration: none;
                 padding: 7px;
                 background-color: white;
                 color: ${({theme}) => theme.primaryRyde};

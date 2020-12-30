@@ -3,5 +3,7 @@ export const theme = {
     primaryRyde: "#D91480",
     primaryGreen: "#9EBF24",
     primaryGray: "#626E73",
-    primaryBlack: "#0D0D0D"
+    primaryBlack: "#0D0D0D",
+    primaryRydeHover: "#bb096b",
+    white: "#fff"
 }

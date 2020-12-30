@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import Link from "next/link"
 
 import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink} from 'reactstrap';
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink} from 'reactstrap';
 
 import styled from 'styled-components';
 
@@ -16,9 +17,7 @@ const HeaderStyle = styled("header")`
     
     .navbar{
         width: 100%;
-        background-color: ${({bgColor}) => bgColor ? "white" : "transparent"};
-        box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.1);
-
+        height: 80px;
         transition: background 0.5s;
     }
 
@@ -26,11 +25,36 @@ const HeaderStyle = styled("header")`
         color: ${({theme}) => theme.primaryRyde};
     }
     .nav-link{
+        color: white;
+        font-weight: 400;
         transition: all ease-in-out 0.3s;
 
         &:hover{
             color: ${({theme}) => theme.primaryRyde};
         }
+    }
+
+    .button{
+            text-decoration: none;
+            background-color: transparent;
+            border: 2px solid ${({theme}) => theme.primaryRyde};
+            color: ${({theme}) => theme.primaryRyde};
+            font-weight: bold;
+            border-radius: 20px;
+            padding: 5px 8px;
+            transition: all ease-out 0.3s;
+            margin-left: 15px;
+            transition: all ease-out 0.3s;
+
+            &:hover{
+                background-color: ${({theme}) => theme.primaryRyde};
+                color: white;
+            }
+
+            :focus{
+                border: 2px solid ${({theme}) => theme.primaryRyde};
+                outline: none;
+            }
     }
 
 `
@@ -64,25 +88,15 @@ const Header = () => {
         transition: "background 0.6s",
     });
 
-    const [changeNavItem, setChangeNavItem] = useState({
-        color: "white"
-    })
-
     const changeNav =  () => {
         const isChange = window.scrollY < 150;
         if(isChange !== true){
-            setChangeNavItem({
-                color: "#D91480"
-            })
             setChange({
-                background: "#fff",
-                boxShadow: "5px 5px 10px rgba(0,0,0,0.2)",
+                background: "#000",
+                boxShadow: "0px 10px 15px -2px rgba(0,0,0,0.1)",
                 transition: "background 0.6s",
             });
         } else {
-            setChangeNavItem({
-                color: "white"
-            })
             setChange({
                 background: "transparent",
                 boxShadow: "",
@@ -101,37 +115,41 @@ const Header = () => {
 
 
     const [isOpen, setIsOpen] = useState(false);
-
     const toggle = () => setIsOpen(!isOpen);
 
     return (
         <HeaderStyle>
             <Navbar style={change} fixed="top" expand="md">
-            <div className="container">
-                <NavbarBrand href="/">Pictogramme</NavbarBrand>
-                <NavbarToggler onClick={toggle} />
-                <Collapse isOpen={isOpen} navbar>
-                <Nav className="ml-auto" navbar>
-                    <NavItem id="demo">
-                        <NavLink style={changeNavItem} href="/">L'agence</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink style={changeNavItem} href="/apropos">Nos services</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink style={changeNavItem} href="/contact">Nos réalisations</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink style={changeNavItem} href="/horaires">A propos</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <Button>
-                            +234824029562
-                        </Button>
-                    </NavItem>
-                </Nav>
-                </Collapse>
-            </div>
+                <div className="container">
+                    <NavbarBrand href="/">Pictogramme</NavbarBrand>
+                    <NavbarToggler onClick={toggle} />
+                    <Collapse isOpen={isOpen} navbar>
+                    <Nav className="ml-auto" navbar>
+                        <NavItem id="demo">
+                            <NavLink href="/">L'agence</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/services">Nos services</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/realisations">Nos réalisations</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/apropos">A propos</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/contact">Contact</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <Link href="tel:+243824029562">
+                                <a className={"button"} type="button">
+                                    +243824029562
+                                </a>
+                            </Link>
+                        </NavItem>
+                    </Nav>
+                    </Collapse>
+                </div>
             </Navbar>
         </HeaderStyle>
     )

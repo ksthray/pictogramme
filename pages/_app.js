@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import {ThemeProvider} from "styled-components"
 
 import {theme} from "../global/theme"

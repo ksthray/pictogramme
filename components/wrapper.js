@@ -1,5 +1,6 @@
 import Header from "./header"
 import Footer from "./footer"
+import Invitation from "./invitation"
 
 const Wrapper = ({children}) => {
     return (
@@ -8,6 +9,7 @@ const Wrapper = ({children}) => {
             <main>
                 {children}
             </main>
+            <Invitation/>
             <Footer/>
         </>
     )

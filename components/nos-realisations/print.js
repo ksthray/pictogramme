@@ -1,6 +1,12 @@
+import React, {useEffect} from "react"
+
+import {motion, useAnimation} from "framer-motion"
+import {useInView} from "react-intersection-observer"
+
+import {cardServicesAnimation, calendar} from "../../utils/functions"
 import Img from "next/image"
 
-import {ContainerPrint, Magazine, Affiche, Flyer} from "./nos.realisations.style"
+import {ContainerPrint, Magazine, Affiche} from "./nos.realisations.style"
 
 const prints = [
     {
@@ -49,11 +55,28 @@ const affiches = [
 //     }
 // ]
 const Print = () => {
+    const animation = useAnimation();
+    const [contentRef, inView] = useInView({
+        triggerOnce: true,
+    });
+
+    useEffect(() => {
+        if (inView) {
+            animation.start("visible");
+        }
+    }, [animation, inView]);
     return (
         <>
             <ContainerPrint>
                 {prints.map((print, i) => (
-                    <Magazine side={print.side} back={print.back} key={i}>
+                    <Magazine 
+                        key={i}
+                        side={print.side} back={print.back} 
+                        ref={contentRef}
+                        animate={animation}
+                        initial="hidden"
+                        variants={cardServicesAnimation}
+                    >
                         <div className={"book"}>
                             <Img 
                                 className={"image"}
@@ -68,15 +91,22 @@ const Print = () => {
             <br/><br/><br/>
             <Affiche>
                 {
-                    affiches.map((affiche) => (
-                        <Img 
-                            key={affiche.id}
-                            src={affiche.image}
-                            layout={"responsive"}
-                            width={100}
-                            height={80}
-                            quality={100}
-                        />
+                    affiches.map((affiche, i) => (
+                        <motion.div
+                            key={i}
+                            ref={contentRef}
+                            animate={animation}
+                            initial="hidden"
+                            variants={calendar}
+                        >
+                            <Img 
+                                src={affiche.image}
+                                layout={"responsive"}
+                                width={100}
+                                height={80}
+                                quality={100}
+                            />
+                        </motion.div>
                     ))
                 }
             </Affiche>

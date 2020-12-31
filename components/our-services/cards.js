@@ -1,8 +1,24 @@
+import React, {useEffect} from "react"
+
 import Link from "next/link"
+import {useAnimation} from "framer-motion"
+import {useInView} from "react-intersection-observer"
 
 import { ContainerCards, CardStyle, BottombarCard } from "./our.services.style"
+import {cardServicesAnimation} from "../../utils/functions"
 
 const Cards = () => {
+    const animation = useAnimation();
+    const [contentRef, inView] = useInView({
+        triggerOnce: true,
+    });
+
+    useEffect(() => {
+        if (inView) {
+            animation.start("visible");
+        }
+    }, [animation, inView]);
+
     const data = [
         {
             id: "1",
@@ -23,27 +39,36 @@ const Cards = () => {
             nameService: "web design UX & UI design",
             array: ["Etude de persona", "Création maquette et prototypage", "Design Thinking"],
             image: "/images/uxdesign.jpg",
-            link: "services/web-design-ux-ui-design"
+            link: "/services/web-design-ux-ui-design"
         },
         {
             id: "3",
             nameService: "création de site web sur mesure",
             array: ["Site vitrine", "Site e-commerce", "Progressive-Web-App"],
             image: "/images/website.jpg",
-            link: "services/site-web"
+            link: "/services/site-web"
         },
         {
             id: "5",
             nameService: "Web marketing strategie digital",
             array: ["Google Adsence", "Referencemen SEO", "Campagne E-mailing"],
             image: "/images/website.jpg",
-            link: "services/web-marketing"
+            link: "/services/web-marketing"
         },
     ]
     return (
-        <ContainerCards>
-            {data.map((item, i) => (
-                <CardStyle key={i} background={item.image}>
+        <ContainerCards
+            key={"container-cards"}
+            ref={contentRef}
+            animate={animation}
+            initial="hidden"
+            variants={cardServicesAnimation}
+        >
+            {data.map((item) => (
+                <CardStyle
+                    key={item.id} 
+                    background={item.image}
+                >
                     <div className={"overlay"}/>
                     <div className={"all-content"}>
                         <h3>{item.nameService}</h3>

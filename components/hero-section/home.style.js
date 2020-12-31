@@ -65,4 +65,29 @@ export const Contains = styled("div")`
         font-size: 1rem;
         margin-top: 20px;
     }
+
+    .button{
+        width: 200px;
+        border-radius: 20px;
+        text-align: center;
+        text-decoration: none;
+        padding: 8px;
+        background-color: ${({theme}) => theme.primaryRyde};
+        color: white;
+        border: none;
+        transition: 0.3s all ease-in-out;
+        font-weight: 500;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+
+        :focus{
+            border: none;
+            outline: none;
+        }
+
+        &:hover{
+            background-color: ${({theme}) => theme.primaryRydeHover};
+            color: white;
+        }
+    }
 `

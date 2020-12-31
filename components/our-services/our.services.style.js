@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import {motion} from "framer-motion"
 
 export const SectionStyle = styled("section")`
     width: 100%;
@@ -8,24 +9,25 @@ export const SectionStyle = styled("section")`
     clip-path: polygon(0 0, 100% 8%, 100% 91%, 0% 100%);
 `
 
-export const Title = styled("h2")`
+export const Title = styled(motion.h2)`
     font-size: 2.5rem;
     color: white;
     text-transform: uppercase;
     margin: 10px 0;
     text-align: center;
 `
-export const Topbar = styled("div")`
+export const Topbar = styled(motion.div)`
     width: 5%;
     height: 4px;
     background: white;
     margin: 0 auto;
 `
-export const Bottombar = styled("div")`
+export const Bottombar = styled(motion.div)`
     width: 15%;
     height: 4px;
     background: white;
     margin: 0 auto;
+    margin-bottom: 30px;
 `
 export const BottombarCard = styled("div")`
     width: 45%;
@@ -34,7 +36,7 @@ export const BottombarCard = styled("div")`
     margin-bottom: 15px;
 `
 
-export const ContainerCards = styled("div")`
+export const ContainerCards = styled(motion.div)`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;

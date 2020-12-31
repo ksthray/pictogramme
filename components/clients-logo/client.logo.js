@@ -1,3 +1,9 @@
+import React, {useEffect} from "react"
+
+import {motion, useAnimation} from "framer-motion"
+import {useInView} from "react-intersection-observer"
+
+import {titleAnimation, barAnimation, calendar} from "../../utils/functions"
 import Img from "next/image"
 
 import {Container} from "reactstrap"
@@ -27,26 +33,67 @@ const logo = [
 ]
 
 const ClientLogo = () => {
+    const animation = useAnimation();
+    const [contentRef, inView] = useInView({
+        triggerOnce: true,
+    });
+
+    useEffect(() => {
+        if (inView) {
+            animation.start("visible");
+        }
+    }, [animation, inView]);
     return (
         <SectionStyle>
             <Container>
                 <br/>
-                <Topbar/>
-                <Title>Ils nous ont fait confiance</Title>
+                <Topbar
+                    ref={contentRef}
+                    animate={animation}
+                    initial="hidden"
+                    variants={barAnimation}
+                />
+                <Title
+                    ref={contentRef}
+                    animate={animation}
+                    initial="hidden"
+                    variants={titleAnimation}
+                >
+                    Ils nous ont fait confiance
+                </Title>
                 <br/>
                 <LogoContainer>
-                    {logo.map((image, i) => (
-                        <Img
-                            key={i}
-                            src={image.image}
-                            layout={"intrinsic"}
-                            width={150}
-                            height={70}
-                        />
+                    {logo.map((image) => (
+                        <motion.div
+                            key={image.id}     
+                            ref={contentRef}
+                            animate={animation}
+                            initial="hidden"
+                            variants={calendar}
+                        >
+                            <Img
+                                src={image.image}
+                                layout={"intrinsic"}
+                                width={150}
+                                height={70}
+                            />
+                        </motion.div>
                     ))}
                 </LogoContainer><br/>
-                <Title>On donne le meilleur de nous pour satisfaire <br/> nos client</Title>
-                <Bottombar/><br/><br/>
+                <Title
+                    ref={contentRef}
+                    animate={animation}
+                    initial="hidden"
+                    variants={titleAnimation}
+                >
+                    On donne le meilleur de nous pour satisfaire <br/> nos client
+                </Title>
+                <Bottombar 
+                    ref={contentRef}
+                    animate={animation}
+                    initial="hidden"
+                    variants={barAnimation}
+                /><br/><br/>
             </Container>
         </SectionStyle>
     )

@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import {motion} from "framer-motion"
 
 export const SectionStyle = styled("section")`
     width: 100%;
@@ -8,7 +9,7 @@ export const SectionStyle = styled("section")`
         justify-content: center;
     }
 `
-export const Button = styled("button")`
+export const Button = styled(motion.button)`
     width: 200px;
     background-color: ${({theme}) => theme.primaryRyde};
     color: white;
@@ -30,20 +31,20 @@ export const Button = styled("button")`
 
 `
 
-export const Title = styled("h2")`
+export const Title = styled(motion.h2)`
     font-size: 2.5rem;
     color: ${({theme}) => theme.primaryRyde};
     text-transform: uppercase;
     margin: 10px 0;
     text-align: center;
 `
-export const Topbar = styled("div")`
+export const Topbar = styled(motion.div)`
     width: 5%;
     height: 4px;
     background: ${({theme}) => theme.primaryRyde};
     margin: 0 auto;
 `
-export const Bottombar = styled("div")`
+export const Bottombar = styled(motion.div)`
     width: 15%;
     height: 4px;
     background: ${({theme}) => theme.primaryRyde};
@@ -52,14 +53,14 @@ export const Bottombar = styled("div")`
 
 //print style magazine
 
-export const ContainerPrint = styled("div")`
+export const ContainerPrint = styled("section")`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-gap: 20px;
 `
 
-export const Magazine = styled("section")`
+export const Magazine = styled(motion.div)`
     display: flex;
     justify-content: center;
     align-items: center;

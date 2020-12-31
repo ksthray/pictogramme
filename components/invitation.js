@@ -1,3 +1,10 @@
+import React, {useEffect} from "react"
+
+import {motion, useAnimation} from "framer-motion"
+import {useInView} from "react-intersection-observer"
+
+import {titleAnimation, cupAnimation} from "../utils/functions"
+
 import Link from "next/link";
 import { Container } from "reactstrap";
 import styled from "styled-components"
@@ -182,20 +189,57 @@ const InvitationStyle = styled("section")`
 `
 
 const Invitation = () => {
+    const animation = useAnimation();
+    const [refContent, inView] = useInView({
+        triggerOnce: true,
+    });
+
+    useEffect(() => {
+        if(inView){
+            animation.start("visible");
+        }
+    }, [animation, inView]);
     return (
         <InvitationStyle>
             <Container>
                 <div className={"container-all"}>
                     <div className={"message"}>
-                        <h4>Vous avez un projet ?</h4>
-                        <p>Contactez-nous enfin d'en discuter autour d'un café chaud !</p><br/>
-                        <Link href="tel:+243824029562">
-                            <a className={"button"} type="button">
-                                +243824029562
-                            </a>
-                        </Link>
+                        <motion.h4
+                            ref={refContent}
+                            animate={animation}
+                            initial="hidden"
+                            variants={titleAnimation}
+                        >
+                            Vous avez un projet ?
+                        </motion.h4>
+                        <motion.p
+                            ref={refContent}
+                            animate={animation}
+                            initial="hidden"
+                            variants={titleAnimation}
+                        >
+                            Contactez-nous enfin d'en discuter autour d'un café chaud !
+                        </motion.p><br/>
+                        <motion.div
+                            ref={refContent}
+                            animate={animation}
+                            initial="hidden"
+                            variants={titleAnimation}
+                        >
+                            <Link href="tel:+243824029562">
+                                <a className={"button"} type="button">
+                                    +243824029562
+                                </a>
+                            </Link>
+                        </motion.div>
                     </div>
-                    <div className={"container-cup"}>
+                    <motion.div 
+                        ref={refContent}
+                        animate={animation}
+                        initial="hidden"
+                        variants={cupAnimation}
+                        className={"container-cup"}
+                    >
                         <div className={"plate"}/>
                         <div className={"cup"}>
                             <div className={"top"}>
@@ -222,7 +266,7 @@ const Invitation = () => {
                             </div>
                             <div className={"handle"}/>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </Container>
         </InvitationStyle>

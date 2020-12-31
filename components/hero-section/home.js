@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Img from "next/image"
+import Link from "next/link"
+import {motion} from "framer-motion"
 
 import {
     Carousel,
@@ -8,30 +10,34 @@ import {
     CarouselIndicators,
 } from 'reactstrap';
 
+import {btnHome} from "../../utils/functions"
+
 const items = [
     {
         src: '/images/pictoqween.jpg',
         altText: 'Esprit créatif',
         caption: 'Echappe à la tyranie du hasard, transgresse les régles au moment opportun',
-        button: 'Voir nos services'
+        button: 'Voir nos services',
+        link: "/services"
     },
     {
         src: '/images/strategy.jpg',
         altText: 'mesurer, estimer, calculer, comparer et évaluer la probabilité de succès.',
         caption: 'S’adapter en permanence en fonction de la concurence par des méthodes innovants.',
-        button: "Voir nos services"
+        button: "Voir nos services",
+        link: "/services"
     },
     {
         src: '/images/gold.jpg',
         altText: 'Des talents mis à votre disposition.',
         caption: 'On valide vos idées après competition, on ameliore, on peaufine et on polie pour une prise de decision.',
-        button: "Voir l'équipe"
+        button: "Voir l'équipe",
+        link: "/apropos"
     }
 ];
 
+import {BgWrap, Contains} from "./home.style"
 
-import Wrapper from "../wrapper"
-import {BgWrap, Contains, Button} from "./home.style"
 
 export default function HomePage() {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -70,12 +76,43 @@ export default function HomePage() {
                 quality={100} 
             />
             <Contains>
-                <h2>Agence créa et imprimérie</h2>
-                <h1>Welcome to PICTOGRAMME</h1>
+                <motion.h2 
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    transition={{delay: 1.1, duration: 1.1}}
+                >
+                    Agence créa et imprimérie
+                </motion.h2>
+                <motion.h1
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    transition={{delay: 1.3, duration: 1.3}}
+                >
+                    Welcome to PICTOGRAMME
+                </motion.h1>
                 <br/>
-                <p>{item.caption}</p>
-                <span>{item.altText} </span><br/>
-                <Button>{item.button}</Button>
+                <motion.p
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    transition={{delay: 2, duration: 1.6}}
+                >
+                    {item.caption}
+                </motion.p>
+                <motion.span
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    transition={{delay: 2.1, duration: 1.6}}
+                >
+                    {item.altText} 
+                </motion.span><br/>
+                <Link href={item.link}>
+                    <motion.a 
+                        variants={btnHome} initial="initial" animate="animate"
+                        className="button" type="button"
+                    >
+                        {item.button}
+                    </motion.a>
+                </Link>
             </Contains>
             <div/>
             </BgWrap>

@@ -6,8 +6,9 @@ const StyleSection = styled("div")`
     height: 270px;
     padding: 2.5rem 0;
     clip-path: polygon(0 0, 100% 0, 100% 77%, 0% 100%);
-    background: rgb(2,73,117);
-    background: linear-gradient(72deg, rgba(2,73,117,1) 8%, rgba(8,105,166,1) 91%);
+    /* background: rgb(2,73,117);
+    background: linear-gradient(72deg, rgba(2,73,117,1) 8%, rgba(8,105,166,1) 91%); */
+    background-color: ${({theme}) => theme.primaryGray};
     display: flex;
     align-items: center;
     color: white;

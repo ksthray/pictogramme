@@ -1,58 +1,76 @@
-import Link from "next/link"
 
-import {GrMail} from "react-icons/gr"
-import {BiMap, BiPhoneCall} from "react-icons/bi"
+import {BiMap} from "react-icons/bi"
+import {FaWhatsapp, FaLocationArrow, FaEnvelope} from "react-icons/fa"
 
 import styled from "styled-components"
 
 const PanneauStyle = styled("div")`
-    background-color: ${({theme}) => theme.primaryRyde};
-    color: white;
-    position: fixed;
-    right: 0;
-    padding: 1rem;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    box-shadow: -6px 5px 12px -4px rgba(0,0,0,0.5);
-    
-    .button{
-        background-color: white;
-        text-decoration: none;
-        text-align: center;
-        width: 100%;
-        color: ${({theme}) => theme.primaryRyde};
-        font-weight: bold;
-        border: none;
-        border-radius: 20px;
-        padding: 7px;
-        transition: all ease-out 0.3s;
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid ${({theme}) => theme.primaryRyde};
+    height: 250px;
 
-        :focus{
-            border: none;
-            outline: none;
+    .head{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        background-color: ${({theme}) => theme.primaryRyde};
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        height: 60px;
+        padding: 0 2rem;
+
+        .icon{
+            color: white;
+            font-size: 1.5rem;
+            position: relative;
+            top: -3px;
+        }
+        h6{
+            color: white;
+            margin-left: 20px;
+            font-size: 1.3rem;
+            text-transform: uppercase;
         }
     }
+    .second{
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            background-color: white;
+            height: 60px;
+            padding: 0 2rem;
+
+            .iconet{
+                color: ${({theme}) => theme.primaryRyde};
+                font-size: 1.5rem;
+                position: relative;
+                top: -5px;
+            }
+            p{
+                color: ${({theme}) => theme.primaryRyde};;
+                margin-left: 20px;
+                font-size: 1.1rem;
+                text-transform: uppercase;
+            }
+        }
 `
 
-const Panneau = () => {
+export const Adresse = () => {
     return (
         <PanneauStyle className={"adresse"}>
-            <div className={"adresse"}>
-                <h5><BiMap/> Gombe justice 232</h5>
+            <div className={"head"}>
+                <FaLocationArrow className={"icon"}/> <h6>Nos cordonnées</h6>
             </div>
-            <div className={"numero"}>
-                <h5><BiPhoneCall/> +243824029562</h5>
+            <div className={"second"}>
+                <BiMap className={"iconet"}/> <p>Gombe justice 232</p>
             </div>
-            <div className={"mail"}>
-                <h5><GrMail/>pictogramme@gmail.com</h5>
-            </div><br/>
-            <Link href="/devis">
-                <a className={"button"} type="button">
-                    demander un devis
-                </a>
-            </Link>
+            <div className={"second"}>
+                <FaWhatsapp className={"iconet"}/> <p>+243824029562</p>
+            </div>
+            <div className={"second"}>
+                <FaEnvelope className={"iconet"}/> <p>pictogramme@gmail.com</p>
+            </div>
         </PanneauStyle>
     )
 }
-
-export default Panneau;

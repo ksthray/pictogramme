@@ -7,6 +7,7 @@ export const MarketingStyle = styled("section")`
     h2{
         font-size: 1.6rem;
         color: ${({theme}) => theme.primaryRyde};
+        margin-bottom: 20px;
     }
     p{
         font-size: 1.1rem; 

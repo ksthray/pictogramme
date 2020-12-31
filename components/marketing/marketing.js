@@ -16,7 +16,7 @@ const Marketing = () => {
         <MarketingStyle>
             <Left>
                 <h2>
-                    Rendez vous plus visible ! Augmentez vos ventes et la notoriété de votre marque
+                    Rendez vous plus visible ! Augmentez vos ventes et la notoriété <br/>de votre marque
                     avec le web marketing.
                 </h2>
                 <p>
@@ -42,7 +42,7 @@ const Marketing = () => {
                 </ImageText><br/>
                 <div className={"container-block"}>
                     <h3>
-                    Nous mobilisons les leviers adaptés à vos besoins pour vous assurer croissance et solidité 
+                    Nous mobilisons les leviers adaptés à vos besoins pour vous assurer <br/>croissance et solidité 
                     dans le développement de votre activité.
                     </h3>
                     <Topbar/>

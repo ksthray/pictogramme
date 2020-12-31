@@ -1,3 +1,10 @@
+import React, {useEffect} from "react"
+
+import {motion, useAnimation} from "framer-motion"
+import {useInView} from "react-intersection-observer"
+
+import {titleAnimation, cupAnimation, barAnimation, bgLogoAnimation} from "../utils/functions"
+
 import Img from "next/image"
 import Link from "next/link"
 
@@ -68,12 +75,12 @@ const FooterStyle = styled("footer")`
         }
     }
 `
-const Topbar = styled("div")`
+const Topbar = styled(motion.div)`
     width: 10%;
     height: 4px;
     background: ${({theme}) => theme.primaryRyde};
 `
-const ContainerIcons = styled("div")`
+const ContainerIcons = styled(motion.div)`
     display: flex;
     justify-content: space-around;
     width: 50%;
@@ -154,7 +161,7 @@ const Btn = styled("div")`
 
 `
 
-const Copyrigth = styled("div")`
+const Copyrigth = styled(motion.div)`
     width: 100%;
     padding: 1rem;
     text-align: center;
@@ -164,6 +171,17 @@ const Copyrigth = styled("div")`
 `
 
 const Footer = () => {
+    const animation = useAnimation();
+    const [refContent, inView] = useInView({
+        triggerOnce: true,
+    });
+
+    useEffect(() => {
+        if(inView){
+            animation.start("visible");
+        }
+    }, [animation, inView]);
+
     const services = [
         {nom: "Création idéentité graphique"},
         {nom: "Impression sur papier"},
@@ -201,7 +219,13 @@ const Footer = () => {
         <FooterStyle>
             <Container>
                 <div className={"container-el"}>
-                    <div className={"entreprise-id"}>
+                    <motion.div 
+                        ref={refContent}
+                        animate={animation}
+                        initial="hidden"
+                        variants={bgLogoAnimation}
+                        className={"entreprise-id"}
+                    >
                         <Img 
                             src={"/images/pictobycmct.png"}
                             width={350}
@@ -209,37 +233,88 @@ const Footer = () => {
                             layout={"intrinsic"}
                             quality={100}
                         />
-                    </div>
+                    </motion.div>
                     <div className={"services"}>
-                        <h4>Nos services</h4>
-                        <Topbar/><br/>
+                        <motion.h4
+                            ref={refContent}
+                            animate={animation}
+                            initial="hidden"
+                            variants={titleAnimation}
+                        >Nos services</motion.h4>
+                        <Topbar
+                            ref={refContent}
+                            animate={animation}
+                            initial="hidden"
+                            variants={barAnimation}
+                        /><br/>
                             {services.map((service, i) => (
-                                <p key={i}>
+                                <motion.p 
+                                    key={i}
+                                    ref={refContent}
+                                    animate={animation}
+                                    initial="hidden"
+                                    variants={cupAnimation}
+                                >
                                     <Link href="/">
                                         <a className={"a"}>
                                             {service.nom}
                                         </a>
-                                </Link>
-                                </p>
+                                    </Link>
+                                </motion.p>
                             ))}
                     </div>
                     <div className={"contacts"}>
-                        <h4>Contact</h4>
-                        <Topbar/><br/>
-                        <p><GrMail/> pictogramme@gamil.com</p>
-                        <p><BiMap/> Gombe, Av de la justice 30</p>
-                        <p><BiPhoneCall/> +243824029562</p>
+                        <motion.h4
+                            ref={refContent}
+                            animate={animation}
+                            initial="hidden"
+                            variants={titleAnimation}
+                        >Contact</motion.h4>
+                        <Topbar
+                            ref={refContent}
+                            animate={animation}
+                            initial="hidden"
+                            variants={barAnimation}
+                        /><br/>
+                        <motion.p
+                            ref={refContent}
+                            animate={animation}
+                            initial="hidden"
+                            variants={cupAnimation}
+                        ><GrMail/> pictogramme@gamil.com</motion.p>
+                        <motion.p
+                            ref={refContent}
+                            animate={animation}
+                            initial="hidden"
+                            variants={cupAnimation}
+                        ><BiMap/> Gombe, Av de la justice 30</motion.p>
+                        <motion.p
+                            ref={refContent}
+                            animate={animation}
+                            initial="hidden"
+                            variants={cupAnimation}
+                        ><BiPhoneCall/> +243824029562</motion.p>
                     </div>
                 </div>
-                <h4 style={{
+                <motion.h4
+                    ref={refContent}
+                    animate={animation}
+                    initial="hidden"
+                    variants={titleAnimation}
+                    style={{
                         textAlign: "center", 
                         color: "#D91480", 
                         textTransform: "uppercase",
                         marginBottom: "60px"
                     }}>
                     Suivez-nous
-                </h4>
-                <ContainerIcons>
+                </motion.h4>
+                <ContainerIcons
+                    ref={refContent}
+                    animate={animation}
+                    initial="hidden"
+                    variants={cupAnimation}
+                >
                     {rsocial.map((social, i) => (
                         <Link key={i} href={social.link}>
                             <a style={{textDecoration: "none"}} target="_blank">
@@ -259,7 +334,12 @@ const Footer = () => {
                 </ContainerIcons>
             </Container>
             <Copyrigth>
-                <span>Powerby CMCT TCG 2020</span>
+                <motion.span
+                    ref={refContent}
+                    animate={animation}
+                    initial="hidden"
+                    variants={titleAnimation}
+                >Powerby CMCT TCG 2020</motion.span>
             </Copyrigth>
         </FooterStyle>
     )

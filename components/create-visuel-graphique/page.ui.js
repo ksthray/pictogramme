@@ -30,7 +30,7 @@ const PageUI = () => {
         <ContainerUi>
             <Left>
                 <h2>
-                    Qu'est-ce qu'une identité visuelle et quelle est sa valeur ajoutée 
+                    Qu'est-ce qu'une identité visuelle et quelle est sa valeur <br/> ajoutée 
                     pour votre entreprise ?
                 </h2>
                 <Topbar/>

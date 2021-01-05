@@ -10,9 +10,7 @@ export default function Services() {
                 <h2>Nos services</h2>
             </HomeOutherPage>
             <Container>
-                <br/>
                 <Cards/>
-                <br/>
             </Container>
         </Wrapper>
     )

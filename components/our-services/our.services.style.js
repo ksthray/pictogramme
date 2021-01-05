@@ -55,6 +55,7 @@ export const ContainerCards = styled(motion.div)`
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-gap: 20px;
+    padding: 2rem 0;
 
     @media screen and (max-width: ${({theme}) => theme.tablet}){
         grid-template-columns: repeat(2, 1fr);

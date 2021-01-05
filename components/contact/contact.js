@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 import {Form, FormGroup, Label, Input, Alert } from 'reactstrap';
 
-import {firebase} from "../../config/firebase"
+import {firebase} from "../../firebase"
 // import { Adresse } from "../panneau";
 
 const Button = styled("button")`

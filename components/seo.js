@@ -10,7 +10,7 @@ const Seo = ({
     keywords,
     router
     }) => {
-        const domain = 'https://pictogramme.netlify.app';
+        const domain = 'https://pictogramme.vercel.app/';
         const formattedTitle = title;
         const url = router && router.asPath ? router.asPath : undefined;
         const canonical = url && url === '/' ? domain : domain + url;

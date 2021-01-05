@@ -5,7 +5,7 @@ import styled from "styled-components"
 import {Form, FormGroup, Label, Input, Alert } from 'reactstrap';
 
 import {firebase} from "../../config/firebase"
-import { Adresse } from "../panneau";
+// import { Adresse } from "../panneau";
 
 const Button = styled("button")`
     width: 250px;
@@ -115,7 +115,7 @@ const Contact = () => {
                     </Button>
                 </Form>
             </div>
-            <Adresse/>
+            {/* <Adresse/> */}
         </ContactStyle>
     )
 }

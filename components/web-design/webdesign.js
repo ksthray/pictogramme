@@ -1,13 +1,14 @@
 import Img from "next/image"
+import ButtonDevis from "../button.devis"
 
 import {WebdesignStyle, Left, Topbar, Outils, TopbarCenter } from "./webdesign.style"
 
 const Webdesign = () => {
     const icons = [
-        {id: "1", image: "/images/framer.png"},
-        {id: "2", image: "/images/figma1.png"},
-        {id: "3", image: "/images/xd.png"},
-        {id: "4", image: "/images/photoshop.png"}
+        {id: "1", image: "/images/framer.png", alt: "logo logiciel"},
+        {id: "2", image: "/images/figma1.png", alt: "logo logiciel"},
+        {id: "3", image: "/images/xd.png", alt: "logo logiciel"},
+        {id: "4", image: "/images/photoshop.png", alt: "logo logiciel"}
     ]
     return (
         <WebdesignStyle>
@@ -29,10 +30,11 @@ const Webdesign = () => {
                         de l’agence en 2010. Notre objectif : diffuser au sein de votre plateforme web une ambiance unique, tout en lui donnant une bonne dose de caractère.
                     </p>
                     <Img
-                        src={"/images/design1.jpg"}
+                        src={"/images/design1-min.jpg"}
                         layout={"responsive"}
                         width={"50%"}
                         height={30}
+                        alt={"image info"}
                     />
                 </div><br/>
                 <div className={"block-2"}>
@@ -49,10 +51,11 @@ const Webdesign = () => {
                     </div>
                     <div className={"image"}>
                         <Img
-                            src={"/images/design2.jpg"}
+                            src={"/images/design2-min.jpg"}
                             quality={100}
                             width={350}
                             height={260}
+                            alt={"image info"}
                         />
                     </div>
                     <div>
@@ -73,19 +76,22 @@ const Webdesign = () => {
                     <TopbarCenter/><br/><br/>
                     <div className={"icons"}>
                         {
-                            icons.map((icon) => (
-                                <Img
-                                    key={icon.id}
-                                    src={icon.image}
-                                    width={150}
-                                    height={150}
-                                    quality={100}
-                                />
+                            icons.map((icon, i) => (
+                                <div key={i} className={"container-img"}>
+                                    <Img
+                                        src={icon.image}
+                                        width={150}
+                                        height={150}
+                                        quality={100}
+                                        alt={icon.alt}
+                                    />
+                                </div>
                             ))
                         }
                     </div>
                 </Outils>
             </Left>
+            <ButtonDevis/>
         </WebdesignStyle>
     )
 }

@@ -1,4 +1,5 @@
 import Img from "next/image"
+import ButtonDevis from "../button.devis"
 import {SitewebStyle, Left, ImageText, Topbar, TopbarCenter} from "./siteweb.style"
 
 const Siteweb = () => {
@@ -31,14 +32,14 @@ const Siteweb = () => {
         }
     ]
     const images = [
-        {id: "1", image: "/images/website1.png"},
-        {id: "2", image: "/images/website2.png"}
+        {id: "1", image: "/images/website1.png", alt: "image écran site internet responsive"},
+        {id: "2", image: "/images/website2.png", alt: "image écran site internet responsive"}
     ]
     return (
         <SitewebStyle>
             <Left>
                 <h2>
-                    Vous avez besoin d'être présent sur internet ? <br/>Nous sommes là pour vous.
+                    Vous avez besoin d'être présent sur internet ? Nous sommes là pour vous.
                 </h2>
                 <Topbar/>
                 <ImageText>
@@ -50,6 +51,7 @@ const Siteweb = () => {
                             width={240}
                             height={150}
                             quality={100}
+                            alt={img.alt}
                         />
                     ))}
                 </ImageText>
@@ -69,21 +71,21 @@ const Siteweb = () => {
                         ))}
                     </div>
                     <div className={"site-ecom"}>
-                    <h3>site e-commerce</h3>
-                    <Topbar/>
-                        {ecom.map((com) => (
-                            <>
-                                <p key={com.id}>{com.text}</p>
-                                <ul style={{paddingLeft: "20px"}}>
-                                    {com.elements.map((v) => (
-                                        <li key={v}>{v}</li> 
-                                    ))}
-                                </ul>
-                            </>
-                        ))}
+                        <h3>site e-commerce</h3>
+                        <Topbar/>
+                            {ecom.map((com) => (
+                                <>
+                                    <p key={com.id}>{com.text}</p>
+                                    <ul style={{paddingLeft: "20px"}}>
+                                        {com.elements.map((v) => (
+                                            <li key={v}>{v}</li> 
+                                        ))}
+                                    </ul>
+                                </>
+                            ))}
                     </div>
                 </div>
-                <div className={"pwa"}>
+                <div className={"pwa"}> 
                     <h3>
                         Faite vos premiers pas dans le monde de PWA<br/>
                         (Progressive-web-application)
@@ -100,6 +102,7 @@ const Siteweb = () => {
                     </ul>
                 </div>
             </Left>
+            <ButtonDevis/>
         </SitewebStyle>
     )
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from "next/link"
+import Img from "next/image"
 import {motion} from "framer-motion"
 
 import {
@@ -12,17 +13,17 @@ import {
     NavLink} from 'reactstrap';
 
 import styled from 'styled-components';
-import {parents} from "../utils/functions"
 
 const HeaderStyle = styled("header")`
     width: 100%;
     
     .navbar{
         width: 100%;
-        height: 80px;
         transition: background 0.5s;
     }
-
+    .navbar-toggler-icon {
+        background-image: url("/svg/icons8-menu.svg");
+    }
     .navbar-brand{
         color: ${({theme}) => theme.primaryRyde};
     }
@@ -36,6 +37,11 @@ const HeaderStyle = styled("header")`
         }
     }
 
+    .main-btn{
+        position: relative;
+        top: 8px;
+    }
+
     .button{
             text-decoration: none;
             background-color: transparent;
@@ -47,6 +53,10 @@ const HeaderStyle = styled("header")`
             transition: all ease-out 0.3s;
             margin-left: 15px;
             transition: all ease-out 0.3s;
+
+            @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+                margin-left: 0;
+            }
 
             &:hover{
                 background-color: ${({theme}) => theme.primaryRyde};
@@ -99,7 +109,7 @@ const Header = () => {
 
     return (
         <HeaderStyle>
-            <Navbar style={change} fixed="top" expand="md">
+            <Navbar style={change} fixed="top" expand="lg">
                 <div className="container">
                     <NavbarBrand href="/">
                         <motion.span
@@ -107,7 +117,14 @@ const Header = () => {
                             animate={{opacity: 1}}
                             transition={{delay: 1, duration: 1.3}}
                         >
-                            Pictogramme
+                            <Img
+                                src={"/images/logopicto.png"}
+                                alt={"logo du site"}
+                                width={170}
+                                height={60}
+                                layout={"intrinsic"}
+                                quality={100}
+                            />
                         </motion.span>
                     </NavbarBrand>
                     <NavbarToggler onClick={toggle} />
@@ -174,6 +191,7 @@ const Header = () => {
                                 initial={{opacity: 0}}
                                 animate={{opacity: 1}}
                                 transition={{delay: 1.1, duration: 1.8}}
+                                className={"main-btn"}
                             >
                                 <Link href="tel:+243824029562">
                                     <a className={"button"} type="button">+243824029562</a>

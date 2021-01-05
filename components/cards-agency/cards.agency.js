@@ -1,7 +1,7 @@
 import React, {useEffect} from "react"
 
 import Link from "next/link"
-import {useAnimation} from "framer-motion"
+import {motion, useAnimation} from "framer-motion"
 import {useInView} from "react-intersection-observer"
 
 import { Container } from 'reactstrap'
@@ -27,7 +27,7 @@ const CardAgency = ( ) => {
     const magazines = [
         {
             id: "1",
-            image: "/images/mbotesouriez.jpg",
+            image: "/images/mbotesouriez-min.jpg",
             text: "La qualité du design",
             pourcentage: 92,
             link: "https://issuu.com/mbote-souriez/docs/mbote_bienvenue_n_3",
@@ -37,17 +37,17 @@ const CardAgency = ( ) => {
         },
         {
             id: "2",
-            image: "/images/mbotesrz.jpg",
+            image: "/images/mbotesrz-min.jpg",
             text: "La qualité du travail",
             pourcentage: 100,
             link: "https://issuu.com/mbote-souriez/docs/mbote_souriez",
             alt: "page magazine",
-            width: "300",
-            height: "400"
+            width: "250",
+            height: "350"
         },
         {
             id: "3",
-            image: "/images/pagembote.jpg",
+            image: "/images/pagembote-min.jpg",
             text: "La qualité de l'impression",
             pourcentage: 93,
             link: "https://issuu.com/mbote-souriez/docs/mbote_bienvenue_n_2",
@@ -99,7 +99,14 @@ const CardAgency = ( ) => {
                     {magazines.map((magazine) => (
                         <Link key={magazine.id} href={magazine.link}>
                             <a style={{textDecoration: "none"}} target="_blank">
-                                <div className={"container-magazine"}>
+                                <motion.div 
+                                    className={"container-magazine"}
+                                    whileHover={{
+                                        y: 15,
+                                        transition: { duration: 0.3 },
+                                    }}
+                                    whileTap={{ scale: 0.9 }}
+                                >
                                     <div className={"image1"}>
                                         <Image
                                             key={magazine.id}
@@ -115,7 +122,7 @@ const CardAgency = ( ) => {
                                     <Progress animated color="more-awesome" value={magazine.pourcentage}>
                                         {magazine.pourcentage}%
                                     </Progress>
-                                </div>
+                                </motion.div>
                             </a>
                         </Link>
                     ))}

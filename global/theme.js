@@ -5,5 +5,8 @@ export const theme = {
     primaryGray: "#626E73",
     primaryBlack: "#0D0D0D",
     primaryRydeHover: "#bb096b",
-    white: "#fff"
+    white: "#fff",
+    tablet: "987px",
+    tabletMini: "768px",
+    mobile: "548px",
 }

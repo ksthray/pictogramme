@@ -48,11 +48,27 @@ export const Contains = styled("div")`
         text-transform: uppercase;
         color: ${({theme}) => theme.primaryRyde};
         font-size: 1.5rem;
+        text-align: center;
+
+        @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+            font-size: 1.3rem;
+        }
+        @media screen and (max-width: ${({theme}) => theme.mobile}){
+            font-size: 1.1rem;
+        }
     }
     h2{
         text-transform: uppercase;
         color: ${({theme}) => theme.primaryRyde};
         font-size: 1.4rem;
+        text-align: center;
+
+        @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+            font-size: 1.1rem;
+        }
+        @media screen and (max-width: ${({theme}) => theme.mobile}){
+            font-size: 1rem;
+        }
     }
     p{
         font-size: 1.7rem;
@@ -60,10 +76,24 @@ export const Contains = styled("div")`
         text-transform: uppercase;
         text-align: center;
         margin-top: 20px;
+
+        @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+            font-size: 1.45rem;
+        }
+        @media screen and (max-width: ${({theme}) => theme.mobile}){
+            font-size: 1.1rem;
+        }
     }
     span{
         font-size: 1rem;
         margin-top: 20px;
+        text-align: center;
+        @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+            font-size: 0.95rem;
+        }
+        @media screen and (max-width: ${({theme}) => theme.mobile}){
+            font-size: 0.8rem;
+        }
     }
 
     .button{

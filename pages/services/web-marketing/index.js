@@ -5,9 +5,13 @@ import Wrapper from "../../../components/wrapper"
 
 export default function MarketingWeb(){
     return (
-        <Wrapper>
+        <Wrapper
+            titrePage={"Marketing web"}
+            descriptionPage={"Marketing digital adapter à votre cible"}
+            imagePage={"/images/affiche.jpg"}
+        >
             <HomeOutherPage>
-                <h2>Web marketing</h2>
+                Web marketing
             </HomeOutherPage>
             <Container>
                 <Marketing/>

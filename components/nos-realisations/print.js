@@ -13,34 +13,40 @@ const prints = [
         id: "1",
         cover: "/images/cover.jpg",
         side: "/images/side.jpg",
-        back: "/images/back.jpg"
+        back: "/images/back.jpg",
+        alt: "magazine"
     },
     {
         id: "2",
         cover: "/images/cover.jpg",
         side: "/images/side.jpg",
-        back: "/images/back.jpg"
+        back: "/images/back.jpg",
+        alt: "magazine"
     },
     {
         id: "3",
         cover: "/images/cover.jpg",
         side: "/images/side.jpg",
-        back: "/images/back.jpg"
+        back: "/images/back.jpg",
+        alt: "magazine"
     }
 ]
 
 const affiches = [
     {
         id: "1",
-        image: "/images/cal1.jpeg"
+        image: "/images/cal1-min.jpeg",
+        alt: "calendrier"
     },
     {
         id: "2",
-        image: "/images/cal2.jpeg"
+        image: "/images/cal2-min.jpeg",
+        alt: "calendrier"
     },
     {
         id: "3",
-        image: "/images/cal3.jpeg"
+        image: "/images/cal3-min.jpeg",
+        alt: "calendrier"
     }
 ]
 
@@ -83,6 +89,7 @@ const Print = () => {
                                 src={print.cover}
                                 layout={"fill"}
                                 quality={100}
+                                alt={print.alt}
                             />
                         </div>
                     </Magazine>
@@ -105,6 +112,7 @@ const Print = () => {
                                 width={100}
                                 height={80}
                                 quality={100}
+                                alt={affiche.alt}
                             />
                         </motion.div>
                     ))

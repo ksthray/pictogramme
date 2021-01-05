@@ -5,7 +5,11 @@ import Wrapper from "../../../components/wrapper"
 
 export default function CreationIdentite() {
     return (
-        <Wrapper>
+        <Wrapper
+            titrePage={"Création identité visuel"}
+            descriptionPage={"Création de vos identités visuels, graphique"}
+            imagePage={"/images/affiche.jpg"}
+        >
             <HomeOutherPage>
                 <h2>Creation de votre identité visuel</h2>
             </HomeOutherPage>

@@ -7,6 +7,12 @@ export const SectionStyle = styled("section")`
     background: rgb(2,73,117);
     background: linear-gradient(72deg, rgba(2,73,117,1) 8%, rgba(8,105,166,1) 91%);
     clip-path: polygon(0 0, 100% 8%, 100% 91%, 0% 100%);
+
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        clip-path: polygon(0 0, 100% 2%, 100% 98%, 0% 100%);
+    }
+
+
 `
 
 export const Title = styled(motion.h2)`
@@ -15,6 +21,14 @@ export const Title = styled(motion.h2)`
     text-transform: uppercase;
     margin: 10px 0;
     text-align: center;
+
+    @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+        font-size: 2.1rem;
+    }
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        font-size: 1.7rem;
+    }
+
 `
 export const Topbar = styled(motion.div)`
     width: 5%;
@@ -41,26 +55,62 @@ export const ContainerCards = styled(motion.div)`
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-gap: 20px;
+
+    @media screen and (max-width: ${({theme}) => theme.tablet}){
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        grid-template-columns: repeat(1, 1fr);
+    }
 `
 
 export const CardStyle = styled("div")`
     background-image: url(${({background}) => background});
-    background-repeat: no-repeat;
     background-size: cover;
-    object-fit: cover;
-    width: 350px;
+    background-position: center;
+    width: 100%;
     height: 270px;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.4);
     margin-bottom: 10px;
 
+    h3{
+        font-size: 1.4rem;
+
+        @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+            font-size: 1.15rem;
+        }
+    }
+
+    @media screen and (max-width: ${({theme}) => theme.tablet}){
+        width: 100%;
+    }
+    @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+        width: 100%;
+    }
+
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        width: 100%;
+    }
+
     .overlay{
-        position: absolute;
-        width: 350px;
+        /* position: absolute; */
+        width: 100%;
         height: 270px;
         z-index: 1;
         background-color: rgba(0,0,0,0.6);
         border-radius: 15px;
+
+        @media screen and (max-width: ${({theme}) => theme.tablet}){
+            width: 335px;
+        }
+
+        @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+            width: 245px;
+        }
+        @media screen and (max-width: ${({theme}) => theme.mobile}){
+            width: 100%;
+        }
     }
 
     .all-content{

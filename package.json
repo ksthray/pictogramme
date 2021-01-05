@@ -12,10 +12,12 @@
     "firebase": "^8.2.1",
     "framer-motion": "^2.9.5",
     "next": "10.0.3",
+    "next-seo": "^4.17.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-icons": "^4.1.0",
     "react-intersection-observer": "^8.31.0",
+    "react-messenger-customer-chat": "^0.8.0",
     "reactstrap": "^8.7.1",
     "styled-components": "^5.2.1"
   }

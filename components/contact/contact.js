@@ -2,7 +2,7 @@ import React, {useState} from "react"
 
 import styled from "styled-components"
 
-import {Form, FormGroup, Label, Input } from 'reactstrap';
+import {Form, FormGroup, Label, Input, Alert } from 'reactstrap';
 
 import {firebase} from "../../config/firebase"
 import { Adresse } from "../panneau";
@@ -28,8 +28,13 @@ const Button = styled("button")`
 const ContactStyle = styled("section")`
     width: 100%;
     display: grid;
-    grid-template-columns: 60% 30%;
+    grid-template-columns: 60% 1fr;
+    grid-template-rows: 1fr;
     grid-gap: 20px;
+
+    @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+        grid-template-columns: repeat(1, 1fr);
+    }
 
     .block-formulaire{
         h2{
@@ -59,7 +64,7 @@ const Contact = () => {
             email: email,
             message: message
         }).then(() => {
-            alert("Message envoyé avec succès")
+            <MessageAlert/>
         }).catch((err) => {
             alert(err.message)
         })
@@ -68,6 +73,8 @@ const Contact = () => {
         setEmail("")
         setMessage("")
     }
+
+    const MessageAlert = () => <Alert color="success">Message envoyé avec succès</Alert>
     return (
         <ContactStyle>
             <div className="block-formulaire">

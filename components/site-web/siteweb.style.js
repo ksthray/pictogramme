@@ -7,6 +7,13 @@ export const SitewebStyle = styled("section")`
     h2{
         font-size: 1.6rem;
         color: ${({theme}) => theme.primaryRyde};
+
+        @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+            font-size: 1.3rem;
+        }
+        @media screen and (max-width: ${({theme}) => theme.mbile}){
+            font-size: 1.1rem;
+        }
     }
 `
 
@@ -43,11 +50,19 @@ export const Left = styled("div")`
         grid-template-columns: 1fr 1fr;
         grid-gap: 20px;
 
+        @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+            grid-template-columns: repeat(1, 1fr);
+        }
+
         .site-vitrine{
             h3{
                 color: ${({theme}) => theme.primaryRyde};
                 font-size: 1.4rem; 
                 text-transform: uppercase;
+
+                @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+                    font-size: 1.2rem;
+                }
             }
 
             p{
@@ -64,6 +79,10 @@ export const Left = styled("div")`
                 color: ${({theme}) => theme.primaryRyde};
                 font-size: 1.4rem; 
                 text-transform: uppercase;
+
+                @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+                    font-size: 1.2rem;
+                }
             }
 
             p{
@@ -97,5 +116,11 @@ export const ImageText = styled("div")`
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
     grid-gap: 20px;
+
+    
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        grid-template-columns: repeat(1, 1fr);
+    }
 `

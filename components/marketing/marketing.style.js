@@ -1,17 +1,25 @@
 import styled from "styled-components"
 
 export const MarketingStyle = styled("section")`
-    width: 100%;
+    width: 100%; 
     padding: 2rem 0;
 
     h2{
         font-size: 1.6rem;
         color: ${({theme}) => theme.primaryRyde};
         margin-bottom: 20px;
+
+        @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+            font-size: 1.3rem;
+        }
     }
     p{
         font-size: 1.1rem; 
         color: ${({theme}) => theme.primaryBlue};
+
+        @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+            font-size: 0.95rem;
+        }
     }
 `
 
@@ -23,6 +31,11 @@ export const Left = styled("div")`
         h3{
             font-size: 1.4rem;
             color: ${({theme}) => theme.primaryRyde};
+            margin: 2rem 0;
+
+            @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+                font-size: 1.2rem;
+            }
         }
         li{
             background-color: red;
@@ -35,6 +48,12 @@ export const Left = styled("div")`
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 30px;
 
+        @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media screen and (max-width: ${({theme}) => theme.mobile}){
+            grid-template-columns: repeat(1, 1fr);
+        }
         .service{
             display: flex;
             justify-content: center;
@@ -63,4 +82,8 @@ export const ImageText = styled("div")`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
+
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        grid-template-columns: repeat(1, 1fr);
+    }
 `

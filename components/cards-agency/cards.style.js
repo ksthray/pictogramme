@@ -11,12 +11,26 @@ export const Title = styled(motion.h2)`
     text-transform: uppercase;
     margin: 10px 0;
     text-align: center;
+
+    @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+        font-size: 2.1rem;
+    }
+
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        font-size: 1.7rem;
+    }
 `
 export const P = styled(motion.p)`
     font-size: 1.4rem;
     color: ${({theme}) => theme.primaryBlue};
     margin: 20px 0;
     text-align: center;
+    @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+        font-size: 1.1rem;
+    }
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        font-size: 1rem;
+    }
 `
 export const Topbar = styled(motion.div)`
     width: 5%;
@@ -32,17 +46,26 @@ export const Bottombar = styled(motion.div)`
 `
 
 export const Cards = styled(motion.div)`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+
+    @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+    }
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        grid-template-columns: repeat(1, 1fr);
+    }
 
     .bg-more-awesome{
         background-color: ${({theme}) => theme.primaryRyde};
     }
 
-    .block-1{
+    .container-magazine{
         .image1{
-            box-shadow: -8px 10px 15px -4px rgba(0,0,0,0.10);
+            display: flex;
+            justify-content: center;
         }
     }
     .p1{
@@ -51,5 +74,9 @@ export const Cards = styled(motion.div)`
         margin-top: 15px;
         text-align: center;
         font-weight: bold;
+
+        @media screen and (max-width: ${({theme}) => theme.mobile}){
+            font-size: 0.9rem;
+        }
     }
 `

@@ -1,5 +1,8 @@
 import styled from "styled-components"
 import {Container} from "reactstrap"
+import {motion} from "framer-motion"
+
+import {titleAnimation, barAnimation} from "../utils/functions"
 
 const StyleSection = styled("div")`
     width: 100%;
@@ -12,26 +15,43 @@ const StyleSection = styled("div")`
     display: flex;
     align-items: center;
     color: white;
+
+    h2{
+
+        @media screen and (max-width: ${({theme}) => theme.mobile}){
+            font-size: 1.4rem;
+        }
+    }
 `
 
-const Topbar = styled("div")`
+const Topbar = styled(motion.div)`
     width: 5%;
     height: 4px;
     background: ${({theme}) => theme.primaryRyde};
+
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        width: 25%;
+    }
 `
-const Bottombar = styled("div")`
+const Bottombar = styled(motion.div)`
     width: 15%;
     height: 4px;
     background: ${({theme}) => theme.primaryRyde};
+
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        width: 55%;
+    }
 `
 
 const HomeOutherPage = ({children}) => {
     return (
         <StyleSection>
             <Container>
-                <Topbar/>
-                {children}
-                <Bottombar/>
+                <Topbar variants={barAnimation} initial="hidden" animate="visible"/>
+                    <motion.h2
+                        variants={titleAnimation} initial="hidden" animate="visible"
+                    >{children}</motion.h2>
+                <Bottombar variants={barAnimation} initial="hidden" animate="visible"/>
             </Container>
         </StyleSection>
     )

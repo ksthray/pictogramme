@@ -11,29 +11,62 @@ import styled from "styled-components"
 
 const InvitationStyle = styled("section")`
     width: 100%;
-    height: 350px;
+    /* height: 350px; */
     padding: 2.5rem 0;
     background: rgb(2,73,117);
     background: linear-gradient(72deg, rgba(2,73,117,1) 8%, rgba(8,105,166,1) 91%);
     clip-path: polygon(0 0, 100% 16%, 100% 100%, 0 100%);
 
+    @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+        flex-direction: column;
+    }
+
     .container-all{
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-top: 4rem;
+        padding: 4rem 0;
+
+        @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+            flex-direction: column;
+        }
     }
     .message{
         z-index: 2;
         color: white;
         margin-right: 6rem;
 
+        @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+            margin-right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 3rem;
+        }
+
+        
+
         h4{
             font-size: 1.5rem;
             text-transform: uppercase;
+
+            @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+                font-size: 1.2rem;
+            }
+            @media screen and (max-width: ${({theme}) => theme.mobile}){
+                font-size: 1.1rem;
+            }
         }
         p{
             font-size: 1.2rem;
+            text-align: center;
+            @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+                font-size: 1rem;
+            }
+            @media screen and (max-width: ${({theme}) => theme.mobile}){
+                font-size: 0.95rem;
+            }
         }
         .button{
             background-color: ${({theme}) => theme.primaryRyde};

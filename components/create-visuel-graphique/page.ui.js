@@ -1,4 +1,5 @@
 import Img from "next/image"
+import ButtonDevis from "../button.devis"
 
 import {ContainerUi, Left, ImageText, Topbar} from "./page.ui.style"
 
@@ -7,6 +8,7 @@ const PageUI = () => {
         {
             id: "1",
             title: "Le logo",
+            alt: "image descriptive",
             images: ["/images/orange.jpg", "/images/bcdc.jpeg", "/images/logopicto.png"],
             heading: "Le logo est l’élément fondateur d’une identité visuelle",
             text: "Notre processus de conception conduit par notre équipe de designers talentueux, avec une expérience dans différents styles, pour toutes les industries.",
@@ -14,6 +16,7 @@ const PageUI = () => {
         {
             id: "2",
             title: "La mise en page",
+            alt: "image descriptive",
             images: ["/images/miseenpage.png"],
             heading: "Elle est importante pour tout type de documents.",
             text: "joue un rôle important pour faire passer un message. Si la mise en page n'est pas adaptée à votre cible, ou si elle ne véhicule pas correctement l’image de votre marque, le message ne sera pas transmis efficacement, particulièrement pour un document publicitaire.",
@@ -21,6 +24,7 @@ const PageUI = () => {
         {
             id: "3",
             title: "La charte graphique",
+            alt: "image descriptive",
             images: ["/images/chartegraphique.png"],
             heading: "Cela inclus le logo, mise en page, des flyer et beaucoup d'autres elements",
             text: "Une charte graphique vise à créer cohérence et uniformité dans la communication de votre entreprise, en regroupant graphiquement son identité, son univers et ses valeurs.",
@@ -30,27 +34,29 @@ const PageUI = () => {
         <ContainerUi>
             <Left>
                 <h2>
-                    Qu'est-ce qu'une identité visuelle et quelle est sa valeur <br/> ajoutée 
+                    Qu'est-ce qu'une identité visuelle et quelle est sa valeur ajoutée 
                     pour votre entreprise ?
                 </h2>
                 <Topbar/>
                 <ImageText>
                     <div>
                         <Img
-                            src={"/images/affiche.jpg"}
+                            src={"/images/affiche-min.jpg"}
                             layout={"responsive"}
                             width={200}
                             height={150}
                             quality={100}
+                            alt={"affiche pictogramme"}
                         />
                     </div>
                     <div>
                         <Img
-                            src={"/images/pictoqween.jpg"}
+                            src={"/images/pictoqween-min.jpg"}
                             layout={"responsive"}
                             width={200}
                             height={150}
                             quality={100}
+                            alt={"affiche pictogramme"}
                         />
                     </div>
                 </ImageText><br/>
@@ -89,6 +95,7 @@ const PageUI = () => {
                                         width={230}
                                         height={"auto"}
                                         quality={100}
+                                        alt={item.alt}
                                     />
                                 ))}
                             </div>
@@ -96,6 +103,7 @@ const PageUI = () => {
                     ))}
                 </div>
             </Left>
+            <ButtonDevis/>
         </ContainerUi>
     )
 }

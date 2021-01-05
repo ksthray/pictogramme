@@ -12,19 +12,23 @@ import {Bottombar, LogoContainer, SectionStyle, Title, Topbar} from "./client.lo
 const logo = [
     {
         id: "1",
-        image: "/images/orange.jpg"
+        image: "/images/orange.jpg",
+        alt: "logo entreprise"
     },
     {
         id: "2",
-        image: "/images/rawbank.png"
+        image: "/images/rawbank.png",
+        alt: "logo entreprise"
     },
     {
         id: "3",
-        image: "/images/bcdc.jpeg"
+        image: "/images/bcdc.jpeg",
+        alt: "logo entreprise"
     },
     {
         id: "4",
-        image: "/images/vodacom.png"
+        image: "/images/vodacom.png",
+        alt: "logo entreprise"
     },
     {
         id: "5",
@@ -66,7 +70,7 @@ const ClientLogo = () => {
                     {logo.map((image) => (
                         <motion.div
                             key={image.id}     
-                            ref={contentRef}
+                            ref={contentRef} 
                             animate={animation}
                             initial="hidden"
                             variants={calendar}
@@ -76,6 +80,7 @@ const ClientLogo = () => {
                                 layout={"intrinsic"}
                                 width={150}
                                 height={70}
+                                alt={image.alt}
                             />
                         </motion.div>
                     ))}
@@ -86,7 +91,7 @@ const ClientLogo = () => {
                     initial="hidden"
                     variants={titleAnimation}
                 >
-                    On donne le meilleur de nous pour satisfaire <br/> nos client
+                    On donne le meilleur de nous pour satisfaire nos client
                 </Title>
                 <Bottombar 
                     ref={contentRef}

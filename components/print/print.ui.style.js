@@ -38,12 +38,19 @@ export const Grid = styled("div")`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
+    @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        grid-template-columns: repeat(1, 1fr);
+    }
+
     .element{
         justify-content: center;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 2rem;
+        margin: 2rem 0;
 
         h5{
             color: ${({theme}) => theme.primaryRyde};
@@ -59,4 +66,11 @@ export const ImageText = styled("div")`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
+
+    @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        grid-template-columns: repeat(1, 1fr);
+    }
 `

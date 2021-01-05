@@ -5,9 +5,13 @@ import Wrapper from "../../../components/wrapper"
 
 export default function WebdesignUxUi(){
     return (
-        <Wrapper>
+        <Wrapper
+            titrePage={"Web design UX et UI design"}
+            descriptionPage={"Expérience utilisateur et interface utilisateur"}
+            imagePage={"/images/affiche.jpg"}
+        >
             <HomeOutherPage>
-                <h2>Web design UX & UI design</h2>
+                Web design UX & UI design
             </HomeOutherPage>
             <Container>
                 <Webdesign/>

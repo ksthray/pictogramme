@@ -1,4 +1,5 @@
 import Img from "next/image"
+import ButtonDevis from "../button.devis"
 
 import {ImageText, MarketingStyle, Left, Topbar} from "./marketing.style"
 
@@ -31,13 +32,15 @@ const Marketing = () => {
                         width={"70%"}
                         height={40}
                         quality={100}
+                        alt={"image info"}
                     />
                     <Img
-                        src={"/images/digital5.jpg"}
+                        src={"/images/digital5.jpg"} 
                         layout={"responsive"}
                         width={"100%"}
                         height={35}
                         quality={100}
+                        alt={"image info"}
                     />
                 </ImageText><br/>
                 <div className={"container-block"}>
@@ -55,6 +58,7 @@ const Marketing = () => {
                     </div>
                 </div>
             </Left>
+            <ButtonDevis/>
         </MarketingStyle>
     )
 }

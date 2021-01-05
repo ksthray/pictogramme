@@ -10,6 +10,16 @@ export const CardGrid = styled("div")`
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-gap: 20px;
+
+    @media screen and (max-width: ${({theme}) => theme.tablet}){
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        grid-template-columns: repeat(1, 1fr);
+    }
 `
 
 export const Card = styled("div")`
@@ -26,6 +36,10 @@ export const Card = styled("div")`
     align-items: flex-end;
     margin-bottom: 50px;
     cursor: pointer;
+
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        height: 480px;
+    }
 
     &:hover{
         .block{

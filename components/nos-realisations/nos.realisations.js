@@ -28,7 +28,7 @@ const NosRealisations = () => {
                     ref={refContent}
                     animate={animation}
                     initial="hidden"
-                    variants={barAnimation}
+                    variants={barAnimation} 
                 />
                 <Title
                     ref={refContent}

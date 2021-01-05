@@ -5,9 +5,14 @@ import AllRealisations from "../components/nos-realisations/all.realisations"
 
 export default function Realisation (){
     return (
-        <Wrapper>
+        <Wrapper
+            titrePage={"Nos réalisations"}
+            descriptionPage={"Nos réçentes réalisations Pictogramme"}
+            imagePage={"/images/affiche.jpg"}
+            motClePage={"Charte graphique, Logo, Site internet, Calendrier"}
+        >
             <HomeOutherPage>
-                <h2>Nos réalisations</h2>
+                Nos réalisations
             </HomeOutherPage>
             <Container>
                 <AllRealisations/>

@@ -5,9 +5,13 @@ import Wrapper from "../../../components/wrapper"
 
 export default function Website(){
     return (
-        <Wrapper>
+        <Wrapper
+            titrePage={"Création site web"}
+            descriptionPage={"Création de vos site web sur mésure"}
+            imagePage={"/images/affiche.jpg"}
+        >
             <HomeOutherPage>
-                <h2>Creation de site web</h2>
+                Creation de site web
             </HomeOutherPage>
             <Container>
                 <Siteweb/>

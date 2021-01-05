@@ -37,6 +37,13 @@ export const Title = styled(motion.h2)`
     text-transform: uppercase;
     margin: 10px 0;
     text-align: center;
+
+    @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+        font-size: 2.1rem;
+    }
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        font-size: 1.7rem;
+    }
 `
 export const Topbar = styled(motion.div)`
     width: 5%;
@@ -55,9 +62,17 @@ export const Bottombar = styled(motion.div)`
 
 export const ContainerPrint = styled("section")`
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
     grid-gap: 20px;
+    justify-content: center;
+
+    @media screen and (max-width: ${({theme}) => theme.tablet}){
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        grid-template-columns: repeat(1, 1fr);
+    }
 `
 
 export const Magazine = styled(motion.div)`
@@ -75,6 +90,16 @@ export const Magazine = styled(motion.div)`
         box-shadow: 20px 20px 20px rgba(0,0,0,0.2);
         transform-style: preserve-3d;
         transition: 0.5s;
+
+        @media screen and (max-width: ${({theme}) => theme.tablet}){
+            width: 280px;
+            height: 370px;
+        }
+
+        @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+            width: 240px;
+            height: 340px;
+        }
 
         &:hover{
             transform: rotateY(35deg);
@@ -129,6 +154,11 @@ export const Affiche = styled("div")`
     .affiche{
         width: 120px;
         height: 210px;
+    }
+
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        font-size: 1.7rem;
+        grid-template-columns: 1fr;
     }
 `
 

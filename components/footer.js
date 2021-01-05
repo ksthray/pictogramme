@@ -24,7 +24,13 @@ const FooterStyle = styled("footer")`
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 10px;
-        height: 300px;
+
+        @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media screen and (max-width: ${({theme}) => theme.mobile}){
+            grid-template-columns: repeat(1, 1fr);
+        }
 
         .entreprise-id{
             display: flex;
@@ -33,6 +39,10 @@ const FooterStyle = styled("footer")`
             flex-direction: column;
             width: 100%;
             height: 100%;
+
+            @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+                display: none;
+            }
         }
 
         .services{
@@ -40,10 +50,15 @@ const FooterStyle = styled("footer")`
             flex-direction: column;
             color: white;
             padding: 2rem 0;
+
+            @media screen and (max-width: ${({theme}) => theme.mobile}){
+                justify-content: center;
+                align-items: center;
+            }
             
             h4{
                 color: ${({theme}) => theme.primaryRyde};
-                font-size: 1.1.rem;
+                font-size: 1.3rem;
             }
             p{
                 line-height: 1;
@@ -64,10 +79,15 @@ const FooterStyle = styled("footer")`
             flex-direction: column;
             color: white;
             padding: 2rem 0;
+
+            @media screen and (max-width: ${({theme}) => theme.mobile}){
+                justify-content: center;
+                align-items: center;
+            }
             
             h4{
                 color: ${({theme}) => theme.primaryRyde};
-                font-size: 1.1.rem;
+                font-size: 1.3rem;
             }
             p{
                 line-height: 1;
@@ -84,8 +104,15 @@ const ContainerIcons = styled(motion.div)`
     display: flex;
     justify-content: space-around;
     width: 50%;
-    height: 100px;
     margin: 0 auto;
+
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 1.4rem;
+    }
 
     .btn, .btn::before, .btn::after{
         transition: 0.5s;
@@ -100,6 +127,7 @@ const ContainerIcons = styled(motion.div)`
     }
 `
 const Btn = styled("div")`
+    margin-bottom: 3rem;
     .btn-icons:hover{
         background-color: ${({face}) => face};
         &:before{
@@ -183,11 +211,11 @@ const Footer = () => {
     }, [animation, inView]);
 
     const services = [
-        {nom: "Création idéentité graphique"},
-        {nom: "Impression sur papier"},
-        {nom: "Web design UX & UI design"},
-        {nom: "Création site web"},
-        {nom: "Web marketing"}
+        {nom: "Création idéentité graphique", link: "/services/creation-identite-graphique"},
+        {nom: "Impression sur papier", link: "/services/impression"},
+        {nom: "Web design UX & UI design", link: "/services/web-design-ux-ui-design"},
+        {nom: "Création site web", link: "/services/site-web"},
+        {nom: "Web marketing", link: "/services/web-marketing"}
     ]
     const rsocial = [
         {
@@ -255,7 +283,7 @@ const Footer = () => {
                                     initial="hidden"
                                     variants={cupAnimation}
                                 >
-                                    <Link href="/">
+                                    <Link href={service.link}>
                                         <a className={"a"}>
                                             {service.nom}
                                         </a>

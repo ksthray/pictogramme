@@ -6,9 +6,13 @@ import { Container } from "reactstrap";
 
 export default function Apropos() {
     return (
-        <Wrapper>
+        <Wrapper
+            titrePage={"A propos"}
+            descriptionPage={"A propos de pcitogramme Rdc"}
+            imagePage={"/images/affiche.jpg"}
+        >
             <HomeOutherPage>
-                <h2>La team</h2>
+                La team
             </HomeOutherPage>
             <Container>
                 <About/>

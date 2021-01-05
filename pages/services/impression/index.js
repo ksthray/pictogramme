@@ -5,9 +5,13 @@ import {Container} from "reactstrap"
 
 export default function Impression() {
     return (
-        <Wrapper>
+        <Wrapper
+            titrePage={"Impression sur papiers"}
+            descriptionPage={"Impression sur papiers de bonne qualités"}
+            imagePage={"/images/affiche.jpg"}
+        >
             <HomeOutherPage>
-                <h2>Impression sur papier</h2>
+                Impression sur papier
             </HomeOutherPage>
             <Container>
                 <PrintUI/>

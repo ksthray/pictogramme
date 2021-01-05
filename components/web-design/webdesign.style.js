@@ -23,17 +23,31 @@ export const Left = styled("div")`
     .block-1{
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
         grid-gap: 20px;
+
+        @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
     .block-2{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 10px;
+        margin: 2rem 0;
+
+        @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+            grid-template-columns: repeat(1, 1fr);
+        }
 
         .image{
             display: flex;
             justify-content: center;
             align-items: center;
+
+            @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+                justify-content: flex-start;
+            }
         }
     }
 
@@ -60,7 +74,7 @@ export const Outils = styled("div")`
     padding: 2rem;
 
     h3{
-        text-align: center;
+        text-align: center; 
         font-size: 1.3rem;
         color: white;
     }
@@ -69,5 +83,16 @@ export const Outils = styled("div")`
         display: flex;
         justify-content: space-around;
         align-items: center;
+
+        @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+            flex-wrap: wrap;
+
+            .container-img{
+                margin-bottom: 10px;
+            }
+        }
+        @media screen and (max-width: ${({theme}) => theme.mobile}){
+            flex-direction: column;
+        }
     }
 `

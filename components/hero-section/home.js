@@ -14,21 +14,21 @@ import {btnHome} from "../../utils/functions"
 
 const items = [
     {
-        src: '/images/pictoqween.jpg',
+        src: '/images/pictoqween-min.jpg',
         altText: 'Esprit créatif',
         caption: 'Echappe à la tyranie du hasard, transgresse les régles au moment opportun',
         button: 'Voir nos services',
         link: "/services"
     },
     {
-        src: '/images/strategy.jpg',
+        src: '/images/strategy-min.jpg',
         altText: 'mesurer, estimer, calculer, comparer et évaluer la probabilité de succès.',
         caption: 'S’adapter en permanence en fonction de la concurence par des méthodes innovants.',
         button: "Voir nos services",
         link: "/services"
     },
     {
-        src: '/images/gold.jpg',
+        src: '/images/gold-min.jpg',
         altText: 'Des talents mis à votre disposition.',
         caption: 'On valide vos idées après competition, on ameliore, on peaufine et on polie pour une prise de decision.',
         button: "Voir l'équipe",

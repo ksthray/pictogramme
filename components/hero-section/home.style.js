@@ -85,7 +85,7 @@ export const Contains = styled("div")`
         }
     }
     span{
-        font-size: 1rem;
+        font-size: 1rem; 
         margin: 2rem 0;
         text-align: center;
         @media screen and (max-width: ${({theme}) => theme.tabletMini}){

@@ -50,7 +50,7 @@ export const BottombarCard = styled("div")`
     margin-bottom: 15px;
 `
 
-export const ContainerCards = styled(motion.div)`
+export const ContainerCards = styled("div")`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;

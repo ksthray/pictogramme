@@ -1,13 +1,13 @@
 import React, {useEffect} from "react"
 
-import {useAnimation} from "framer-motion"
+import {motion, useAnimation} from "framer-motion"
 import {useInView} from "react-intersection-observer"
 
 import { Container } from "reactstrap"
 import Cards from "./Cards"
 import {SectionStyle, Title, Topbar, Bottombar} from "./our.services.style"
 
-import {titleAnimation, barAnimation} from "../../utils/functions"
+import {titleAnimation, barAnimation, cardAgencyAnimation} from "../../utils/functions"
 
 const OurServices = () => {
     const animation = useAnimation();
@@ -45,7 +45,14 @@ const OurServices = () => {
                     initial="hidden"
                     variants={barAnimation}
                 />
-                <Cards/>
+                <motion.div
+                    ref={contentRef}
+                    animate={animation}
+                    initial="hidden"
+                    variants={cardAgencyAnimation}
+                >
+                    <Cards/>
+                </motion.div>
             </Container>
             <br/>
         </SectionStyle>

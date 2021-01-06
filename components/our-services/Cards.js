@@ -1,23 +1,14 @@
-import React, {useEffect} from "react"
-
-import Link from "next/link"
-import {useAnimation} from "framer-motion"
-import {useInView} from "react-intersection-observer"
+import {useRouter} from "next/router"
 
 import { ContainerCards, CardStyle, BottombarCard } from "./our.services.style"
-import {cardServicesAnimation} from "../../utils/functions"
 
 const Cards = () => {
-    const animation = useAnimation();
-    const [contentRef, inView] = useInView({
-        triggerOnce: true,
-    });
+    const router = useRouter()
 
-    useEffect(() => {
-        if (inView) {
-            animation.start("visible");
-        }
-    }, [animation, inView]);
+    const pushPage = (e, link) => {
+        e.preventDefault()
+        router.push(link)
+    }
 
     const data = [
         {
@@ -57,16 +48,10 @@ const Cards = () => {
         },
     ]
     return (
-        <ContainerCards
-            key={"container-cards"}
-            ref={contentRef}
-            animate={animation}
-            initial="hidden"
-            variants={cardServicesAnimation} 
-        >
-            {data.map((item) => (
+        <ContainerCards>
+            {data.map((item, i) => (
                 <CardStyle
-                    key={item.id} 
+                    key={i} 
                     background={item.image}
                 >
                     <div className={"overlay"}>
@@ -77,11 +62,9 @@ const Cards = () => {
                                 <p key={i}>{"👌 "}{el}</p>
                             ))}
                             <div className={"container-button"}>
-                                <Link href={item.link}>
-                                    <a type="button" className={"button"}>
-                                        En savoir +
-                                    </a>
-                                </Link>
+                                <button onClick={(e) => pushPage(e, item.link)} type="button" className={"button"}>
+                                    En savoir +
+                                </button>
                             </div>
                         </div>
                     </div>

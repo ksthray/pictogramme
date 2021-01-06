@@ -7,7 +7,7 @@ import {titleAnimation, barAnimation, calendar} from "../../utils/functions"
 import Img from "next/image"
 
 import {Container} from "reactstrap"
-import {Bottombar, LogoContainer, SectionStyle, Title, Topbar} from "./client.logo.style"
+import {Bottombar, LogoContainer, P, SectionStyle, Title, Topbar} from "./client.logo.style"
 
 const logo = [
     {
@@ -85,14 +85,14 @@ const ClientLogo = () => {
                         </motion.div>
                     ))}
                 </LogoContainer><br/>
-                <Title
+                <P
                     ref={contentRef}
                     animate={animation}
                     initial="hidden"
                     variants={titleAnimation}
                 >
-                    On donne le meilleur de nous pour satisfaire nos client
-                </Title>
+                    On donne le meilleur de nous pour satisfaire nos clients
+                </P>
                 <Bottombar 
                     ref={contentRef}
                     animate={animation}

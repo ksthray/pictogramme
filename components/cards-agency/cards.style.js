@@ -3,6 +3,7 @@ import {motion} from "framer-motion"
 
 export const SectionStyle = styled("section")`
     width: 100%;
+    padding: 2rem 0;
 `
 
 export const Title = styled(motion.h2)`
@@ -66,17 +67,25 @@ export const Cards = styled(motion.div)`
         .image1{
             display: flex;
             justify-content: center;
-        }
-    }
-    .p1{
-        font-size: 1.1rem;
-        color: ${({theme}) => theme.primaryRyde};
-        margin-top: 15px;
-        text-align: center;
-        font-weight: bold;
+            flex-direction: column;
+            align-items: center;
 
-        @media screen and (max-width: ${({theme}) => theme.mobile}){
-            font-size: 0.9rem;
+
+            .p1{
+                font-size: 1.1rem;
+                color: ${({theme}) => theme.primaryRyde};
+                margin-top: 15px;
+                text-align: center;
+                font-weight: 550;
+
+                @media screen and (max-width: ${({theme}) => theme.mobile}){
+                    font-size: 0.9rem;
+                }
+            }
         }
+
+        .progress{
+                width: 80%;
+            }
     }
 `

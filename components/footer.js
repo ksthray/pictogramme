@@ -99,6 +99,7 @@ const Topbar = styled(motion.div)`
     width: 10%;
     height: 4px;
     background: ${({theme}) => theme.primaryRyde};
+    margin-bottom: 10px;
 `
 const ContainerIcons = styled(motion.div)`
     display: flex;
@@ -345,7 +346,7 @@ const Footer = () => {
                 >
                     {rsocial.map((social, i) => (
                         <Link key={i} href={social.link}>
-                            <a style={{textDecoration: "none"}} target="_blank">
+                            <a style={{textDecoration: "none"}} target="_blank" rel="noopener">
                                 <Btn face={social.face} left={social.left} right={social.right}>
                                     <div className={"btn btn-icons"}>
                                         <div className={"logo"}>

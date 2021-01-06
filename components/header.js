@@ -53,6 +53,8 @@ const HeaderStyle = styled("header")`
             transition: all ease-out 0.3s;
             margin-left: 15px;
             transition: all ease-out 0.3s;
+            position: relative;
+            top: -5px;
 
             @media screen and (max-width: ${({theme}) => theme.tabletMini}){
                 margin-left: 0;
@@ -194,7 +196,11 @@ const Header = () => {
                                 className={"main-btn"}
                             >
                                 <Link href="tel:+243824029562">
-                                    <a className={"button"} type="button">+243824029562</a>
+                                    <a>
+                                        <button className={"button"}>
+                                            +243824029562
+                                        </button>
+                                    </a>
                                 </Link>
                             </motion.div>
                         </NavItem>

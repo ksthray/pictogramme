@@ -58,7 +58,6 @@ const CardAgency = ( ) => {
     ]
     return (
         <SectionStyle>
-            <br/>
             <Container>
                 <Topbar
                     ref={contentRef}
@@ -98,7 +97,7 @@ const CardAgency = ( ) => {
                 >
                     {magazines.map((magazine) => (
                         <Link key={magazine.id} href={magazine.link}>
-                            <a style={{textDecoration: "none"}} target="_blank">
+                            <a style={{textDecoration: "none"}} target="_blank" rel="noopener">
                                 <motion.div 
                                     className={"container-magazine"}
                                     whileHover={{
@@ -115,13 +114,13 @@ const CardAgency = ( ) => {
                                             width={magazine.width}
                                             height={magazine.height}
                                         />
+                                        <p className={"p1"}>
+                                            {magazine.text}
+                                        </p>
+                                        <Progress animated color="more-awesome" value={magazine.pourcentage}>
+                                            {magazine.pourcentage}%
+                                        </Progress>
                                     </div>
-                                    <p className={"p1"}>
-                                        {magazine.text}
-                                    </p>
-                                    <Progress animated color="more-awesome" value={magazine.pourcentage}>
-                                        {magazine.pourcentage}%
-                                    </Progress>
                                 </motion.div>
                             </a>
                         </Link>

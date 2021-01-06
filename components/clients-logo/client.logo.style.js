@@ -5,19 +5,33 @@ export const SectionStyle = styled("section")`
     width: 100%;
 `
 
-export const Title = styled(motion.h4)`
+export const Title = styled(motion.h2)`
     font-size: 1.6rem;
     color: ${({theme}) => theme.primaryRyde};
     margin: 10px 0;
     text-align: center;
 
     @media screen and (max-width: ${({theme}) => theme.tabletMini}){
-        font-size: 1.3rem;
+        font-size: 1.35rem;
     }
     @media screen and (max-width: ${({theme}) => theme.mobile}){
-        font-size: 1.15rem;
+        font-size: 1.3rem;
     }
 `
+export const P = styled(motion.p)`
+    font-size: 1.5rem;
+    color: ${({theme}) => theme.primaryRyde};
+    margin: 10px 0;
+    text-align: center;
+
+    @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+        font-size: 1.25rem;
+    }
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        font-size: 1.2rem;
+    }
+`
+
 export const Topbar = styled(motion.div)`
     width: 5%;
     height: 4px;

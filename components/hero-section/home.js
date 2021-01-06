@@ -76,20 +76,20 @@ export default function HomePage() {
                 quality={100} 
             />
             <Contains>
-                <motion.h2 
+                <motion.h1 
                     initial={{opacity: 0}}
                     animate={{opacity: 1}}
                     transition={{delay: 1.1, duration: 1.1}}
                 >
                     Agence créa et imprimérie
-                </motion.h2>
-                <motion.h1
+                </motion.h1>
+                <motion.h2
                     initial={{opacity: 0}}
                     animate={{opacity: 1}}
                     transition={{delay: 1.3, duration: 1.3}}
                 >
                     Welcome to PICTOGRAMME
-                </motion.h1>
+                </motion.h2>
                 <br/>
                 <motion.p
                     initial={{opacity: 0}}

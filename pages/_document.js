@@ -36,6 +36,7 @@ export default class MyDocument extends Document {
                     <meta title="Agence créa et impremerie" />
                     <link rel="icon" sizes="96x96" href="favicon.ico" />
                     <meta name="theme-color" content="#319795"></meta>
+                    <meta name="google-site-verification" content="RJAX3bTXXpyOo6F_sdRW_G8GjoWCsqZZaRywW6GaiXs" />
                 </Head>
                 <body>
                     <Main />

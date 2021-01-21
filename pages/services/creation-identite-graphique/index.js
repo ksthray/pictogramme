@@ -7,7 +7,7 @@ export default function CreationIdentite() {
     return (
         <Wrapper
             titrePage={"Création identité visuel"}
-            descriptionPage={"Création de vos identités visuels, graphique"}
+            descriptionPage={"Pictogramme Rdc, création de vos identités visuels"}
             imagePage={"/images/affiche.jpg"}
         >
             <HomeOutherPage>

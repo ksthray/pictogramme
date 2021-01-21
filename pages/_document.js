@@ -37,6 +37,8 @@ export default class MyDocument extends Document {
                     <link rel="icon" sizes="96x96" href="favicon.ico" />
                     <meta name="theme-color" content="#319795"></meta>
                     <meta name="google-site-verification" content="RJAX3bTXXpyOo6F_sdRW_G8GjoWCsqZZaRywW6GaiXs" />
+                    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+                    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet"/>
                 </Head>
                 <body>
                     <Main />

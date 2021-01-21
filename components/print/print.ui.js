@@ -1,20 +1,20 @@
 import Img from "next/image"
 import ButtonDevis from "../button.devis"
 
-import {PrintStyle, ImageText, Left, Grid, Topbar} from "./print.ui.style"
+import {PrintStyle, ImageText, Left, Grid, Topbar, TopPrint} from "./print.ui.style"
 
 const PrintUI = () => {
     const items = [
         {
             id: "1",
             titre: "carte de visite",
-            image: "/images/visitcard.png",
+            image: "/images/cartes-visites.jpg",
             alt: "image carte de visite"
         },
         {
             id: "2",
             titre: "brochure",
-            image: "/images/brochure.png",
+            image: "/images/flyer2.jpg",
             alt: "image brochure"
         },
         {
@@ -26,13 +26,13 @@ const PrintUI = () => {
         {
             id: "4",
             titre: "impression menu",
-            image: "/images/visitcard.png",
+            image: "/images/flyer1.jpg",
             alt: "image flyer"
         },
         {
             id: "5",
             titre: "grand format affiche",
-            image: "/images/visitcard.png",
+            image: "/images/carte-de-voeux1.jpg",
             alt: "image carte de visit"
         },
         {
@@ -43,15 +43,9 @@ const PrintUI = () => {
         },
         {
             id: "7",
-            titre: "impression livres",
-            image: "/images/cover.jpg",
-            alt: "image livre"
-        },
-        {
-            id: "8",
             titre: "impression magazine",
-            image: "/images/mbotesrz-min.jpg",
-            alt: "image magazine"
+            image: "/images/vita-cover.jpg",
+            alt: "image livre"
         },
     ]
     const prints = [
@@ -61,47 +55,46 @@ const PrintUI = () => {
     ]
     return (
         <PrintStyle>
-            <Left>
-                <h2>
-                    Picto Print
-                </h2>
-                <p>
-                    Une communication efficace exige que votre marque assure une présence à la fois virtuelle 
-                    et physique en alliant supports papier et digital. Il est important d’investir les méthodes
-                    traditionnelles de communication qui permettent de toucher de nombreux publics, 
-                    c’est pourquoi notre agence de print vous accompagne dans la création et l’impression 
-                    de vos supports physiques.
-                </p>
-                <ImageText>
-                    {prints.map((print) => (
-                        <Img
-                            key={print.id}
-                            src={print.image}
-                            layout={"responsive"}
-                            width={110}
-                            height={100}
-                            quality={100}
-                            alt={print.alt}
-                        />
-                    ))}
-                </ImageText>
+            <div className={"main-print"}>
+                <img src={"/images/carte-de-voeux1.jpg"} alt={"image de picto print"}/>
+                <div className={"texts"}>
+                    <h2>
+                        Picto Print
+                    </h2>
+                    <TopPrint/>
+                    <p>
+                        Une communication efficace exige que votre marque assure une présence à la fois virtuelle 
+                        et physique en alliant supports papier et digital. Il est important d’investir les méthodes
+                        traditionnelles de communication qui permettent de toucher de nombreux publics, 
+                        c’est pourquoi notre agence de print vous accompagne dans la création et l’impression 
+                        de vos supports physiques.
+                    </p>
+                    <div className={"imprimentes"}>
+                        {prints.map((print, i) => (
+                            <img
+                                key={i}
+                                src={print.image}
+                                alt={print.alt}
+                            />
+                        ))}
+                    </div>
+                </div>
+            </div><br/>
+            <div className={"prestations"}>
                 <h3>NOS PRESTATIONS PRINT</h3>
                 <Topbar/><br/>
-                <Grid>
-                    {items.map((item) => (
-                        <div className={"element"} key={item.id}>
-                            <h5>{item.titre}</h5>
-                            <Img
+                <div className={"grid-prest"}>
+                    {items.map((item, i) => (
+                        <div className={"element"} key={i}>
+                            <h4>{item.titre}</h4>
+                            <img
                                 src={item.image} 
-                                width={200}
-                                height={"auto"}
-                                quality={100}
                                 alt={item.alt}
                             />
                         </div>
                     ))}
-                </Grid>
-            </Left>
+                </div>
+            </div><br/>
             <ButtonDevis/>
         </PrintStyle>
     )

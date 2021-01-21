@@ -38,50 +38,51 @@ const Siteweb = () => {
     return (
         <SitewebStyle>
             <Left>
-                <h2>
-                    Vous avez besoin d'être présent sur internet ? Nous sommes là pour vous.
-                </h2>
-                <Topbar/>
-                <ImageText>
-                    {images.map((img) => (
-                        <Img
-                            key={img.id}
-                            src={img.image}
-                            layout={"responsive"}
-                            width={240}
-                            height={150}
-                            quality={100}
-                            alt={img.alt}
-                        />
-                    ))}
-                </ImageText>
+                <div className={"main-site"}>
+                    <div className={"grid"}>
+                        <div className={"text"}>
+                            <h2>
+                                Vous avez besoin d'être présent sur internet ? Nous sommes là pour vous.
+                            </h2>
+                            <Topbar/>
+                            <p>
+                                Notre agence web fait bien plus que créer ou refondre votre site internet. 
+                                Notre intervention s’attache à créer un site internet qui va générer un retour sur 
+                                investissement mesurable et programmé pour votre entreprise.
+                            </p>
+                        </div>
+                        <div className={"img-site"}>
+                            <img src={"/images/website1.png"} alt={"image site web responsive"} />
+                        </div>
+                    </div>
+                </div>
                 <div className={"container-block"}>
                     <div className={"site-vitrine"}>
                         <h3>site vitrine</h3>
                         <Topbar/>
-                        {vitrine.map((vit) => (
-                            <>
-                                <p key={vit.id}>{vit.text}</p>
+                        {vitrine.map((vit, i) => (
+                            <div key={i}>
+                                <p>{vit.text}</p>
                                 <ul style={{paddingLeft: "20px"}}>
                                     {vit.elements.map((v) => (
                                         <li key={v}>{v}</li> 
                                     ))}
                                 </ul>
-                            </>
+                            </div>
                         ))}
                     </div>
                     <div className={"site-ecom"}>
                         <h3>site e-commerce</h3>
                         <Topbar/>
-                            {ecom.map((com) => (
-                                <>
-                                    <p key={com.id}>{com.text}</p>
+                            {ecom.map((com, i) => (
+                                <div key={i}>
+                                    <p>{com.text}</p>
                                     <ul style={{paddingLeft: "20px"}}>
                                         {com.elements.map((v) => (
                                             <li key={v}>{v}</li> 
                                         ))}
                                     </ul>
-                                </>
+                                </div>
                             ))}
                     </div>
                 </div>

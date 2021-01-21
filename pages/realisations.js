@@ -7,7 +7,7 @@ export default function Realisation (){
     return (
         <Wrapper
             titrePage={"Nos réalisations"}
-            descriptionPage={"Nos réçentes réalisations Pictogramme"}
+            descriptionPage={"Nos réçentes réalisations pictogramme Rdc"}
             imagePage={"/images/affiche.jpg"}
             motClePage={"Charte graphique, Logo, Site internet, Calendrier"}
         >

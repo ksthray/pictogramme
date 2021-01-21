@@ -11,12 +11,12 @@ export default function Home() {
   return (
     <Wrapper
       titrePage={"Pictogramme Rdc"}
-      descriptionPage={"Page d'accueil de Pictogramme Rdc"}
+      descriptionPage={"Bienvenue dans pictogramme, agence créa et imprimerie"}
       imagePage={"/images/affiche.jpg"}
-      motClePage={"Agence, créa, imprimerie, webdesign ux ui"}
+      motClePage={"Agence, créa, imprimerie, webdesign ux ui, site internet, site web"}
     >
       <HomePage/>
-      <CardAgency/>
+      <CardAgency/><br/><br/>
       <OurServices/>
       <NosRealisations/>
       <ClientLogo/>

@@ -1,0 +1,35 @@
+[
+    {
+        "id": "1",
+        "image": "/images/mbotesouriez-min.jpg",
+        "text": "La qualité du design",
+        "pourcentage": 92,
+        "link": "https://issuu.com/mbote-souriez/docs/mbote_bienvenue_n_3",
+        "alt": "page magazine",
+        "width": "250",
+        "height": "350",
+        "translate": "30px"
+    },
+    {
+        "id": "2",
+        "image": "/images/mbotesrz-min.jpg",
+        "text": "La qualité du travail",
+        "pourcentage": 100,
+        "link": "https://issuu.com/mbote-souriez/docs/mbote_souriez",
+        "alt": "page magazine",
+        "width": "250",
+        "height": "350",
+        "translate": "0"
+    },
+    {
+        "id": "3",
+        "image": "/images/pagembote-min.jpg",
+        "text": "La qualité de l'impression",
+        "pourcentage": 93,
+        "link": "https://issuu.com/mbote-souriez/docs/mbote_bienvenue_n_2",
+        "alt": "page magazine",
+        "width": "250",
+        "height": "350",
+        "translate": "30px"
+    }
+]

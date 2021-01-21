@@ -7,7 +7,7 @@ export default function MarketingWeb(){
     return (
         <Wrapper
             titrePage={"Marketing web"}
-            descriptionPage={"Marketing digital adapter à votre cible"}
+            descriptionPage={"Pictogramme Rdc, marketing digital adapter à votre cible"}
             imagePage={"/images/affiche.jpg"}
         >
             <HomeOutherPage>

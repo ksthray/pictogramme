@@ -3,16 +3,6 @@ import styled from "styled-components"
 export const BgWrap = styled("div")`
     width: 100%;
     height: 100vh;
-    z-index: 1;
-
-    div{
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0,0,0,0.4);
-    }
 `
 export const Button = styled("button")`
     background-color: ${({theme}) => theme.primaryRyde};
@@ -47,20 +37,7 @@ export const Contains = styled("div")`
     h1{
         text-transform: uppercase;
         color: ${({theme}) => theme.primaryRyde};
-        font-size: 1.5rem;
-        text-align: center;
-
-        @media screen and (max-width: ${({theme}) => theme.tabletMini}){
-            font-size: 1.3rem;
-        }
-        @media screen and (max-width: ${({theme}) => theme.mobile}){
-            font-size: 1.1rem;
-        }
-    }
-    h2{
-        text-transform: uppercase;
-        color: ${({theme}) => theme.primaryRyde};
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         text-align: center;
 
         @media screen and (max-width: ${({theme}) => theme.tabletMini}){
@@ -70,29 +47,45 @@ export const Contains = styled("div")`
             font-size: 1rem;
         }
     }
+    h2{
+        text-transform: uppercase;
+        color: ${({theme}) => theme.primaryRyde};
+        font-size: 1.45rem;
+        text-align: center;
+        font-display: swap;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 700;
+
+        @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+            font-size: 1.2rem;
+        }
+        @media screen and (max-width: ${({theme}) => theme.mobile}){
+            font-size: 1.1rem;
+        }
+    }
     p{
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         color: white;
         text-transform: uppercase;
         text-align: center;
         margin-top: 20px;
 
         @media screen and (max-width: ${({theme}) => theme.tabletMini}){
-            font-size: 1.45rem;
+            font-size: 1.3rem;
         }
         @media screen and (max-width: ${({theme}) => theme.mobile}){
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
     }
     span{
-        font-size: 1rem; 
+        font-size: 1.1rem; 
         margin: 2rem 0;
         text-align: center;
         @media screen and (max-width: ${({theme}) => theme.tabletMini}){
             font-size: 0.95rem;
         }
         @media screen and (max-width: ${({theme}) => theme.mobile}){
-            font-size: 0.8rem;
+            font-size: 0.9rem;
         }
     }
 

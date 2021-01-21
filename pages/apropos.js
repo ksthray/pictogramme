@@ -8,11 +8,11 @@ export default function Apropos() {
     return (
         <Wrapper
             titrePage={"A propos"}
-            descriptionPage={"A propos de pcitogramme Rdc"}
+            descriptionPage={"A propos de pictogramme Rdc, l'équipe de geeks de pictogramme Rdc"}
             imagePage={"/images/affiche.jpg"}
         >
             <HomeOutherPage>
-                La team
+                L'équipe
             </HomeOutherPage>
             <Container>
                 <About/>

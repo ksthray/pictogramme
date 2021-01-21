@@ -1,23 +1,17 @@
-import React, {useEffect} from "react"
-
-import {motion, useAnimation} from "framer-motion"
-import {useInView} from "react-intersection-observer"
-
-import {titleAnimation, barAnimation, calendar} from "../../utils/functions"
-import Img from "next/image"
+import Slider from "react-slick";
 
 import {Container} from "reactstrap"
-import {Bottombar, LogoContainer, P, SectionStyle, Title, Topbar} from "./client.logo.style"
+import {LogoContainer, SectionStyle, Title, Topbar} from "./client.logo.style"
 
 const logo = [
     {
         id: "1",
-        image: "/images/orange.jpg",
+        image: "/images/ram.png",
         alt: "logo entreprise"
     },
     {
         id: "2",
-        image: "/images/rawbank.png",
+        image: "/images/bibidigi.png",
         alt: "logo entreprise"
     },
     {
@@ -27,78 +21,80 @@ const logo = [
     },
     {
         id: "4",
-        image: "/images/vodacom.png",
+        image: "/images/zahira.png",
         alt: "logo entreprise"
     },
     {
         id: "5",
         image: "/images/blackbox.png"
+    },
+    {
+        id: "6",
+        image: "/images/orange.jpg"
+    },
+    {
+        id: "7",
+        image: "/images/rawbank.png"
     }
 ]
 
 const ClientLogo = () => {
-    const animation = useAnimation();
-    const [contentRef, inView] = useInView({
-        triggerOnce: true,
-    });
+    
+    const settings = {
+        dots: false,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        speed: 1500,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+                }
+            }
+        ]
+    };
 
-    useEffect(() => {
-        if (inView) {
-            animation.start("visible");
-        }
-    }, [animation, inView]);
     return (
         <SectionStyle>
             <Container>
                 <br/>
-                <Topbar
-                    ref={contentRef}
-                    animate={animation}
-                    initial="hidden"
-                    variants={barAnimation}
-                />
-                <Title
-                    ref={contentRef}
-                    animate={animation}
-                    initial="hidden"
-                    variants={titleAnimation}
-                >
-                    Ils nous ont fait confiance
+                <Title>
+                    Ils nous font confiance
                 </Title>
-                <br/>
-                <LogoContainer>
-                    {logo.map((image) => (
-                        <motion.div
-                            key={image.id}     
-                            ref={contentRef} 
-                            animate={animation}
-                            initial="hidden"
-                            variants={calendar}
-                        >
-                            <Img
+                <br/><br/>
+                <Slider {...settings}>
+                    {logo.map((image, i) => (
+                        <LogoContainer key={i}>
+                            <img    
                                 src={image.image}
-                                layout={"intrinsic"}
-                                width={150}
-                                height={70}
                                 alt={image.alt}
+                                className={"the-images"}
                             />
-                        </motion.div>
+                        </LogoContainer>
                     ))}
-                </LogoContainer><br/>
-                <P
-                    ref={contentRef}
-                    animate={animation}
-                    initial="hidden"
-                    variants={titleAnimation}
-                >
-                    On donne le meilleur de nous pour satisfaire nos clients
-                </P>
-                <Bottombar 
-                    ref={contentRef}
-                    animate={animation}
-                    initial="hidden"
-                    variants={barAnimation}
-                /><br/><br/>
+                </Slider>
+                <br/><br/>
             </Container>
         </SectionStyle>
     )

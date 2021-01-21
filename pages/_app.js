@@ -1,5 +1,7 @@
 import {AnimatePresence} from "framer-motion"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css"
 
 import {ThemeProvider} from "styled-components"
 

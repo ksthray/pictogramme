@@ -7,9 +7,9 @@ const PageUI = () => {
     const items = [
         {
             id: "1",
-            title: "Le logo",
+            title: "Un logo",
             alt: "image descriptive",
-            images: ["/images/orange.jpg", "/images/bcdc.jpeg", "/images/logopicto.png"],
+            images: ["/images/logopicto.png", "/images/bibidigi.png", "/images/ram.png", "/images/blackbox.png"],
             heading: "Le logo est l’élément fondateur d’une identité visuelle",
             text: "Notre processus de conception conduit par notre équipe de designers talentueux, avec une expérience dans différents styles, pour toutes les industries.",
         },
@@ -17,7 +17,7 @@ const PageUI = () => {
             id: "2",
             title: "La mise en page",
             alt: "image descriptive",
-            images: ["/images/miseenpage.png"],
+            images: ["/images/flyer1.jpg"],
             heading: "Elle est importante pour tout type de documents.",
             text: "joue un rôle important pour faire passer un message. Si la mise en page n'est pas adaptée à votre cible, ou si elle ne véhicule pas correctement l’image de votre marque, le message ne sera pas transmis efficacement, particulièrement pour un document publicitaire.",
         },
@@ -25,50 +25,31 @@ const PageUI = () => {
             id: "3",
             title: "La charte graphique",
             alt: "image descriptive",
-            images: ["/images/chartegraphique.png"],
+            images: ["/images/flyer2.jpg"],
             heading: "Cela inclus le logo, mise en page, des flyer et beaucoup d'autres elements",
             text: "Une charte graphique vise à créer cohérence et uniformité dans la communication de votre entreprise, en regroupant graphiquement son identité, son univers et ses valeurs.",
         }
     ]
     return (
         <ContainerUi>
-            <Left>
-                <h2>
-                    Qu'est-ce qu'une identité visuelle et quelle est sa valeur ajoutée 
-                    pour votre entreprise ?
-                </h2>
-                <Topbar/>
-                <ImageText>
-                    <div>
-                        <Img
-                            src={"/images/affiche-min.jpg"}
-                            layout={"responsive"}
-                            width={200}
-                            height={150}
-                            quality={100}
-                            alt={"affiche pictogramme"}
-                        />
-                    </div>
-                    <div>
-                        <Img
-                            src={"/images/pictoqween-min.jpg"}
-                            layout={"responsive"}
-                            width={200}
-                            height={150}
-                            quality={100}
-                            alt={"affiche pictogramme"}
-                        />
-                    </div>
-                </ImageText><br/>
-                <div className={"article"}>
-                    <h3>Qu'est-ce qu'une identité visuel ?</h3><br/>
+            <div className={"block1"}>
+                <div className={"image"}>
+                    <img src={"/images/guylain-min.jpeg"} alt="photo d'israel"/>
+                </div>
+                <div className={"texts"}>
+                    <h2>Qu'est-ce qu'une identité visuelle ?</h2>
+                    <Topbar/>
+                    <p>Quelle est sa valeur ajoutée 
+                    pour votre entreprise ?</p>
                     <p>
-                        Une identité visuelle est constituée par un ensemble d’éléments graphiques permettant 
+                    Une identité visuelle est constituée par un ensemble d’éléments graphiques permettant 
                         d’identifier une entreprise ou une institution. Les éléments graphiques constituant une 
                         identité visuelle sont : le nom (marque), le logotype, la griffe, l’emblème, la couleur, 
                         la typographie, des pictogrammes, …
-                    </p><br/>
-
+                    </p>
+                </div>
+            </div><br/><br/>
+            <div className={"article"}>
                     <p>
                         Dans le cas d’une entreprise, tous les éléments graphiques de l’identité visuelle sont
                         détaillés et figés dans un document nommé « charte graphique » 
@@ -81,28 +62,78 @@ const PageUI = () => {
                         L’enjeu d’une identité visuelle est donc de faire valoir la marque de votre entreprise 
                         grâce à un ensemble de points invariants :
                     </p>
-                    {items.map((item) => (
-                        <div key={item.id} className={"present"}>
-                            <h4>{item.title} </h4>
-                            <p>{item.heading}</p>
-                            <p>{item.text}</p>
-                            <div className={"images"}>
-                                {item.images.map((image) => (
-                                    <Img 
-                                        key={item.id} 
-                                        src={image} 
-                                        layout={"intrinsic"}
-                                        width={230}
-                                        height={"auto"}
-                                        quality={100}
-                                        alt={item.alt}
-                                    />
+            </div><br/>
+            <div className={"logo"}>
+                {items.map((item, i) => {
+                    if(item.title === "Un logo"){
+                        return (
+                            <div className={"grid"} key={i}>
+                                <div className={"leslogo"}>
+                                    {item.images.map((image, i) => (
+                                        <img 
+                                            key={i} 
+                                            src={image} 
+                                            alt={item.alt}
+                                        />
                                 ))}
+                                </div>
+                                <div className={"text"}>
+                                    <h3>{item.title}</h3>
+                                    <Topbar/>
+                                    <p>{item.heading}</p>
+                                    <p>{item.text}</p>
+                                </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
-            </Left>
+                        )
+                    }
+                })}
+            </div><br/>
+            <div className={"mise-en-page"}>
+                {items.map((el, i) => {
+                    if(el.title === "La mise en page"){
+                        return (
+                            <div className={"grid"} key={i}>
+                                <div className={"text"}>
+                                    <h3>{el.title}</h3>
+                                    <Topbar/>
+                                    <p>{el.heading}</p>
+                                    <p>{el.text}</p>
+                                </div>
+                                <div className={"img"}>
+                                    <img 
+                                        key={i} 
+                                        src={el.images} 
+                                        alt={el.alt}
+                                    />
+                                </div>
+                            </div>
+                        )
+                    }
+                })}
+            </div><br/>
+            <div className={"charte"}>
+                {items.map((chart, i) => {
+                    if(chart.title === "La charte graphique"){
+                        return (
+                            <div className={"grid"} key={i}>
+                                <div className={"img"}>
+                                    <img 
+                                        key={i} 
+                                        src={chart.images} 
+                                        alt={chart.alt}
+                                    />
+                                </div>
+                                <div className={"text"}>
+                                    <h3>{chart.title}</h3>
+                                    <Topbar/>
+                                    <p>{chart.heading}</p>
+                                    <p>{chart.text}</p>
+                                </div>
+                            </div>
+                        )
+                    }
+                })}
+            </div>
             <ButtonDevis/>
         </ContainerUi>
     )

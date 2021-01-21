@@ -7,7 +7,7 @@ export default function WebdesignUxUi(){
     return (
         <Wrapper
             titrePage={"Web design UX et UI design"}
-            descriptionPage={"Expérience utilisateur et interface utilisateur"}
+            descriptionPage={"Pictogramme Rdc, expérience utilisateur et interface utilisateur"}
             imagePage={"/images/affiche.jpg"}
         >
             <HomeOutherPage>

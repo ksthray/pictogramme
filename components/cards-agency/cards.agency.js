@@ -6,10 +6,11 @@ import {useInView} from "react-intersection-observer"
 
 import { Container } from 'reactstrap'
 import Image from '../image'
-import {SectionStyle, Cards, Title, Topbar, Bottombar, P} from './cards.style'
+import {SectionStyle, Cards, Title, Topbar, Bottombar, P, CadreImage} from './cards.style'
 import { Progress } from 'reactstrap';
 
 import {cardAgencyAnimation, titleAnimation, barAnimation, pAnimation} from "../../utils/functions"
+import magazines from "../../data/agency.json"
 
 
 const CardAgency = ( ) => {
@@ -24,38 +25,6 @@ const CardAgency = ( ) => {
         }
     }, [animation, inView]);
 
-    const magazines = [
-        {
-            id: "1",
-            image: "/images/mbotesouriez-min.jpg",
-            text: "La qualité du design",
-            pourcentage: 92,
-            link: "https://issuu.com/mbote-souriez/docs/mbote_bienvenue_n_3",
-            alt: "page magazine",
-            width: "250",
-            height: "350"
-        },
-        {
-            id: "2",
-            image: "/images/mbotesrz-min.jpg",
-            text: "La qualité du travail",
-            pourcentage: 100,
-            link: "https://issuu.com/mbote-souriez/docs/mbote_souriez",
-            alt: "page magazine",
-            width: "250",
-            height: "350"
-        },
-        {
-            id: "3",
-            image: "/images/pagembote-min.jpg",
-            text: "La qualité de l'impression",
-            pourcentage: 93,
-            link: "https://issuu.com/mbote-souriez/docs/mbote_bienvenue_n_2",
-            alt: "page magazine",
-            width: "250",
-            height: "350"
-        },
-    ]
     return (
         <SectionStyle>
             <Container>
@@ -106,7 +75,7 @@ const CardAgency = ( ) => {
                                     }}
                                     whileTap={{ scale: 0.9 }}
                                 >
-                                    <div className={"image1"}>
+                                    <CadreImage>
                                         <Image
                                             key={magazine.id}
                                             src={magazine.image}
@@ -120,7 +89,7 @@ const CardAgency = ( ) => {
                                         <Progress animated color="more-awesome" value={magazine.pourcentage}>
                                             {magazine.pourcentage}%
                                         </Progress>
-                                    </div>
+                                    </CadreImage>
                                 </motion.div>
                             </a>
                         </Link>

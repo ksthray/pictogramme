@@ -14,21 +14,21 @@ import {btnHome} from "../../utils/functions"
 
 const items = [
     {
-        src: '/images/pictoqween-min.jpg',
+        src: '/images/pictoqween.jpg',
         altText: 'Esprit créatif',
         caption: 'Echappe à la tyranie du hasard, transgresse les régles au moment opportun',
         button: 'Voir nos services',
         link: "/services"
     },
     {
-        src: '/images/strategy-min.jpg',
+        src: '/images/strategy.jpg',
         altText: 'mesurer, estimer, calculer, comparer et évaluer la probabilité de succès.',
         caption: 'S’adapter en permanence en fonction de la concurence par des méthodes innovants.',
         button: "Voir nos services",
         link: "/services"
     },
     {
-        src: '/images/gold-min.jpg',
+        src: '/images/gold.jpg',
         altText: 'Des talents mis à votre disposition.',
         caption: 'On valide vos idées après competition, on ameliore, on peaufine et on polie pour une prise de decision.',
         button: "Voir l'équipe",
@@ -61,6 +61,12 @@ export default function HomePage() {
     }
 
     const slides = items.map((item) => {
+        const pushPage = (e, link) => {
+            e.preventDefault()
+            if(typeof window !== "undefined"){
+                window.location.href = `${link}`
+            }
+        }
         return (
         <CarouselItem
             onExiting={() => setAnimating(true)}
@@ -68,53 +74,54 @@ export default function HomePage() {
             key={item.src}
         >
             <BgWrap>
-            <Img 
-                src={item.src} 
-                alt={item.altText} 
-                layout="fill"
-                objectFit="cover"
-                quality={100} 
-            />
-            <Contains>
-                <motion.h1 
-                    initial={{opacity: 0}}
-                    animate={{opacity: 1}}
-                    transition={{delay: 1.1, duration: 1.1}}
-                >
-                    Agence créa et imprimérie
-                </motion.h1>
-                <motion.h2
-                    initial={{opacity: 0}}
-                    animate={{opacity: 1}}
-                    transition={{delay: 1.3, duration: 1.3}}
-                >
-                    Welcome to PICTOGRAMME
-                </motion.h2>
-                <br/>
-                <motion.p
-                    initial={{opacity: 0}}
-                    animate={{opacity: 1}}
-                    transition={{delay: 2, duration: 1.6}}
-                >
-                    {item.caption}
-                </motion.p>
-                <motion.span
-                    initial={{opacity: 0}}
-                    animate={{opacity: 1}}
-                    transition={{delay: 2.1, duration: 1.6}}
-                >
-                    {item.altText} 
-                </motion.span><br/>
-                <Link href={item.link}>
-                    <motion.a 
-                        variants={btnHome} initial="initial" animate="animate"
+                <Img 
+                    src={item.src} 
+                    alt={item.altText} 
+                    layout="fill"
+                    objectFit="cover"
+                    quality={100} 
+                />
+                <Contains>
+                    <motion.h1  
+                        initial={{opacity: 0}}
+                        animate={{opacity: 1}}
+                        transition={{delay: 1.1, duration: 1.1}}
+                    >
+                        Agence créa et imprimérie
+                    </motion.h1>
+                    <motion.h2
+                        initial={{opacity: 0}}
+                        animate={{opacity: 1}}
+                        transition={{delay: 1.3, duration: 1.3}}
+                    >
+                        Welcome to PICTOGRAMME
+                    </motion.h2>
+                    <br/>
+                    <motion.p
+                        initial={{opacity: 0}}
+                        animate={{opacity: 1}}
+                        transition={{delay: 2, duration: 1.6}}
+                    >
+                        {item.caption}
+                    </motion.p>
+                    <motion.span
+                        initial={{opacity: 0}}
+                        animate={{opacity: 1}}
+                        transition={{delay: 2.1, duration: 1.6}}
+                    >
+                        {item.altText} 
+                    </motion.span><br/>
+                    <motion.button
+                        variants={btnHome} 
+                        initial="initial" 
+                        animate="animate"
+                        whileHover="hover"
                         className="button" type="button"
+                        onClick={(e) => pushPage(e, item.link)}
                     >
                         {item.button}
-                    </motion.a>
-                </Link>
-            </Contains>
-            <div/>
+                    </motion.button>
+                </Contains>
             </BgWrap>
         </CarouselItem>
         );

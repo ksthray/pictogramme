@@ -20,6 +20,13 @@ const NosRealisations = () => {
             animation.start("visible");
         }
     }, [animation, inView]);
+
+    const pushPage = (e) => {
+        e.preventDefault()
+        if(typeof window !== "undefined"){
+            window.location.href = "/realisations"
+        }
+    }
     return (
         <SectionStyle>
             <Container>
@@ -47,7 +54,7 @@ const NosRealisations = () => {
                 <br/><br/>
                 <Print/>
                 <div className={"button-main"}>
-                    <Button>
+                    <Button onClick={(e) => pushPage(e)}>
                         Voir +
                     </Button>
                 </div>

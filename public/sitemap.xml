@@ -5,4 +5,31 @@
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
+    <url>
+        <loc>https://pictogramme.vercel.app/services</loc>
+    </url>
+    <url>
+        <loc>https://pictogramme.vercel.app/realisations</loc>
+    </url>
+    <url>
+        <loc>https://pictogramme.vercel.app/apropos</loc>
+    </url>
+    <url>
+        <loc>https://pictogramme.vercel.app/contact</loc>
+    </url>
+    <url>
+        <loc>https://pictogramme.vercel.app/services/creation-identite-graphique</loc>
+    </url>
+    <url>
+        <loc>https://pictogramme.vercel.app/services/impression-sur-papier</loc>
+    </url>
+    <url>
+        <loc>https://pictogramme.vercel.app/services/web-design-ux-ui-design</loc>
+    </url>
+    <url>
+        <loc>https://pictogramme.vercel.app/services/site-web</loc>
+    </url>
+    <url>
+        <loc>https://pictogramme.vercel.app/services/web-marketing</loc>
+    </url>
 </urlset>

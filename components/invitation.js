@@ -2,6 +2,7 @@ import React, {useEffect} from "react"
 
 import {motion, useAnimation} from "framer-motion"
 import {useInView} from "react-intersection-observer"
+import {FaPhoneAlt} from "react-icons/fa"
 
 import {titleAnimation, cupAnimation} from "../utils/functions"
 
@@ -12,13 +13,24 @@ import styled from "styled-components"
 const InvitationStyle = styled("section")`
     width: 100%;
     /* height: 350px; */
-    padding: 2.5rem 0;
-    background: rgb(2,73,117);
-    background: linear-gradient(72deg, rgba(2,73,117,1) 8%, rgba(8,105,166,1) 91%);
+    /* padding: 2.5rem 0; */
+    /* background: rgb(2,73,117);
+    background: linear-gradient(72deg, rgba(2,73,117,1) 8%, rgba(8,105,166,1) 91%); */
+    background-image: url("/images/bg-invitation.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
     clip-path: polygon(0 0, 100% 16%, 100% 100%, 0 100%);
 
     @media screen and (max-width: ${({theme}) => theme.tabletMini}){
         flex-direction: column;
+    }
+
+    .overlay-invitation{
+        width: 100%;
+        height: 100%;
+        background: rgb(0,0,0);
+        background: linear-gradient(55deg, rgba(0,0,0,0.48783263305322133) 10%, rgba(0,0,0,0.8463760504201681) 81%);
+        padding: 2.5rem 0
     }
 
     .container-all{
@@ -72,7 +84,7 @@ const InvitationStyle = styled("section")`
             background-color: ${({theme}) => theme.primaryRyde};
             text-decoration: none;
             text-align: center;
-            width: 200px;
+            padding: 7px;
             color: white;
             font-weight: bold;
             border: none;
@@ -234,74 +246,78 @@ const Invitation = () => {
     }, [animation, inView]);
     return (
         <InvitationStyle>
-            <Container>
-                <div className={"container-all"}>
-                    <div className={"message"}>
-                        <motion.h4
+            <div className={"overlay-invitation"}>
+                <Container>
+                    <div className={"container-all"}>
+                        <div className={"message"}>
+                            <motion.h4
+                                ref={refContent}
+                                animate={animation}
+                                initial="hidden"
+                                variants={titleAnimation}
+                            >
+                                Vous avez un projet ?
+                            </motion.h4>
+                            <motion.p
+                                ref={refContent}
+                                animate={animation}
+                                initial="hidden"
+                                variants={titleAnimation}
+                            >
+                                Contactez-nous enfin d'en discuter autour d'un café chaud !
+                            </motion.p><br/>
+                            <motion.div
+                                ref={refContent}
+                                animate={animation}
+                                initial="hidden"
+                                variants={titleAnimation}
+                            >
+                                <Link href="tel:+243824029562">
+                                    <a>
+                                        <button className={"button"} type="button">
+                                            <FaPhoneAlt/> +243824029562
+                                        </button>
+                                    </a>
+                                </Link>
+                            </motion.div>
+                        </div>
+                        <motion.div 
                             ref={refContent}
                             animate={animation}
                             initial="hidden"
-                            variants={titleAnimation}
+                            variants={cupAnimation}
+                            className={"container-cup"}
                         >
-                            Vous avez un projet ?
-                        </motion.h4>
-                        <motion.p
-                            ref={refContent}
-                            animate={animation}
-                            initial="hidden"
-                            variants={titleAnimation}
-                        >
-                            Contactez-nous enfin d'en discuter autour d'un café chaud !
-                        </motion.p><br/>
-                        <motion.div
-                            ref={refContent}
-                            animate={animation}
-                            initial="hidden"
-                            variants={titleAnimation}
-                        >
-                            <Link href="tel:+243824029562">
-                                <a className={"button"} type="button">
-                                    +243824029562
-                                </a>
-                            </Link>
+                            <div className={"plate"}/>
+                            <div className={"cup"}>
+                                <div className={"top"}>
+                                    <div className={"vapeur"}>
+                                        <span style={{"--i": "1"}} />
+                                        <span style={{"--i": "8"}} />
+                                        <span style={{"--i": "2"}} />
+                                        <span style={{"--i": "6"}} />
+                                        <span style={{"--i": "3"}} />
+                                        <span style={{"--i": "10"}} />
+                                        <span style={{"--i": "5"}} />
+                                        <span style={{"--i": "7"}} />
+                                        <span style={{"--i": "9"}} />
+                                        <span style={{"--i": "4"}} />
+                                        <span style={{"--i": "15"}} />
+                                        <span style={{"--i": "11"}} />
+                                        <span style={{"--i": "13"}} />
+                                        <span style={{"--i": "12"}} />
+                                        <span style={{"--i": "14"}} />
+                                    </div>
+                                    <div className={"circle"}>
+                                        <div className={"tea"}/>
+                                    </div>
+                                </div>
+                                <div className={"handle"}/>
+                            </div>
                         </motion.div>
                     </div>
-                    <motion.div 
-                        ref={refContent}
-                        animate={animation}
-                        initial="hidden"
-                        variants={cupAnimation}
-                        className={"container-cup"}
-                    >
-                        <div className={"plate"}/>
-                        <div className={"cup"}>
-                            <div className={"top"}>
-                                <div className={"vapeur"}>
-                                    <span style={{"--i": "1"}} />
-                                    <span style={{"--i": "8"}} />
-                                    <span style={{"--i": "2"}} />
-                                    <span style={{"--i": "6"}} />
-                                    <span style={{"--i": "3"}} />
-                                    <span style={{"--i": "10"}} />
-                                    <span style={{"--i": "5"}} />
-                                    <span style={{"--i": "7"}} />
-                                    <span style={{"--i": "9"}} />
-                                    <span style={{"--i": "4"}} />
-                                    <span style={{"--i": "15"}} />
-                                    <span style={{"--i": "11"}} />
-                                    <span style={{"--i": "13"}} />
-                                    <span style={{"--i": "12"}} />
-                                    <span style={{"--i": "14"}} />
-                                </div>
-                                <div className={"circle"}>
-                                    <div className={"tea"}/>
-                                </div>
-                            </div>
-                            <div className={"handle"}/>
-                        </div>
-                    </motion.div>
-                </div>
-            </Container>
+                </Container>
+            </div>
         </InvitationStyle>
     )
 }

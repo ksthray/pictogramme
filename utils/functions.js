@@ -55,6 +55,18 @@ export const titleAnimation = {
         x: -50,
     },
 }
+export const opacityAnimation = {
+    visible: {
+        opacity: 1,
+        transition: {
+        duration: 1.5,
+        ease: [0.6, 0.05, -0.01, 0.9],
+        },
+    },
+    hidden: {
+        opacity: 0,
+    },
+}
 export const barAnimation = {
     visible: {
         opacity: 1,
@@ -126,4 +138,7 @@ export const btnHome = {
             ease: [0.6, 0.05, -0.01, 0.9],
         },
     },
+    hover: {
+        scale: 0.85,
+    }
 };

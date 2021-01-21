@@ -21,6 +21,36 @@ export const Left = styled("div")`
     display: flex;
     flex-direction: column;
 
+    .main-site{
+        width: 100%;
+
+        .grid{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-gap: 20px;
+            
+            .text{
+                h2{
+                    font-size: 1.4rem;
+                    color: ${({theme}) => theme.primaryRyde};
+                    font-weight: 500;
+                }
+                p{
+                    font-size: 1rem;
+                    color: ${({theme}) => theme.primaryBlack};
+                }
+            }
+
+            .img-site{
+                width: 100%;
+
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
     .pwa{
         display: flex;
         justify-content: center;
@@ -110,17 +140,4 @@ export const TopbarCenter = styled("div")`
     background: white;
     margin: 0 auto;
     margin-bottom: 25px;
-`
-
-export const ImageText = styled("div")`
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
-    grid-gap: 20px;
-
-    
-    @media screen and (max-width: ${({theme}) => theme.mobile}){
-        grid-template-columns: repeat(1, 1fr);
-    }
 `

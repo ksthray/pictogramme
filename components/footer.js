@@ -67,6 +67,7 @@ const FooterStyle = styled("footer")`
             .a{
                 text-decoration: none;
                 transition: color 0.3s;
+                color: white;
 
                 &:hover{
                     color: ${({theme}) => theme.primaryRyde};
@@ -189,7 +190,6 @@ const Btn = styled("div")`
     }
 
 `
-
 const Copyrigth = styled(motion.div)`
     width: 100%;
     padding: 1rem;
@@ -198,7 +198,6 @@ const Copyrigth = styled(motion.div)`
     color: white;
     font-size: 0.8rem;
 `
-
 const Footer = () => {
     const animation = useAnimation();
     const [refContent, inView] = useInView({

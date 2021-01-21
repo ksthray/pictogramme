@@ -1,16 +1,22 @@
 import { Container } from "reactstrap"
 import HomeOutherPage from "../../components/home.outherpage"
-import Cards from "../../components/our-services/Cards"
+import NewCard from "../../components/our-services/NewCards"
 import Wrapper from "../../components/wrapper"
 
 export default function Services() {
     return (
-        <Wrapper>
+        <Wrapper
+            titrePage={"Services"}
+            descriptionPage={"Les services que pictogramme Rdc vous offres"}
+            imagePage={"/images/affiche.jpg"}
+            motClePage={"Création identité graphique, Impressions, Ux design, site web, marketing digital"}
+        >
             <HomeOutherPage>
                 <h2>Nos services</h2>
             </HomeOutherPage>
             <Container>
-                <Cards/>
+                <br/>
+                <NewCard/>
             </Container>
         </Wrapper>
     )

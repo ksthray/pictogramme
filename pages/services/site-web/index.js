@@ -7,7 +7,7 @@ export default function Website(){
     return (
         <Wrapper
             titrePage={"Création site web"}
-            descriptionPage={"Création de vos site web sur mésure"}
+            descriptionPage={"Pictogramme Rdc, création de vos site web sur mésure"}
             imagePage={"/images/affiche.jpg"}
         >
             <HomeOutherPage>

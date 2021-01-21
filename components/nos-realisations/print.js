@@ -11,14 +11,14 @@ import {ContainerPrint, Magazine, Affiche} from "./nos.realisations.style"
 const prints = [
     {
         id: "1",
-        cover: "/images/cover.jpg",
+        cover: "/images/vita-cover.jpg",
         side: "/images/side.jpg",
-        back: "/images/back.jpg",
+        back: "/images/vita-back.jpg",
         alt: "magazine"
     },
     {
         id: "2",
-        cover: "/images/cover.jpg",
+        cover: "/images/mbotesouriez-min.jpg",
         side: "/images/side.jpg",
         back: "/images/back.jpg",
         alt: "magazine"
@@ -35,31 +35,36 @@ const prints = [
 const affiches = [
     {
         id: "1",
-        image: "/images/cal1-min.jpeg",
+        image: "/images/casquette1.jpg",
         alt: "calendrier"
     },
     {
         id: "2",
-        image: "/images/cal2-min.jpeg",
+        image: "/images/mask.jpg",
         alt: "calendrier"
     },
     {
         id: "3",
         image: "/images/cal3-min.jpeg",
         alt: "calendrier"
+    },
+    {
+        id: "4",
+        image: "/images/shopping.jpg",
+        alt: "calendrier"
+    },
+    {
+        id: "5",
+        image: "/images/carte-de-voeux.jpg",
+        alt: "calendrier"
+    },
+    {
+        id: "6",
+        image: "/images/stylo1.jpg",
+        alt: "calendrier"
     }
 ]
 
-// const flyers = [
-//     {
-//         id: "1",
-//         image: "/images/flyer.png"
-//     },
-//     {
-//         id: "2",
-//         image: "/images/flyer1.png"
-//     }
-// ]
 const Print = () => {
     const animation = useAnimation();
     const [contentRef, inView] = useInView({
@@ -96,7 +101,24 @@ const Print = () => {
                 ))}
             </ContainerPrint>
             <br/><br/><br/>
-            <Affiche>
+            <OutherAffiche/>
+        </>
+    )
+}
+
+const OutherAffiche = () => {
+    const animation = useAnimation();
+    const [contentRef, inView] = useInView({
+        triggerOnce: true,
+    });
+
+    useEffect(() => {
+        if (inView) {
+            animation.start("visible");
+        }
+    }, [animation, inView]);
+    return (
+        <Affiche>
                 {
                     affiches.map((affiche, i) => (
                         <motion.div
@@ -106,19 +128,15 @@ const Print = () => {
                             initial="hidden"
                             variants={calendar}
                         >
-                            <Img 
+                            <img 
                                 src={affiche.image}
-                                layout={"responsive"}
-                                width={100}
-                                height={80}
-                                quality={100}
                                 alt={affiche.alt}
+                                className={"img-affiche"}
                             />
                         </motion.div>
                     ))
                 }
-            </Affiche>
-        </>
+        </Affiche>
     )
 }
 

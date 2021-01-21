@@ -4,10 +4,13 @@ import {motion, useAnimation} from "framer-motion"
 import {useInView} from "react-intersection-observer"
 
 import { Container } from "reactstrap"
-import Cards from "./Cards"
-import {SectionStyle, Title, Topbar, Bottombar} from "./our.services.style"
+// import Cards from "./Cards"
 
-import {titleAnimation, barAnimation, cardAgencyAnimation} from "../../utils/functions"
+import NewCards from "./NewCards"
+import Cards from "./Cards"
+import {SectionStyle, Title, Topbar, Bottombar, Paragraph} from "./our.services.style"
+
+import {titleAnimation, barAnimation, opacityAnimation} from "../../utils/functions"
 
 const OurServices = () => {
     const animation = useAnimation();
@@ -39,22 +42,25 @@ const OurServices = () => {
                     Nos
                     Services
                 </Title>
-                <Bottombar
+                {/* <NewCards/> */}
+                <Paragraph
                     ref={contentRef}
                     animate={animation}
                     initial="hidden"
-                    variants={barAnimation}
-                />
-                <motion.div
-                    ref={contentRef}
-                    animate={animation}
-                    initial="hidden"
-                    variants={cardAgencyAnimation}
+                    variants={opacityAnimation}
                 >
-                    <Cards/>
-                </motion.div>
+                        Notre agence de communication accompagne les entreprises en proposant le meilleur 
+                        service sur n'importe quel marché cible. Nous parlons votre langue, comprenons vos 
+                        objectifs et proposons les solutions digitales les plus efficaces.
+                </Paragraph>
+                <Bottombar
+                ref={contentRef}
+                animate={animation}
+                initial="hidden"
+                variants={barAnimation}
+                />
             </Container>
-            <br/>
+            <Cards/>
         </SectionStyle>
     )
 }

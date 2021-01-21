@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Link from "next/link"
 import Img from "next/image"
 import {motion} from "framer-motion"
+import {FaPhoneAlt} from "react-icons/fa"
 
 import {
     Collapse,
@@ -72,7 +73,6 @@ const HeaderStyle = styled("header")`
     }
 
 `
-
 const Header = () => {
     const [change, setChange] = useState({
         background: "transparent",
@@ -189,7 +189,6 @@ const Header = () => {
                         </NavItem>
                         <NavItem>
                             <motion.div
-                                whileHover={{scale: 1.1}}
                                 initial={{opacity: 0}}
                                 animate={{opacity: 1}}
                                 transition={{delay: 1.1, duration: 1.8}}
@@ -198,7 +197,7 @@ const Header = () => {
                                 <Link href="tel:+243824029562">
                                     <a>
                                         <button className={"button"}>
-                                            +243824029562
+                                            <FaPhoneAlt/> +243824029562
                                         </button>
                                     </a>
                                 </Link>

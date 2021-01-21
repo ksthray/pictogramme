@@ -6,17 +6,27 @@ import {titleAnimation, barAnimation} from "../utils/functions"
 
 const StyleSection = styled("div")`
     width: 100%;
-    height: 270px;
-    padding: 2.5rem 0;
-    clip-path: polygon(0 0, 100% 0, 100% 77%, 0% 100%);
+    height: 300px;
+    /* clip-path: polygon(0 0, 100% 0, 100% 77%, 0% 100%); */
     /* background: rgb(2,73,117);
     background: linear-gradient(72deg, rgba(2,73,117,1) 8%, rgba(8,105,166,1) 91%); */
-    background-color: ${({theme}) => theme.primaryGray};
-    display: flex;
-    align-items: center;
-    color: white;
+    background-image: url("/images/chess.jpg");
+    background-position: center;
+    background-size: cover;
+    .overlay-fade{
+        display: flex;
+        align-items: center;
+        color: white;
+        width: 100%;
+        height: 300px;
+        background-color: rgba(0,0,0,0.5);
+        padding: 2.5rem 0;
+    }
 
     h2{
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.7rem;
 
         @media screen and (max-width: ${({theme}) => theme.mobile}){
             font-size: 1.4rem;
@@ -27,6 +37,7 @@ const StyleSection = styled("div")`
 const Topbar = styled(motion.div)`
     width: 5%;
     height: 4px;
+    margin: 0 auto;
     background: ${({theme}) => theme.primaryRyde};
 
     @media screen and (max-width: ${({theme}) => theme.mobile}){
@@ -36,6 +47,7 @@ const Topbar = styled(motion.div)`
 const Bottombar = styled(motion.div)`
     width: 15%;
     height: 4px;
+    margin: 0 auto;
     background: ${({theme}) => theme.primaryRyde};
 
     @media screen and (max-width: ${({theme}) => theme.mobile}){
@@ -46,13 +58,15 @@ const Bottombar = styled(motion.div)`
 const HomeOutherPage = ({children}) => {
     return (
         <StyleSection>
-            <Container>
-                <Topbar variants={barAnimation} initial="hidden" animate="visible"/>
-                    <motion.h2
-                        variants={titleAnimation} initial="hidden" animate="visible"
-                    >{children}</motion.h2>
-                <Bottombar variants={barAnimation} initial="hidden" animate="visible"/>
-            </Container>
+            <div className={"overlay-fade"}>
+                <Container>
+                    <Topbar variants={barAnimation} initial="hidden" animate="visible"/>
+                        <motion.h2
+                            variants={titleAnimation} initial="hidden" animate="visible"
+                        >{children}</motion.h2>
+                    <Bottombar variants={barAnimation} initial="hidden" animate="visible"/>
+                </Container>
+            </div>
         </StyleSection>
     )
 }

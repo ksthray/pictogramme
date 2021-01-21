@@ -7,23 +7,23 @@ export const SectionStyle = styled("section")`
 `
 
 export const Title = styled(motion.h2)`
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     color: ${({theme}) => theme.primaryRyde};
     text-transform: uppercase;
     margin: 10px 0;
     text-align: center;
 
     @media screen and (max-width: ${({theme}) => theme.tabletMini}){
-        font-size: 2.1rem;
+        font-size: 1.6rem;
     }
 
     @media screen and (max-width: ${({theme}) => theme.mobile}){
-        font-size: 1.7rem;
+        font-size: 1.4rem;
     }
 `
 export const P = styled(motion.p)`
-    font-size: 1.4rem;
-    color: ${({theme}) => theme.primaryBlue};
+    font-size: 1.2rem;
+    color: ${({theme}) => theme.primaryBlack};
     margin: 20px 0;
     text-align: center;
     @media screen and (max-width: ${({theme}) => theme.tabletMini}){
@@ -69,23 +69,31 @@ export const Cards = styled(motion.div)`
             justify-content: center;
             flex-direction: column;
             align-items: center;
-
-
-            .p1{
-                font-size: 1.1rem;
-                color: ${({theme}) => theme.primaryRyde};
-                margin-top: 15px;
-                text-align: center;
-                font-weight: 550;
-
-                @media screen and (max-width: ${({theme}) => theme.mobile}){
-                    font-size: 0.9rem;
-                }
-            }
         }
 
         .progress{
                 width: 80%;
             }
     }
+`
+
+export const CadreImage = styled(motion.div)`
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+
+    .p1{
+        font-size: 1rem;
+        color: ${({theme}) => theme.primaryRyde};
+        margin-top: 15px;
+        text-align: center;
+        font-weight: 400;
+
+        @media screen and (max-width: ${({theme}) => theme.mobile}){
+            font-size: 0.9rem;
+        }
+    }
+
 `

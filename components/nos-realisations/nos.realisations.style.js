@@ -32,17 +32,17 @@ export const Button = styled(motion.button)`
 `
 
 export const Title = styled(motion.h2)`
-    font-size: 2.5rem;
+    font-size: 1.8rem;;
     color: ${({theme}) => theme.primaryRyde};
     text-transform: uppercase;
     margin: 10px 0;
     text-align: center;
 
     @media screen and (max-width: ${({theme}) => theme.tabletMini}){
-        font-size: 2.1rem;
+        font-size: 1.6rem;
     }
     @media screen and (max-width: ${({theme}) => theme.mobile}){
-        font-size: 1.7rem;
+        font-size: 1.4rem;
     }
 `
 export const Topbar = styled(motion.div)`
@@ -151,9 +151,9 @@ export const Affiche = styled("div")`
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
 
-    .affiche{
-        width: 120px;
-        height: 210px;
+    .img-affiche{
+        width: 100%;
+        height: auto;
     }
 
     @media screen and (max-width: ${({theme}) => theme.mobile}){
@@ -181,6 +181,7 @@ export const AllStyle = styled("section")`
         text-align: center;
         text-transform: uppercase;
         font-size: 1.6rem;
+        margin-top: 15px;
     }
 `
 

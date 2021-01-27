@@ -29,6 +29,9 @@ export const Left = styled("div")`
         @media screen and (max-width: ${({theme}) => theme.tabletMini}){
             grid-template-columns: repeat(1, 1fr);
         }
+        @media screen and (max-width: ${({theme}) => theme.mobile}){
+            text-align: center;
+        }
     }
     .block-2{
         display: grid;
@@ -38,6 +41,10 @@ export const Left = styled("div")`
 
         @media screen and (max-width: ${({theme}) => theme.tabletMini}){
             grid-template-columns: repeat(1, 1fr);
+        }
+
+        @media screen and (max-width: ${({theme}) => theme.mobile}){
+            text-align: center;
         }
 
         .image{
@@ -57,6 +64,11 @@ export const Topbar = styled("div")`
     height: 3px;
     background: ${({theme}) => theme.primaryRyde};
     margin-bottom: 25px;
+
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        margin: 0 auto;
+        margin-bottom: 25px;
+    }
 `
 
 export const TopbarCenter = styled("div")`

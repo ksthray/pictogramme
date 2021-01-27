@@ -55,7 +55,7 @@ export const LogoContainer = styled("div")`
     margin-right: 20px;
 
     .the-images{
-        width: 200px;
+        width: 160px;
         height: auto;
         margin: 0 auto;
     }

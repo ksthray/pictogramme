@@ -8,7 +8,11 @@ export const PrintStyle = styled("section")`
         display: grid;
         grid-template-columns: 30% 70%;
         grid-gap: 20px;
-
+        
+        @media screen and (max-width: ${({theme}) => theme.mobile}){
+            grid-template-columns: repeat(1, 1fr);
+            text-align: center;
+        } 
         img{
             width: 100%;
         }
@@ -29,6 +33,10 @@ export const PrintStyle = styled("section")`
                 grid-template-columns: repeat(3, 1fr);
                 grid-gap: 10px;
 
+                @media screen and (max-width: ${({theme}) => theme.mobile}){
+                    grid-template-columns: repeat(2, 1fr);
+                } 
+
                 img{
                     width: 100%;
                 }
@@ -48,6 +56,10 @@ export const PrintStyle = styled("section")`
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: 1fr;
             grid-gap: 20px;
+
+            @media screen and (max-width: ${({theme}) => theme.mobile}){
+                grid-template-columns: repeat(1, 1fr);
+            } 
 
             h4{
                 font-size: 1.1rem;
@@ -70,10 +82,16 @@ export const Topbar = styled("div")`
     margin-bottom: 25px;
     margin-top: 25px;
     margin: 0 auto;
+
 `
 export const TopPrint = styled("div")`
     width: 10%;
     height: 3px;
     background: ${({theme}) => theme.primaryRyde};
     margin-bottom: 20px;
+
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        margin: 0 auto;
+        margin-bottom: 20px;
+    } 
 `

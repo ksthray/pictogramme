@@ -9,6 +9,16 @@ export const ContainerUi = styled("section")`
         grid-template-columns: 50% 50%;
         grid-gap: 20px;
 
+        @media screen and (max-width: ${({theme}) => theme.tablet}){
+            grid-template-columns: repeat(1, 1fr);
+        }
+        /* @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media screen and (max-width: ${({theme}) => theme.mobile}){
+            grid-template-columns: repeat(1, 1fr);
+        } */
+
         .image{
             width: 100%;
             background-image: url("/images/carte-de-voeux.jpg");
@@ -18,13 +28,27 @@ export const ContainerUi = styled("section")`
             justify-content: flex-end;
 
             img{
-                width: 300px;
+                width: 260px;
                 transform: translate(25px, 60px);
                 box-shadow: 10px 10px 10px rgba(0,0,0,0.1);
+
+                @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+                    width: 220px;                
+                    transform: translate(25px, 20px);
+                } 
+
+                @media screen and (max-width: ${({theme}) => theme.mobile}){
+                    width: 200px;                
+                    transform: translate(25px, 10px);
+                } 
             }
         }
         .texts{
             padding-left: 30px;
+
+            @media screen and (max-width: ${({theme}) => theme.tablet}){
+                padding-left: 0;
+            }
 
             h2{
                 font-size: 1.3rem;
@@ -42,6 +66,10 @@ export const ContainerUi = styled("section")`
         text-align: left;
         padding-top: 2rem;
 
+        @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+            padding-top: 10px;
+        }
+
         p{
             margin-bottom: 10px;
         }
@@ -54,6 +82,10 @@ export const ContainerUi = styled("section")`
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-gap: 20px;
+
+            @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+                grid-template-columns: repeat(1, 1fr);
+            }
 
             h3{
                 font-size: 1.3rem;
@@ -87,6 +119,10 @@ export const ContainerUi = styled("section")`
             grid-template-columns: repeat(2, 1fr);
             grid-gap: 20px;
 
+            @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+                grid-template-columns: repeat(1, 1fr);
+            }
+
             h3{
                 font-size: 1.3rem;
                 color: ${({theme}) => theme.primaryRyde};
@@ -110,8 +146,12 @@ export const ContainerUi = styled("section")`
 
         .grid{
             display: grid;
-            grid-template-columns: 60% 40%;
+            grid-template-columns: repeat(2, 1fr);
             grid-gap: 20px;
+
+            @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+                grid-template-columns: repeat(1, 1fr);
+            }
 
             h3{
                 font-size: 1.3rem;

@@ -38,7 +38,7 @@ const PrintUI = () => {
         {
             id: "6",
             titre: "calendrier agendas",
-            image: "/images/cal1-min.jpeg",
+            image: "/images/cal3-min.jpeg",
             alt: "image calendrier"
         },
         {
@@ -56,7 +56,7 @@ const PrintUI = () => {
     return (
         <PrintStyle>
             <div className={"main-print"}>
-                <img src={"/images/carte-de-voeux1.jpg"} alt={"image de picto print"}/>
+                <img src={"/images/pictoprint.jpg"} alt={"image de picto print"}/>
                 <div className={"texts"}>
                     <h2>
                         Picto Print

@@ -21,13 +21,20 @@ export const Left = styled("div")`
     display: flex;
     flex-direction: column;
 
+    
+
     .main-site{
         width: 100%;
 
         .grid{
             display: grid;
-            grid-template-columns: 50% 50%;
+            grid-template-columns: repeat(2, 1fr);
             grid-gap: 20px;
+
+            @media screen and (max-width: ${({theme}) => theme.mobile}){
+                grid-template-columns: repeat(1, 1fr);
+                text-align: center;
+            }
             
             .text{
                 h2{
@@ -53,6 +60,7 @@ export const Left = styled("div")`
 
     .pwa{
         display: flex;
+        padding: 1rem;
         justify-content: center;
         align-items: center;
         flex-direction: column;
@@ -60,7 +68,6 @@ export const Left = styled("div")`
         background: rgb(217,20,128);
         background: linear-gradient(56deg, rgba(217,20,128,1) 4%, rgba(185,0,101,1) 79%);
         color: white;
-        padding: 1rem 0;
         border-radius: 20px;
 
         p{
@@ -85,6 +92,7 @@ export const Left = styled("div")`
         }
 
         .site-vitrine{
+
             h3{
                 color: ${({theme}) => theme.primaryRyde};
                 font-size: 1.4rem; 
@@ -102,6 +110,13 @@ export const Left = styled("div")`
             }
             li{
                 padding: 7px;
+            }
+            @media screen and (max-width: ${({theme}) => theme.mobile}){
+                    text-align: center;
+                    
+                    li{
+                        list-style-type: none;
+                    }
             }
         }
         .site-ecom{
@@ -123,6 +138,13 @@ export const Left = styled("div")`
             li{
                 padding: 7px;
             }
+            @media screen and (max-width: ${({theme}) => theme.mobile}){
+                    text-align: center;
+                    
+                    li{
+                        list-style-type: none;
+                    }
+            }
         }
     }
 
@@ -132,6 +154,11 @@ export const Topbar = styled("div")`
     height: 3px;
     background: ${({theme}) => theme.primaryRyde};
     margin-bottom: 25px;
+
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        margin: 0 auto;
+        margin-bottom: 25px;
+    }
 `
 
 export const TopbarCenter = styled("div")`

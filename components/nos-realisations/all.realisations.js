@@ -71,7 +71,7 @@ const AllRealisations = () => {
             <Affiche>
                 {
                     donnees.map((item, i) => (
-                        <div>
+                        <div key={i}>
                             <img 
                                 src={item.image}
                                 alt={item.alt}

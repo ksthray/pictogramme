@@ -2,8 +2,8 @@ import React, {useEffect} from "react"
 
 import {motion, useAnimation} from "framer-motion"
 import {useInView} from "react-intersection-observer"
-import {useRouter} from "next/router"
 import {BsPencilSquare, BsCollection} from "react-icons/bs"
+import {FaUsers, FaCode, FaBullhorn} from "react-icons/fa"
 
 import {ContainerCards, CardStyle, Bottombar} from "./our.services.style"
 import Carre from "./Carre"
@@ -47,7 +47,15 @@ const Cards = () => {
             description: "Nous vous accompagons dans la définition de vos besoins, nous identifions ensemble les contraintes et le périmètre de conception.",
             array: ["Etude de persona", "Design Thinking", "Maquette"],
             image: "/images/uxdesign-min.jpg",
-            link: "/services/web-design-ux-ui-design"
+            link: "/services/web-design-ux-ui-design",
+            icon: <FaUsers/>,
+            size: "1.15rem",
+            background: "#fcfcfc",
+            shadow: `6px 6px 14px #f9f9f9,
+            -6px -6px 14px #ffffff`,
+            sizeIcon: "2rem",
+            sizeP: "0.9rem",
+            widthBtn: "130px"
         },
         {
             id: "3",
@@ -55,7 +63,15 @@ const Cards = () => {
             description: "Nous intervenons sur toute la chaîne du développement web, de la création de sites web à la création d’application mobile sur mesure.",
             array: ["Site vitrine", "Site e-commerce", "Progressive-Web-App"],
             image: "/images/christo.jpg",
-            link: "/services/site-web"
+            link: "/services/site-web",
+            icon: <FaCode/>,
+            size: "1.25rem",
+            background: "#fcfcfc",
+            shadow: `6px 6px 12px #e5e5e5,
+            -6px -6px 12px #ffffff`,
+            sizeIcon: "2.5rem",
+            sizeP: "1rem",
+            widthBtn: "160px"
         },
         {
             id: "5",
@@ -63,11 +79,17 @@ const Cards = () => {
             description: "Nous créons, développons, animons et engageons vos communautés à travers un contenu social riche et hyper adapté aux usages de vos cibles.",
             array: ["Google Adsence", "Referencemen SEO", "Campagne E-mailing"],
             image: "/images/website-min.jpg",
-            link: "/services/web-marketing"
+            link: "/services/web-marketing",
+            icon: <FaBullhorn/>,
+            size: "1.15rem",
+            background: "#fcfcfc",
+            shadow: `6px 6px 14px #f9f9f9,
+            -6px -6px 14px #ffffff`,
+            sizeIcon: "2rem",
+            sizeP: "0.9rem",
+            widthBtn: "130px"
         },
     ]
-
-    const router = useRouter()
 
     const pushPage = (link) => {
         if(typeof window !== "undefined"){

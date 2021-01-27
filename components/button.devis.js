@@ -1,4 +1,4 @@
-import Link from "next/link"
+import {motion} from "framer-motion"
 import styled from "styled-components"
 
 const BtnStyle = styled("div")`
@@ -13,10 +13,11 @@ const BtnStyle = styled("div")`
         padding: 10px;
         border: 1px solid ${({theme}) => theme.primaryRyde};
         text-decoration: none;
+        background-color: ${({theme}) => theme.primaryRyde};
         text-align: center;
         text-transform: uppercase;
         transition: all ease-in-out 0.4s;
-        color: ${({theme}) => theme.primaryRyde};
+        color: white;
         border-radius: 20px;
         font-weight: 600;
 
@@ -35,11 +36,20 @@ const BtnStyle = styled("div")`
 const ButtonDevis = () => {
     return (
         <BtnStyle>
-            <Link href={"/devis"}>
-                <a className={"btn"} type={"button"}>
-                    demander devis
-                </a>
-            </Link>
+            <motion.button
+                className={"btn"}
+                whileHover={{
+                    scale: 0.9,
+                    transition: {duration: 0.1}
+                }}
+                onClick={() => {
+                    if(typeof window !== "undefined"){
+                        window.location.href = "/devis"
+                    }
+                }}
+            >
+                demander devis
+            </motion.button>
         </BtnStyle>
     )
 }

@@ -1,10 +1,9 @@
 import React, {useEffect} from "react"
 
-import {motion, useAnimation} from "framer-motion"
+import {useAnimation} from "framer-motion"
 import {useInView} from "react-intersection-observer"
 
-import {cardServicesAnimation, calendar} from "../../utils/functions"
-import Img from "next/image"
+import {cardServicesAnimation, } from "../../utils/functions"
 
 import {ContainerPrint, Magazine, Affiche} from "./nos.realisations.style"
 
@@ -89,11 +88,9 @@ const Print = () => {
                         variants={cardServicesAnimation}
                     >
                         <div className={"book"}>
-                            <Img 
+                            <img 
                                 className={"image"}
                                 src={print.cover}
-                                layout={"fill"}
-                                quality={100}
                                 alt={print.alt}
                             />
                         </div>
@@ -107,33 +104,17 @@ const Print = () => {
 }
 
 const OutherAffiche = () => {
-    const animation = useAnimation();
-    const [contentRef, inView] = useInView({
-        triggerOnce: true,
-    });
-
-    useEffect(() => {
-        if (inView) {
-            animation.start("visible");
-        }
-    }, [animation, inView]);
+    
     return (
         <Affiche>
                 {
                     affiches.map((affiche, i) => (
-                        <motion.div
+                        <img
                             key={i}
-                            ref={contentRef}
-                            animate={animation}
-                            initial="hidden"
-                            variants={calendar}
-                        >
-                            <img 
-                                src={affiche.image}
-                                alt={affiche.alt}
-                                className={"img-affiche"}
-                            />
-                        </motion.div>
+                            src={affiche.image}
+                            alt={affiche.alt}
+                            className={"img-affiche"}
+                        />
                     ))
                 }
         </Affiche>

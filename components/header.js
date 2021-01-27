@@ -105,7 +105,6 @@ const Header = () => {
         }
     }, [])
 
-
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
 
@@ -132,25 +131,25 @@ const Header = () => {
                     <NavbarToggler onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
                     <Nav className="ml-auto" navbar>
-                        <NavItem id="demo">
-                            <NavLink href="/">
-                                <motion.span
-                                    initial={{opacity: 0}}
-                                    animate={{opacity: 1}}
-                                    transition={{delay: 1.1, duration: 1.4}}
-                                >
-                                    L'agence
-                                </motion.span>
-                            </NavLink>
-                        </NavItem>
                         <NavItem>
-                            <NavLink href="/services">
+                            <NavLink href="/">
                                 <motion.span
                                     initial={{opacity: 0}}
                                     animate={{opacity: 1}}
                                     transition={{delay: 1.1, duration: 1.5}}
                                 >
-                                    Services
+                                    Accueil
+                                </motion.span>
+                            </NavLink>
+                        </NavItem>
+                        <NavItem id="demo">
+                            <NavLink href="/services">
+                                <motion.span
+                                    initial={{opacity: 0}}
+                                    animate={{opacity: 1}}
+                                    transition={{delay: 1.1, duration: 1.4}}
+                                >
+                                    Picto services
                                 </motion.span>
                             </NavLink>
                         </NavItem>
@@ -161,7 +160,7 @@ const Header = () => {
                                     animate={{opacity: 1}}
                                     transition={{delay: 1.1, duration: 1.6}}
                                 >
-                                    Nos réalisations
+                                    Picto réalisations
                                 </motion.span>
                             </NavLink>
                         </NavItem>
@@ -172,7 +171,7 @@ const Header = () => {
                                     animate={{opacity: 1}}
                                     transition={{delay: 1.1, duration: 1.7}}
                                 >
-                                    A propos
+                                    Picto team
                                 </motion.span>
                             </NavLink>
                         </NavItem>

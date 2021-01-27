@@ -3,6 +3,7 @@ import styled from "styled-components"
 export const BgWrap = styled("div")`
     width: 100%;
     height: 100vh;
+    background: black;
 `
 export const Button = styled("button")`
     background-color: ${({theme}) => theme.primaryRyde};
@@ -38,6 +39,7 @@ export const Contains = styled("div")`
         text-transform: uppercase;
         color: ${({theme}) => theme.primaryRyde};
         font-size: 1.3rem;
+        font-weight: 600;
         text-align: center;
 
         @media screen and (max-width: ${({theme}) => theme.tabletMini}){
@@ -54,7 +56,7 @@ export const Contains = styled("div")`
         text-align: center;
         font-display: swap;
         font-family: 'Raleway', sans-serif;
-        font-weight: 700;
+        font-weight: 600;
 
         @media screen and (max-width: ${({theme}) => theme.tabletMini}){
             font-size: 1.2rem;
@@ -68,7 +70,7 @@ export const Contains = styled("div")`
         color: white;
         text-transform: uppercase;
         text-align: center;
-        margin-top: 20px;
+        margin-top: 60px;
 
         @media screen and (max-width: ${({theme}) => theme.tabletMini}){
             font-size: 1.3rem;
@@ -98,7 +100,7 @@ export const Contains = styled("div")`
         background-color: ${({theme}) => theme.primaryRyde};
         color: white;
         border: none;
-        transition: 0.3s all ease-in-out;
+        transition: 0.3s all ease-in-out; 
         font-weight: 500;
         font-size: 0.9rem;
         text-transform: uppercase;

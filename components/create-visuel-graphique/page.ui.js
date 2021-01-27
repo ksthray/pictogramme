@@ -30,11 +30,11 @@ const PageUI = () => {
             text: "Une charte graphique vise à créer cohérence et uniformité dans la communication de votre entreprise, en regroupant graphiquement son identité, son univers et ses valeurs.",
         }
     ]
-    return (
+    return ( 
         <ContainerUi>
             <div className={"block1"}>
                 <div className={"image"}>
-                    <img src={"/images/guylain-min.jpeg"} alt="photo d'israel"/>
+                    <img src={"/images/guylain2.jpg"} alt="DG picto image"/>
                 </div>
                 <div className={"texts"}>
                     <h2>Qu'est-ce qu'une identité visuelle ?</h2>

@@ -87,16 +87,15 @@ export default function HomePage() {
                         animate={{opacity: 1}}
                         transition={{delay: 1.1, duration: 1.1}}
                     >
-                        Agence créa et imprimérie
+                        Agence créa et print
                     </motion.h1>
-                    <motion.h2
+                    {/* <motion.h2
                         initial={{opacity: 0}}
                         animate={{opacity: 1}}
                         transition={{delay: 1.3, duration: 1.3}}
                     >
                         Welcome to PICTOGRAMME
-                    </motion.h2>
-                    <br/>
+                    </motion.h2> */}
                     <motion.p
                         initial={{opacity: 0}}
                         animate={{opacity: 1}}
@@ -116,7 +115,8 @@ export default function HomePage() {
                         initial="initial" 
                         animate="animate"
                         whileHover="hover"
-                        className="button" type="button"
+                        className="button" 
+                        type="button"
                         onClick={(e) => pushPage(e, item.link)}
                     >
                         {item.button}
@@ -133,7 +133,7 @@ export default function HomePage() {
                 next={next}
                 previous={previous}
                 className="carousel carousel-fade"
-                interval={"5000"}
+                interval={"7000"}
             >
                 <CarouselIndicators
                 items={items} 

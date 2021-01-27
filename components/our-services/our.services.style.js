@@ -4,20 +4,7 @@ import {motion} from "framer-motion"
 export const SectionStyle = styled("section")`
     width: 100%;
     padding: 2rem 0;
-    /* background: #fff2f9; */
-    background: rgb(247,247,247);
-    background: linear-gradient(45deg, rgba(247,247,247,1) 0%, rgba(255,255,255,1) 100%);
-    /* background: ${({theme}) => theme.primaryBlack}; */
-    /* clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%); */
-    /* background-color: #202020; */
-    /* background: rgb(255,218,238);
-    background: radial-gradient(circle, rgba(255,218,238,1) 0%, rgba(255,255,255,1) 50%); */
-
-    @media screen and (max-width: ${({theme}) => theme.mobile}){
-        clip-path: polygon(0 0, 100% 2%, 100% 98%, 0% 100%);
-    }
-
-
+    background: #fcfcfc;
 `
 
 export const Title = styled(motion.h2)`
@@ -51,10 +38,12 @@ export const Bottombar = styled(motion.div)`
     background-color: ${({theme}) => theme.primaryRyde};
 `
 export const BarSlim = styled("div")`
-width: 20%;
-height: 3px;
-margin-bottom: 10px;
-background-color: ${({theme}) => theme.primaryRyde};
+    width: 15%;
+    height: 3px;
+    background: white;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background-color: ${({theme}) => theme.primaryRyde};
 `
 export const BottombarCard = styled("div")`
     width: 45%;
@@ -145,76 +134,94 @@ export const CardStyle = styled(motion.div)`
 `
 
 export const SlimCardContainer = styled("div")`
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 35% 1fr;
+    grid-gap: 25px;
     width: 100%;
     padding: 1rem;
+    margin-top: 20px;
+
+    @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        grid-template-columns: 1fr;
+    }
+
 `
-export const SlimCard = styled("div")`
-    width: 100%;
-    background-image:url(${({Image}) => Image});
-    background-position: center;
-    background-size: cover;
-    height: 250px;
+export const SlimCard = styled(motion.div)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 20px;
+    background: ${({background}) => background};
+    box-shadow: ${({shadow}) => shadow};
 
-    .carre{
-        background-color: white;
-        padding: 1rem;
-        width: 80%;
-        border-radius: 20px;
-        text-align: left;
-        /* height: 200px; */
-        box-shadow: 0px 2px 20px 4px rgba(0,0,0,0.1);
-        transform: translate(35px, 70px);
-        transition: 0.4s all ease-in-out;
 
-        &:hover{
-            background-color: ${({theme}) => theme.primaryRyde};
-            h3{
-                color: white;
-            }
-            p{
-                color: white;
-            }
-            .button-carre{
-                box-shadow:  7px 7px 10px #ce137a,
-                            -7px -7px 10px #e41586;
-            }
-        }
+    h2{
+        text-transform: uppercase;
+        font-size: ${({size}) => size};
+        color: ${({theme}) => theme.primaryRyde};
+        font-weight: 600;
+    }
+    p{
+        font-size: ${({sizeP}) => sizeP};
+        margin-bottom: 20px;
+    }
+    span{
+        font-size: ${({sizeIcon}) => sizeIcon};
+        color: ${({theme}) => theme.primaryRyde};
+    }
 
-        h3{
-            text-transform: uppercase;
-            color: ${({theme}) => theme.primaryRyde};
-            font-size: 1.3rem;
-            transition: 0.4s all ease-in-out;
+    @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+        background: transparent;
+        box-shadow: none;
+        h2{
+            font-size: 1.15rem;
         }
         p{
-            color: ${({theme}) => theme.primaryRyde};
-            transition: 0.4s all ease-in-out;
+            font-size: 0.9rem;
         }
-        .button-carre{
-            width: 130px;
-            padding: 7px;
-            border: none;
-            color: ${({theme}) => theme.white};
-            font-weight: 500;
-            border-radius: 20px;
-            background: #D91480;
-            box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-            transition: 0.4s all ease-in-out;
-
-            &:focus{
-                border: none;
-                outline: none;
-            }
+        span{
+            font-size: 2rem;
         }
     }
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        margin-bottom: 25px;
+    }
+    
+    .button-carre{
+        width: ${({width}) => width};
+        padding: 7px;
+        border: none;
+        color: ${({theme}) => theme.white};
+        font-weight: 500;
+        border-radius: 20px;
+        background: #D91480;
+        transition: 0.3s all ease-in-out;
+
+        &:focus{
+            border: none;
+            outline: none;
+        }
+
+        @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+            width: 130px;
+        }
+    }
+    
 `
 
 //Style for New Cards
 
 export const NewCardStyle = styled("div")`
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
 
     h2{
@@ -222,31 +229,25 @@ export const NewCardStyle = styled("div")`
         color: ${({theme}) => theme.primaryRyde};
         font-weight: 700;
         text-align: center;
+        text-transform: uppercase;
     }
-    
-    .message-service{
-        font-size: 1rem;
-        color: ${({theme}) => theme.primaryBlack};
-        padding: 0 10px;
-        text-align: center;
-    }
-    .grid{
-        display: grid;
-        grid-template-columns: 40% 60%;
-        grid-gap: 20px;
 
-        .image{
-            img{
-                width: 100%;
-            }
+    .container-top{
+        width: 100%;
+        background: #ffffff;
+        padding: 1rem;
+        border-radius: 20px;
+
+        p{
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         .grid-item{
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 10px;
-            margin-left: 20px;
-
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
             .flat-icon{
                 display: flex;
                 justify-content: center;
@@ -255,7 +256,7 @@ export const NewCardStyle = styled("div")`
                 text-align: center;
 
                 img{
-                    width: 60px;
+                    width: 50px;
                     height: auto;
                 }
                 h3{
@@ -271,90 +272,45 @@ export const NewCardStyle = styled("div")`
             }
         }
     }
-`
 
-export const Card = styled("div")`
-    width: 100%;
-    height: 400px;
-    flex-direction: column;
-    border-radius: 20px;
-    padding: 10px;
-    transition: 0.3s all ease-in-out;
+    .container-souhait{
+        width: 100%;
+        padding: 2rem 0;
 
-    &:hover{
-        /* background: #f7f7f7; */
-        box-shadow:  6px 6px 17px #e3e3e3,
-            -6px -6px 17px #ffffff;
-    }
-`
-export const CardHead = styled("div")`align-items: center;
-    width: 100%;
-    height: 45%;
-    background-image: url(${({background}) => background});
-    background-size: cover;
-    background-position: center; 
-    color: white;
-    border-radius: 10px;
-`
-export const CardBody = styled("div")`
-    width: 100%;
-    height: 33%;
-    padding: 5px 0;  
-
-    p{
-        color: ${({theme}) => theme.primaryRyde};
-        font-size: 1.1rem;
-    }
-`
-export const CardTitle = styled("div")`
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    height: 12%;
-
-    h2{
-        text-transform: uppercase;
-        font-size: 1.3rem;
-        text-align: left;
-        font-weight: 550;
-        color: white;
-        color: ${({theme}) => theme.primaryRyde};
-    }
-`
-export const CardBottom = styled("div")`
-    width: 100%;
-    height: 10%;
-
-    .btn-container{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 140px;
-        height: 40px;
-        border: 2px solid ${({theme}) => theme.primaryRyde};
-        border-radius: 20px;
-        color: ${({theme}) => theme.primaryRyde};
-        font-size: 1.1rem;
-        padding-left: 15px;
-        transition: 0.3s all ease-in-out;
-        cursor: pointer;
-
-        &:hover{
-            background-color: ${({theme}) => theme.primaryRyde};
-            color: white;
-        }
-
-        span{
+        .card-main{
             display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
             justify-content: center;
-            align-items: center;
-            color:  ${({theme}) => theme.white};
-            width: 41px;
-            border-radius: 100%;
-            height: 40px;
-            background: ${({theme}) => theme.primaryRyde};
-            font-size: 1.3rem;
+
+            .card-souhait{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 25%;
+                border-radius: 20px;
+                color: ${({theme}) => theme.primaryRyde};
+                /* border-top: 1px solid ${({theme}) => theme.primaryRyde};
+                border-left: 1px solid ${({theme}) => theme.primaryRyde};
+                border-right: 1px solid ${({theme}) => theme.primaryRyde}; */
+                border-bottom: 5px solid ${({theme}) => theme.primaryRyde};
+                padding: 2rem;
+                text-align: center;
+                background: #ffffff;
+                box-shadow:  9px 9px 8px #f2f2f2,
+                            -9px -9px 8px #ffffff;
+
+                span{
+                    font-size: 2.3rem;
+                    margin-bottom: 2rem;
+                }
+
+                @media screen and (max-width: ${({theme}) => theme.mobile}){
+                    width: 100%;
+                }
+            }
         }
     }
+    
 `

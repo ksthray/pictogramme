@@ -36,7 +36,7 @@ const Siteweb = () => {
         {id: "2", image: "/images/website2.png", alt: "image écran site internet responsive"}
     ]
     return (
-        <SitewebStyle>
+        <SitewebStyle> 
             <Left>
                 <div className={"main-site"}>
                     <div className={"grid"}>
@@ -64,8 +64,8 @@ const Siteweb = () => {
                             <div key={i}>
                                 <p>{vit.text}</p>
                                 <ul style={{paddingLeft: "20px"}}>
-                                    {vit.elements.map((v) => (
-                                        <li key={v}>{v}</li> 
+                                    {vit.elements.map((v, i) => (
+                                        <li key={i}>{v}</li> 
                                     ))}
                                 </ul>
                             </div>
@@ -78,8 +78,8 @@ const Siteweb = () => {
                                 <div key={i}>
                                     <p>{com.text}</p>
                                     <ul style={{paddingLeft: "20px"}}>
-                                        {com.elements.map((v) => (
-                                            <li key={v}>{v}</li> 
+                                        {com.elements.map((v, i) => (
+                                            <li key={i}>{v}</li> 
                                         ))}
                                     </ul>
                                 </div>

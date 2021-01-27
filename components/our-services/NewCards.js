@@ -1,14 +1,9 @@
-import {useRouter} from "next/router"
+import {FaStar, FaRocket, FaHeart, FaCode, FaSlidersH} from "react-icons/fa"
+import {AiFillPrinter} from "react-icons/ai"
 
-import {Card, CardHead, CardBody, CardBottom, CardTitle, NewCardStyle} from "./our.services.style"
+import {NewCardStyle, BarSlim} from "./our.services.style"
 
 const NewCards = () => {
-    const router = useRouter()
-
-    const pushPage = (e, link) => {
-        e.preventDefault()
-        router.push(link)
-    }
     const data = [
         {
             id: "1",
@@ -41,27 +36,65 @@ const NewCards = () => {
             image: "/images/bullhorn.png",
         },
     ]
+    const items = [
+        {
+            id: "1",
+            phrase: "Définir ou réfondre votre identité de marque.",
+            icon: <FaStar/>
+        },
+        {
+            id: "2",
+            phrase: "Appuyer le lancement d'un nouveau produit ou d'une nouvelle offre.",
+            icon: <FaRocket/>
+        },
+        {
+            id: "3",
+            phrase: "Imprimer vos supports physiques, pour une marketing traditionnel.",
+            icon: <AiFillPrinter/>
+        },
+        {
+            id: "4",
+            phrase: "Emouvoir vos cibles avec des messagesde marque captivants.",
+            icon: <FaHeart/>
+        },
+        {
+            id: "5",
+            phrase: "Créer ou réfondre votre site web, (site vitrine ou e-commerce).",
+            icon: <FaCode/>
+        },
+        {
+            id: "6",
+            phrase: "Vous souhaitez optimiser vos plans médias et augmenter vos performances.",
+            icon: <FaSlidersH/>
+        },
+    ]
     return (
         <NewCardStyle>
-            <h2>Booster votre business</h2><br/>
-            <p className={"message-service"}>
-                Notre agence de communication accompagne les entreprises en proposant le meilleur 
-                service sur n'importe quel marché cible. Nous parlons votre langue, comprenons vos 
-                objectifs et proposons les solutions digitales les plus efficaces.
-            </p><br/>
-            <div className={"grid"}>
-                <div className={"image"}>
-                    <img
-                        src={"/images/gold-min.jpg"}
-                        alt={"chesse king"}
-                    />
-                </div>
+            <div className={"container-top"}>
+                <h2>Booster votre business</h2>
+                <BarSlim/>
+                <p >
+                    Notre agence de communication accompagne les entreprises en proposant le meilleur 
+                    service sur n'importe quel marché cible. Nous parlons votre langue, comprenons vos 
+                    objectifs et proposons les solutions digitales les plus efficaces.
+                </p>
                 <div className={"grid-item"}>
                     {data.map((item, i) => (
                         <div className={"flat-icon"} key={i}>
                             <img src={item.image} alt={"icon"}/>
                             <h3>{item.nameService}</h3>
-                            <p>{item.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <div className={"container-souhait"}>
+                <h2>Si vous souhaitez</h2>
+                <BarSlim/>
+                <div className={"card-main"}>
+                    {items.map((item, i) => (
+                        <div className={"card-souhait"} key={i}>
+                            <span>{item.icon}</span>
+                            <p>{item.phrase}</p>
                         </div>
                     ))}
                 </div>

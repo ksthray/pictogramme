@@ -13,7 +13,7 @@ import {cardAgencyAnimation, titleAnimation, barAnimation, pAnimation} from "../
 import magazines from "../../data/agency.json"
 
 
-const CardAgency = ( ) => {
+const CardAgency = () => {
     const animation = useAnimation();
     const [contentRef, inView] = useInView({
         triggerOnce: true,
@@ -57,46 +57,57 @@ const CardAgency = ( ) => {
                 >
                     « Sans imagination, il ne pourrait avoir de création »,
                 </P><br/>
-                <Cards
-                    key={"cards"}
-                    ref={contentRef}
-                    animate={animation}
-                    initial="hidden"
-                    variants={cardAgencyAnimation}
-                >
-                    {magazines.map((magazine) => (
-                        <Link key={magazine.id} href={magazine.link}>
-                            <a style={{textDecoration: "none"}} target="_blank" rel="noopener">
-                                <motion.div 
-                                    className={"container-magazine"}
-                                    whileHover={{
-                                        y: 15,
-                                        transition: { duration: 0.3 },
-                                    }}
-                                    whileTap={{ scale: 0.9 }}
-                                >
-                                    <CadreImage>
-                                        <Image
-                                            key={magazine.id}
-                                            src={magazine.image}
-                                            alt={magazine.alt}
-                                            width={magazine.width}
-                                            height={magazine.height}
-                                        />
-                                        <p className={"p1"}>
-                                            {magazine.text}
-                                        </p>
-                                        <Progress animated color="more-awesome" value={magazine.pourcentage}>
-                                            {magazine.pourcentage}%
-                                        </Progress>
-                                    </CadreImage>
-                                </motion.div>
-                            </a>
-                        </Link>
-                    ))}
-                </Cards>
+                <CardMag/>
             </Container>
         </SectionStyle>
+    )
+}
+
+const CardMag = () => {
+    const animation = useAnimation();
+    const [contentRef, inView] = useInView({
+        triggerOnce: true,
+    });
+
+    useEffect(() => {
+        if (inView) {
+            animation.start("visible");
+        }
+    }, [animation, inView]);
+    return (
+        <Cards>
+            {magazines.map((magazine) => (
+                <Link key={magazine.id} href={magazine.link}>
+                    <a style={{textDecoration: "none"}} target="_blank" rel="noopener">
+                        <motion.div 
+                            className={"container-magazine"}
+                            whileHover="hover"
+                            whileTap="tap"
+                            ref={contentRef}
+                            animate={animation}
+                            initial="hidden"
+                            variants={cardAgencyAnimation}
+                        >
+                            <CadreImage>
+                                <Image
+                                    key={magazine.id}
+                                    src={magazine.image}
+                                    alt={magazine.alt}
+                                    width={magazine.width}
+                                    height={magazine.height}
+                                />
+                                <p className={"p1"}>
+                                    {magazine.text}
+                                </p>
+                                <Progress animated color="more-awesome" value={magazine.pourcentage}>
+                                    {magazine.pourcentage}%
+                                </Progress>
+                            </CadreImage>
+                        </motion.div>
+                    </a>
+                </Link>
+            ))}
+        </Cards>
     )
 }
 

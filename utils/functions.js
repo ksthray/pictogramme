@@ -12,6 +12,13 @@ export const cardAgencyAnimation = {
         opacity: 0,
         y: 72,
     },
+    hover: {
+        y: 15,
+        transition: {duration: 0.3}
+    },
+    tap: {
+        scale: 0.9
+    }
 }
 export const cardServicesAnimation = {
     visible: {
@@ -125,12 +132,9 @@ export const pAnimation = {
 
 export const btnHome = {
     initial: { 
-        y: 0, 
-        x: -100,
         opacity: 0
     },
     animate: {
-        x: 0,
         opacity: 1,
         transition: {
             duration: 1,

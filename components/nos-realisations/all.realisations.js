@@ -1,7 +1,16 @@
-import { AllStyle, Affiche } from "./nos.realisations.style"
+import React, {useState} from "react"
+
+import { AllStyle, Containt } from "./nos.realisations.style"
 import Print from "./print"
+import ToutComponent from "./tout"
 
 const AllRealisations = () => {
+    const [toggleTabs, setTabs] = useState(1)
+
+    const toggleTab = (index) => {
+        setTabs(index)
+    }
+
     const donnees = [
         {
             id: "1",
@@ -65,23 +74,44 @@ const AllRealisations = () => {
         }
     ]
     return (
-        <AllStyle><br/>
-            <Print/>
-            <br/>
-            <Affiche>
-                {
-                    donnees.map((item, i) => (
-                        <div key={i}>
-                            <img 
-                                src={item.image}
-                                alt={item.alt}
-                                className={"img-affiche"}
-                            />
-                        </div>
-                    ))
-                }
-            </Affiche>
-            <br/>
+        <AllStyle>
+            <div className={"bloc-onglets"}>
+                <div 
+                    className={toggleTabs === 1 ? "tabs active-tabs" : "tabs"} 
+                    onClick={() => toggleTab(1)}
+                >
+                    Tout
+                </div>
+                <div 
+                    className={toggleTabs === 2 ? "tabs active-tabs" : "tabs"} 
+                    onClick={() => toggleTab(2)}
+                >
+                    Graphisme
+                </div>
+                <div 
+                    className={toggleTabs === 3 ? "tabs active-tabs" : "tabs"} 
+                    onClick={() => toggleTab(3)}
+                >
+                    Mbote souriez
+                </div>
+                <div 
+                    className={toggleTabs === 4 ? "tabs active-tabs" : "tabs"} 
+                    onClick={() => toggleTab(4)}
+                >
+                    Site internet
+                </div>
+            </div>
+            <div className={"contenu-onglets"}>
+                <div className={toggleTabs === 1 ? "contenu active-contenu" : "contenu"}>
+                    <ToutComponent/>
+                </div>
+                <div className={toggleTabs === 2 ? "contenu active-contenu" : "contenu"}>
+                    <Print/>
+                </div>
+                <div className={toggleTabs === 3 ? "contenu active-contenu" : "contenu"}>
+                    COntenue Onglet 3
+                </div>
+            </div>
         </AllStyle>
     )
 }

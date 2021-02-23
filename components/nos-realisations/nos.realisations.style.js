@@ -161,16 +161,6 @@ export const Affiche = styled("div")`
         grid-template-columns: 1fr;
     }
 `
-
-//flyer et depliants
-
-export const Flyer = styled("div")`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-
-`
-
 //All realisations
 
 export const AllStyle = styled("section")`
@@ -183,6 +173,54 @@ export const AllStyle = styled("section")`
         font-size: 1.6rem;
         margin-top: 15px;
     }
+
+    .bloc-onglets{
+        display: flex;
+        justify-content: center;
+        gap: 1px;
+        transform: translateY(-20px);
+        background-color: white;
+        width: 65%;
+        margin: 0 auto;
+        /* border: 1px solid ${({theme}) => theme.primaryRyde}; */
+        cursor: pointer;
+
+        .tabs{
+            width: 25%;
+            padding: 1rem;
+            text-align: center;
+            color: ${({theme}) => theme.primaryRyde};
+            transition: all 0.5s ease-in-out;
+
+            &:hover{
+                background-color: rgba(217,20,128,0.1);
+            }
+        }
+        .active-tabs{
+            width: 25%;
+            padding: 1rem;
+            background-color: ${({theme}) => theme.primaryRyde};
+            color: white;
+            border: 1px solid ${({theme}) => theme.primaryRyde};
+            text-align: center;
+            font-weight: bold;
+            transition: all 0.5s ease-in-out;
+
+            &:hover{
+                background-color: ${({theme}) => theme.primaryRyde} !important;
+            }
+        }
+    }
+
+    .contenu-onglets{
+
+        .contenu{
+            display: none;
+        }
+        .active-contenu{
+            display: block;
+        }
+    }
 `
 
 export const Bar = styled("div")`
@@ -191,4 +229,73 @@ export const Bar = styled("div")`
     background: ${({theme}) => theme.primaryRyde};
     margin-bottom: 25px;
     margin: 0 auto;
+`
+
+//Tout js
+export const Containt = styled("div")`
+    width: 100%;
+
+    .top-el{
+        display: grid;
+        grid-template-columns: 60.7% 38.4%;
+        grid-gap: 20px;
+
+        video{
+            width: 100%;
+        }
+        img{
+            width: 100%;
+        }
+    }
+
+    .sect1{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
+
+        .img1{
+            width: 25%;
+        }
+        .img2{
+            width: 40%;
+        }
+        .img3{
+            width: 25%;
+        }
+    }
+
+    .sect2{
+        display: grid;
+        grid-template-columns: 20% 1fr 20%;
+        grid-gap: 20px;
+        height: 600px;
+
+        .atm{
+            width: 100%;
+            height: 600px;
+        }
+        .imgs{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            img{
+                width: 100%;
+                height: 290px;
+
+            }
+        }
+    }
+    .sect3{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        padding: 0 3rem;
+
+        img{
+            width: 100%;
+        }
+    }
 `

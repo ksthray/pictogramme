@@ -12,7 +12,7 @@ export default function Realisation (){
             motClePage={"Charte graphique, Logo, Site internet, Calendrier"}
         >
             <HomeOutherPage>
-                Nos réalisations
+                Picto oeuvres
             </HomeOutherPage>
             <Container>
                 <AllRealisations/>

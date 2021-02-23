@@ -7,6 +7,7 @@ import {titleAnimation, barAnimation} from "../../utils/functions"
 
 import {SectionStyle, Title, Topbar, Bottombar, Button} from "./nos.realisations.style"
 import Print from "./print"
+import Slider from "../carouselrealisation/slider"
 import {Container} from "reactstrap" 
 
 const NosRealisations = () => {
@@ -52,7 +53,8 @@ const NosRealisations = () => {
                     variants={barAnimation}
                 />
                 <br/><br/>
-                <Print/>
+                <Print/><br/>
+                <Slider/>
                 <div className={"button-main"}>
                     <Button onClick={(e) => pushPage(e)}>
                         Voir +

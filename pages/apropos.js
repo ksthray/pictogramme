@@ -12,7 +12,7 @@ export default function Apropos() {
             imagePage={"/images/affiche.jpg"}
         >
             <HomeOutherPage>
-                Team Picto
+                Picto Team
             </HomeOutherPage>
             <Container>
                 <About/>

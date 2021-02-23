@@ -164,16 +164,17 @@ export const SlimCard = styled(motion.div)`
     h2{
         text-transform: uppercase;
         font-size: ${({size}) => size};
-        color: ${({theme}) => theme.primaryRyde};
+        color: ${({colorP}) => colorP};
         font-weight: 600;
     }
     p{
         font-size: ${({sizeP}) => sizeP};
         margin-bottom: 20px;
+        color: ${({colorP}) => colorP};
     }
     span{
         font-size: ${({sizeIcon}) => sizeIcon};
-        color: ${({theme}) => theme.primaryRyde};
+        color: ${({color}) => color};
     }
 
     @media screen and (max-width: ${({theme}) => theme.tabletMini}){
@@ -197,10 +198,10 @@ export const SlimCard = styled(motion.div)`
         width: ${({width}) => width};
         padding: 7px;
         border: none;
-        color: ${({theme}) => theme.white};
+        color: ${({colorBtn}) => colorBtn};
         font-weight: 500;
         border-radius: 20px;
-        background: #D91480;
+        background:  ${({color}) => color};
         transition: 0.3s all ease-in-out;
 
         &:focus{
@@ -216,7 +217,34 @@ export const SlimCard = styled(motion.div)`
 `
 
 //Style for New Cards
+export const FlatIcon = styled("div")`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 30%;
+    height: 250px;
+    border-radius: 20px;
+    background: ${({bgG}) => bgG};
+    background: ${({bgL}) => bgL};
 
+    img{
+        width: 50px;
+        height: auto;
+    }
+    h3{
+        font-size: 1rem;
+        margin-top: 10px;
+        color: ${({theme}) => theme.primaryRyde};
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+    p{
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+`
 export const NewCardStyle = styled("div")`
     display: flex;
     justify-content: center;
@@ -240,36 +268,20 @@ export const NewCardStyle = styled("div")`
 
         p{
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
+        }
+        .grid-item1{
+            width: 100%;
         }
 
-        .grid-item{
+        .grid-item2{
+            /* display: grid;
+            grid-template-columns: repeat(3, 1fr); */
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
+            flex-wrap: wrap;
             gap: 20px;
-            .flat-icon{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                text-align: center;
-
-                img{
-                    width: 50px;
-                    height: auto;
-                }
-                h3{
-                    font-size: 1rem;
-                    margin-top: 10px;
-                    color: ${({theme}) => theme.primaryRyde};
-                    font-weight: 500;
-                    text-transform: uppercase;
-                }
-                p{
-                    font-size: 0.9rem;
-                }
-            }
+            width: 100%;
         }
     }
 
@@ -278,9 +290,9 @@ export const NewCardStyle = styled("div")`
         padding: 2rem 0;
 
         .card-main{
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 30px;
             justify-content: center;
 
             .card-souhait{
@@ -288,22 +300,20 @@ export const NewCardStyle = styled("div")`
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
-                width: 25%;
+                width: 100%;
                 border-radius: 20px;
-                color: ${({theme}) => theme.primaryRyde};
-                /* border-top: 1px solid ${({theme}) => theme.primaryRyde};
-                border-left: 1px solid ${({theme}) => theme.primaryRyde};
-                border-right: 1px solid ${({theme}) => theme.primaryRyde}; */
-                border-bottom: 5px solid ${({theme}) => theme.primaryRyde};
+                color: ${({theme}) => theme.white};
+                background: rgb(217,20,128);
+                background: linear-gradient(170deg, rgba(217,20,128,1) 0%, rgba(167,6,94,1) 100%);
                 padding: 2rem;
                 text-align: center;
-                background: #ffffff;
-                box-shadow:  9px 9px 8px #f2f2f2,
-                            -9px -9px 8px #ffffff;
 
                 span{
-                    font-size: 2.3rem;
+                    font-size: 3rem;
                     margin-bottom: 2rem;
+                }
+                p{
+                    font-size: 1.1rem;
                 }
 
                 @media screen and (max-width: ${({theme}) => theme.mobile}){

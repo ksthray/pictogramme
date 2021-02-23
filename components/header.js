@@ -130,79 +130,63 @@ const Header = () => {
                     </NavbarBrand>
                     <NavbarToggler onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
-                    <Nav className="ml-auto" navbar>
-                        <NavItem>
-                            <NavLink href="/">
-                                <motion.span
-                                    initial={{opacity: 0}}
-                                    animate={{opacity: 1}}
-                                    transition={{delay: 1.1, duration: 1.5}}
-                                >
-                                    Accueil
-                                </motion.span>
-                            </NavLink>
-                        </NavItem>
-                        <NavItem id="demo">
-                            <NavLink href="/services">
-                                <motion.span
-                                    initial={{opacity: 0}}
-                                    animate={{opacity: 1}}
-                                    transition={{delay: 1.1, duration: 1.4}}
-                                >
-                                    Picto services
-                                </motion.span>
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="/realisations">
-                                <motion.span
-                                    initial={{opacity: 0}}
-                                    animate={{opacity: 1}}
-                                    transition={{delay: 1.1, duration: 1.6}}
-                                >
-                                    Picto réalisations
-                                </motion.span>
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="/apropos">
-                                <motion.span
-                                    initial={{opacity: 0}}
-                                    animate={{opacity: 1}}
-                                    transition={{delay: 1.1, duration: 1.7}}
-                                >
-                                    Picto team
-                                </motion.span>
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="/contact">
-                            <   motion.span
-                                    initial={{opacity: 0}}
-                                    animate={{opacity: 1}}
-                                    transition={{delay: 1.1, duration: 1.8}}
-                                >
-                                    Contact
-                                </motion.span>
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <motion.div
-                                initial={{opacity: 0}}
-                                animate={{opacity: 1}}
-                                transition={{delay: 1.1, duration: 1.8}}
-                                className={"main-btn"}
-                            >
-                                <Link href="tel:+243824029562">
-                                    <a>
-                                        <button className={"button"}>
-                                            <FaPhoneAlt/> +243824029562
-                                        </button>
-                                    </a>
-                                </Link>
-                            </motion.div>
-                        </NavItem>
-                    </Nav>
+                        <Nav className="ml-auto" navbar>
+                            <NavItem id="demo">
+                                <NavLink href="/services">
+                                    <motion.span
+                                        initial={{opacity: 0}}
+                                        animate={{opacity: 1}}
+                                        transition={{delay: 1.1, duration: 1.4}}
+                                    >
+                                        Picto créative
+                                    </motion.span>
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="/realisations">
+                                    <motion.span
+                                        initial={{opacity: 0}}
+                                        animate={{opacity: 1}}
+                                        transition={{delay: 1.1, duration: 1.6}}
+                                    >
+                                        Picto oeuvres
+                                    </motion.span>
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="/influences">
+                                    <motion.span
+                                        initial={{opacity: 0}}
+                                        animate={{opacity: 1}}
+                                        transition={{delay: 1.1, duration: 1.6}}
+                                    >
+                                        Picto influence
+                                    </motion.span>
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="/apropos">
+                                    <motion.span
+                                        initial={{opacity: 0}}
+                                        animate={{opacity: 1}}
+                                        transition={{delay: 1.1, duration: 1.7}}
+                                    >
+                                        Picto team
+                                    </motion.span>
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="/contact">
+                                    <motion.span
+                                        initial={{opacity: 0}}
+                                        animate={{opacity: 1}}
+                                        transition={{delay: 1.1, duration: 1.8}}
+                                    >
+                                        Contact
+                                    </motion.span>
+                                </NavLink>
+                            </NavItem>
+                        </Nav>
                     </Collapse>
                 </div>
             </Navbar>

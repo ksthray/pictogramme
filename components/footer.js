@@ -335,7 +335,7 @@ const Footer = () => {
                         textTransform: "uppercase",
                         marginBottom: "60px"
                     }}>
-                    Suivez-nous
+                    Restez connecter
                 </motion.h4>
                 <ContainerIcons
                     ref={refContent}

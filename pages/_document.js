@@ -33,7 +33,7 @@ export default class MyDocument extends Document {
             <Html lang="fr">
                 <Head>
                     {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
-                    <meta title="Agence créa et impremerie" />
+                    <meta title="Agence créa et print" />
                     <link rel="icon" sizes="96x96" href="favicon.ico" />
                     <meta name="theme-color" content="#319795"></meta>
                     <meta name="google-site-verification" content="RJAX3bTXXpyOo6F_sdRW_G8GjoWCsqZZaRywW6GaiXs" />

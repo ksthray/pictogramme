@@ -24,9 +24,9 @@ const prints = [
     },
     {
         id: "3",
-        cover: "/images/cover.jpg",
+        cover: "/images/karibucover.jpg",
         side: "/images/side.jpg",
-        back: "/images/back.jpg",
+        back: "/images/karibuback.jpg",
         alt: "magazine"
     }
 ]
@@ -35,7 +35,7 @@ const affiches = [
     {
         id: "1",
         image: "/images/casquette1.jpg",
-        alt: "calendrier"
+        alt: "casquette"
     },
     {
         id: "2",
@@ -45,22 +45,37 @@ const affiches = [
     {
         id: "3",
         image: "/images/cal3-min.jpeg",
-        alt: "calendrier"
+        alt: "mask"
     },
-    {
+    { 
         id: "4",
-        image: "/images/shopping.jpg",
-        alt: "calendrier"
+        image: "/images/flash-disque2.jpg",
+        alt: "flash"
     },
     {
         id: "5",
-        image: "/images/carte-de-voeux.jpg",
-        alt: "calendrier"
+        image: "/images/goblet2.jpg",
+        alt: "goblet"
     },
     {
         id: "6",
         image: "/images/stylo1.jpg",
-        alt: "calendrier"
+        alt: "stylo"
+    },
+    {
+        id: "7",
+        image: "/images/bache1.jpg",
+        alt: "bash"
+    },
+    {
+        id: "8",
+        image: "/images/flash-disque1.jpg",
+        alt: "flash disque"
+    },
+    {
+        id: "9",
+        image: "/images/bracelet.jpg",
+        alt: "bracelet"
     }
 ]
 

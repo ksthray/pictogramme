@@ -38,6 +38,9 @@ const Carre = ({data}) => {
                                 sizeIcon={element.sizeIcon}
                                 sizeP={element.sizeP}
                                 width={element.widthBtn}
+                                color={element.color}
+                                colorP={element.colorP}
+                                colorBtn={element.colorBtn}
                                 ref={contentRef}
                                 animate={animation}
                                 initial="hidden"

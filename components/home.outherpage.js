@@ -1,3 +1,6 @@
+import Link from "next/link"
+import { useRouter } from 'next/router'
+
 import styled from "styled-components"
 import {Container} from "reactstrap"
 import {motion} from "framer-motion"
@@ -56,15 +59,22 @@ const Bottombar = styled(motion.div)`
 `
 
 const HomeOutherPage = ({children}) => {
+    const router = useRouter()
+
+    const namelink = router.pathname
+    
     return (
         <StyleSection>
             <div className={"overlay-fade"}>
                 <Container>
-                    <Topbar variants={barAnimation} initial="hidden" animate="visible"/>
                         <motion.h2
                             variants={titleAnimation} initial="hidden" animate="visible"
                         >{children}</motion.h2>
-                    <Bottombar variants={barAnimation} initial="hidden" animate="visible"/>
+                    <Bottombar variants={barAnimation} initial="hidden" animate="visible"/><br/>
+                    {/* <div style={{display: "flex", justifyContent: "center"}}>
+                        <Link href="/"><a>Accueil</a></Link>
+                        <Link href={namelink}><a>{namelink}</a></Link>
+                    </div> */}
                 </Container>
             </div>
         </StyleSection>

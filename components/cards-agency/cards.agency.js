@@ -41,7 +41,7 @@ const CardAgency = () => {
                     variants={titleAnimation}
                 >
                     De la conception <br/>
-                    à l'imprimerie
+                    au print
                 </Title>
                 <Bottombar
                     ref={contentRef}

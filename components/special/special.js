@@ -46,7 +46,7 @@ const Special = (props) => {
                     Spécial mois de la femme
                 </h2>
                 <BarSlim/>
-                <p>Femme répaire, femme icone</p> <br/><br/>
+                <p>Femme répère, femme emblématique, femme icone</p> <br/><br/>
                 <CountDownStyle>
                 {state.jours && (
                         <div className="countdown-item">

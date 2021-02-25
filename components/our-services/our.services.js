@@ -49,7 +49,7 @@ const OurServices = () => {
                     initial="hidden"
                     variants={opacityAnimation}
                 >
-                        Notre agence de communication accompagne les entreprises en proposant le meilleur 
+                        Notre agence de conseil en communication print et web accompagne les entreprises en proposant le meilleur 
                         service sur n'importe quel marché cible. Nous parlons votre langue, comprenons vos 
                         objectifs et proposons les solutions digitales les plus efficaces.
                 </Paragraph>

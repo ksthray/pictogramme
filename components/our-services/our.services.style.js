@@ -182,12 +182,15 @@ export const SlimCard = styled(motion.div)`
         box-shadow: none;
         h2{
             font-size: 1.15rem;
+            color: ${({theme}) => theme.primaryRyde} !important;
         }
         p{
             font-size: 0.9rem;
+            color: ${({theme}) => theme.primaryRyde} !important;
         }
         span{
             font-size: 2rem;
+            color: ${({theme}) => theme.primaryRyde} !important;
         }
     }
     @media screen and (max-width: ${({theme}) => theme.mobile}){

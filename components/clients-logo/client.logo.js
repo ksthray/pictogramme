@@ -38,7 +38,7 @@ const logo = [
     }
 ]
 
-const ClientLogo = () => {
+const ClientLogo = () => { 
     
     const settings = {
         dots: false,

@@ -111,7 +111,7 @@ export const Contains = styled("div")`
         }
 
         &:hover{
-            background-color: ${({theme}) => theme.primaryRydeHover};
+            background-color: ${({theme}) => theme.primaryBlue};
             color: white;
         }
     }

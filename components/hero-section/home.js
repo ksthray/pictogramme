@@ -87,15 +87,8 @@ export default function HomePage() {
                         animate={{opacity: 1}}
                         transition={{delay: 1.1, duration: 1.1}}
                     >
-                        Agence créa et print
+                        Agence créa et stratégie
                     </motion.h1>
-                    {/* <motion.h2
-                        initial={{opacity: 0}}
-                        animate={{opacity: 1}}
-                        transition={{delay: 1.3, duration: 1.3}}
-                    >
-                        Welcome to PICTOGRAMME
-                    </motion.h2> */}
                     <motion.p
                         initial={{opacity: 0}}
                         animate={{opacity: 1}}

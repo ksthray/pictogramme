@@ -12,6 +12,13 @@ const SliderStyle = styled("div")`
     position: relative;
     margin: auto;
     overflow: hidden;
+
+    @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+        height: 300px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.mobile}){
+        height: 250px;
+    }
 `
 
 const len = sliderImages.length - 1

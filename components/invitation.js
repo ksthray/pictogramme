@@ -16,12 +16,13 @@ const InvitationStyle = styled("section")`
     /* padding: 2.5rem 0; */
     /* background: rgb(2,73,117);
     background: linear-gradient(72deg, rgba(2,73,117,1) 8%, rgba(8,105,166,1) 91%); */
-    background: rgb(217,20,128);
-    background: linear-gradient(55deg, rgba(217,20,128,1) 0%, rgba(171,7,97,1) 69%);
-    /* background-image: url("/images/bg-invitation.jpg");
+    /* background: rgb(217,20,128);
+    background: linear-gradient(55deg, rgba(217,20,128,1) 0%, rgba(171,7,97,1) 69%); */
+    background-image: url("/images/couvertureicones.jpg");
     background-repeat: no-repeat;
-    background-position: center; */
-    clip-path: polygon(0 0, 100% 16%, 100% 100%, 0 100%);
+    background-position: center;
+    background-size: cover;
+    /* clip-path: polygon(0 0, 100% 16%, 100% 100%, 0 100%); */
 
     @media screen and (max-width: ${({theme}) => theme.tabletMini}){
         flex-direction: column;

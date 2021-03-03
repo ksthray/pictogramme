@@ -220,7 +220,7 @@ const Footer = () => {
     const rsocial = [
         {
             nom: "facebook", 
-            link: "https://web.facebook.com/Pictogramme-RDC-106616237991990", 
+            link: "https://www.facebook.com/Ic%C3%B4nes-RDC-106087318205604/", 
             icon: <FaFacebook style={{position: "relative", top: "-5px"}} className={"icon"}/>,
             face: "#315dfb",
             left: "#1e3ca7",
@@ -228,7 +228,7 @@ const Footer = () => {
         },
         {
             nom: "instagram", 
-            link: "https://www.instagram.com/pictogramme_rdc/", 
+            link: "https://instagram.com/icones_rdc?igshid=1a2l7w40wv2a1", 
             icon: <GrInstagram style={{position: "relative", top: "-5px"}} className={"icon"}/>,
             face: "#dd2a7b",
             left: "#af145a",
@@ -255,9 +255,9 @@ const Footer = () => {
                         className={"entreprise-id"}
                     >
                         <Img 
-                            src={"/images/pictobycmct.png"}
-                            width={350}
-                            height={200}
+                            src={"/images/logobg.png"}
+                            width={250}
+                            height={250}
                             layout={"intrinsic"}
                             quality={100}
                         />
@@ -331,9 +331,10 @@ const Footer = () => {
                     variants={titleAnimation}
                     style={{
                         textAlign: "center", 
-                        color: "#D91480", 
+                        color: "#0487D9", 
                         textTransform: "uppercase",
-                        marginBottom: "60px"
+                        marginBottom: "60px",
+                        fontSize: "1.2rem"
                     }}>
                     Restez connecter
                 </motion.h4>

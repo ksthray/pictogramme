@@ -1,136 +1,124 @@
-import React, {useState, useEffect} from "react"
-import moment from "moment"
+import Link from "next/link"
+import Slider from "react-slick";
 
 import { Container } from "reactstrap"
-import {Containt, CountDownStyle, SVG, BarSlim} from "./special.style"
+import {Containt, BarSlim, ContainerVisuels} from "./special.style"
 
-const Special = (props) => {
-    const [state, setState] = useState({
-        jours: undefined,
-        heure: undefined,
-        minute: undefined,
-        seconde: undefined,
-    })
-    
-    useEffect(() => {
-        const interval = setInterval(() => {
-            const { timeTillDate, timeFormat } = props;
-            const then = moment(timeTillDate, timeFormat);
-            const now = moment();
-            const countdown = moment(then - now);
-            const jours = countdown.format('D');
-            const heure = countdown.format('HH');
-            const minute = countdown.format('mm');
-            const seconde = countdown.format('ss');
-    
-            setState({ jours, heure, minute, seconde });
-        }, 1000);
+import {
+    FaFacebookSquare,
+    FaInstagram,
+    FaTwitterSquare,
+    FaLinkedin
+} from "react-icons/fa"
 
-        return () => {
-            clearInterval(interval);
+const Special = () => {
+    const settings = {
+        dots: false,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: false,
+        speed: 1500,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+                }
+            },
+            {
+                breakpoint: 770,
+                settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+                }
+            }
+        ]
+    };
+    const visuels = [
+        {
+            image: "/images/visuelblanch.jpg",
+            alt: "visuel blanc"
+        },
+        {
+            image: "/images/visuelrose.jpg",
+            alt: "visuel rose"
+        },
+        {
+            image: "/images/visuelbleu.jpg",
+            alt: "visuel blue"
+        },
+        {
+            image: "/images/visuelorange.jpg",
+            alt: "visuel orange"
         }
-    },)
-    // Mapping the date values to radius values
-    const joursRadius = mapNumber(state.jours, 30, 0, 0, 360);
-    const heureRadius = mapNumber(state.heure, 24, 0, 0, 360);
-    const minuteRadius = mapNumber(state.minute, 60, 0, 0, 360);
-    const secondeRadius = mapNumber(state.seconde, 60, 0, 0, 360);
-
-    if (!state.seconde) {
-        return null;
-    }
+    ]
+    const socials = [
+        {lien: "https://www.facebook.com/Ic%C3%B4nes-RDC-106087318205604/", icon: <FaFacebookSquare/>},
+        {lien: "https://instagram.com/icones_rdc?igshid=1a2l7w40wv2a1", icon: <FaInstagram/>},
+        {lien: "https://www.linkedin.com/company/ic%C3%B4ne-rdc/", icon: <FaLinkedin/>},
+        {lien: "https://mobile.twitter.com/IconeRdc", icon: <FaTwitterSquare/>},
+    ]
     return (
         <Containt>
             <Container>
-                <h2>
-                    Spécial mois de la femme
-                </h2>
-                <BarSlim/>
-                <p>Femme répère, femme emblématique, femme icone</p> <br/><br/>
-                <CountDownStyle>
-                {state.jours && (
-                        <div className="countdown-item">
-                            <SVGCircle radius={joursRadius} />
-                            {state.jours}
-                            <span>jours</span>
+                <ContainerVisuels>
+                    <div className={"ctnt"}>
+                        <Slider {...settings}>
+                            {visuels.map((image, i) => (
+                                <div className={"visuel"} key={i}>
+                                    <img    
+                                        src={image.image}
+                                        alt={image.alt}
+                                        className={"images"}
+                                    />
+                                </div>
+                            ))}
+                        </Slider>
+                    </div>
+                    <div className={"comm"}>
+                        <h2>
+                            Spécial mois de la femme
+                        </h2>
+                        <BarSlim/>
+                        <p>
+                            À l’occasion du mois de mars, mois dédié à la femme, Icône vous présente la campagne « 30 visages de femmes, femmes repères, femmes influentes, femmes baobabs » en RDC. C’est une campagne où la femme congolaise est mise à l’honneur, quel qu’en soit le domaine dans lequel elle évolue. Nous voulons valoriser les femmes qui contribuent à leur épanouissement et à l’épanouissement de notre société.
+                        </p><br/>
+                        <span>Suivez-nous pour ne rien rater</span>
+                        <div className={"socials"}>
+                            {socials.map((social, i) => (
+                                <Link key={i} href={social.lien}>
+                                    <a style={{textDecoration: "none"}} target="_blank" rel="noopener">
+                                        {social.icon}
+                                    </a>
+                                </Link>
+                            ))}
                         </div>
-                    )}
-                    {state.heure && (
-                        <div className="countdown-item">
-                            <SVGCircle radius={heureRadius} />
-                            {state.heure}
-                            <span>heures</span>
-                        </div>
-                    )}
-                    {state.minute && (
-                        <div className="countdown-item">
-                            <SVGCircle radius={minuteRadius} />
-                            {state.minute}
-                            <span>minutes</span>
-                        </div>
-                    )}
-                    {state.seconde && (
-                        <div className="countdown-item">
-                            <SVGCircle radius={secondeRadius} />
-                            {state.seconde}
-                            <span>secondes</span>
-                        </div>
-                    )}
-                </CountDownStyle>
+                    </div>
+                </ContainerVisuels>
             </Container>
         </Containt>
     )
-}
-
-const SVGCircle = ({ radius }) => (
-    <SVG>
-        <path
-            fill="none"
-            stroke="#D91480"
-            stroke-width="4"
-            d={describeArc(50, 50, 48, 0, radius)}
-        />
-    </SVG>
-);
-
-// From StackOverflow: https://stackoverflow.com/questions/5736398/how-to-calculate-the-svg-path-for-an-arc-of-a-circle
-
-function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
-    var angleInRadians = ((angleInDegrees - 90) * Math.PI) / 180.0;
-    
-    return {
-        x: centerX + radius * Math.cos(angleInRadians),
-        y: centerY + radius * Math.sin(angleInRadians)
-    };
-}
-
-function describeArc(x, y, radius, startAngle, endAngle) {
-    var start = polarToCartesian(x, y, radius, endAngle);
-    var end = polarToCartesian(x, y, radius, startAngle);
-    var largeArcFlag = endAngle - startAngle <= 180 ? '0' : '1';
-    var d = [
-        'M',
-        start.x,
-        start.y,
-        'A',
-        radius,
-        radius,
-        0,
-        largeArcFlag,
-        0,
-        end.x,
-        end.y
-    ].join(' ');
-    
-    return d;
-}
-
-// From StackOverflow: https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
-
-function mapNumber(number, in_min, in_max, out_min, out_max) {
-    return (
-        ((number - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
-    );
 }
 
 export default Special;

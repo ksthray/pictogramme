@@ -4,6 +4,8 @@ import Img from "next/image"
 import {motion} from "framer-motion"
 import {FaPhoneAlt} from "react-icons/fa"
 
+// import {Sidebar} from "./header/sidebar"
+
 import {
     Collapse,
     Navbar,
@@ -119,10 +121,10 @@ const Header = () => {
                             transition={{delay: 1, duration: 1.3}}
                         >
                             <Img
-                                src={"/images/logopicto.png"}
+                                src={"/images/logoicones.jpg"}
                                 alt={"logo du site"}
-                                width={170}
-                                height={60}
+                                width={100}
+                                height={40}
                                 layout={"intrinsic"}
                                 quality={100}
                             />
@@ -135,7 +137,7 @@ const Header = () => {
                                 <NavLink href="/services">
                                     <motion.span
                                         initial={{opacity: 0}}
-                                        animate={{opacity: 1}}
+                                        animate={{opacity: 1}} 
                                         transition={{delay: 1.1, duration: 1.4}}
                                     >
                                         Picto créative

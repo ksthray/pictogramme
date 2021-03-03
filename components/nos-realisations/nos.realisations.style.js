@@ -21,7 +21,7 @@ export const Button = styled(motion.button)`
     margin-left: 15px;
 
     &:hover{
-        background:  ${({theme}) => theme.primaryRydeHover};
+        background:  ${({theme}) => theme.primaryBlue};
     }
 
     :focus{

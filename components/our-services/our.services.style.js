@@ -214,6 +214,8 @@ export const SlimCard = styled(motion.div)`
 
         @media screen and (max-width: ${({theme}) => theme.tabletMini}){
             width: 130px;
+            background:  ${({theme}) => theme.primaryRyde};
+            color: white;
         }
     }
     
@@ -226,7 +228,7 @@ export const FlatIcon = styled("div")`
     align-items: center;
     flex-direction: column;
     text-align: center;
-    width: 30%;
+    width: 300px;
     height: 250px;
     border-radius: 20px;
     background: ${({bgG}) => bgG};
@@ -278,8 +280,6 @@ export const NewCardStyle = styled("div")`
         }
 
         .grid-item2{
-            /* display: grid;
-            grid-template-columns: repeat(3, 1fr); */
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -298,16 +298,27 @@ export const NewCardStyle = styled("div")`
             grid-gap: 30px;
             justify-content: center;
 
+            @media screen and (max-width: ${({theme}) => theme.tablet}){
+                grid-template-columns: repeat(3, 1fr);
+            }
+            @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @media screen and (max-width: ${({theme}) => theme.mobile}){
+                grid-template-columns: repeat(1, 1fr);
+            }
+
             .card-souhait{
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                flex-wrap: wrap;
                 flex-direction: column;
                 width: 100%;
                 border-radius: 20px;
                 color: ${({theme}) => theme.white};
-                background: rgb(217,20,128);
-                background: linear-gradient(170deg, rgba(217,20,128,1) 0%, rgba(167,6,94,1) 100%);
+                background: rgb(4,135,217);
+                background: linear-gradient(146deg, rgba(4,135,217,1) 0%, rgba(2,73,134,1) 100%);
                 padding: 2rem;
                 text-align: center;
 

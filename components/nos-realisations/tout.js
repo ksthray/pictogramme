@@ -15,7 +15,7 @@ const ToutComponent = () => {
         <Containt>
             <div className={"top-el"}>
                 <video controls loop>
-                    <source src={"/videos/mbotespot.mp4"} type={"video/mp4"}/>
+                    <source src={"/videos/mbotespot.mp4"} type={"video/mp4"}/> 
                 </video>
                 <img src={"/images/liveroom.jpg"}/>
             </div><br/>

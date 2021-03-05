@@ -15,29 +15,29 @@ const InfluencePage = () => {
     const data = [
         {
             title: "Lancement",
-            desc: "Vous souhaitez appuyer le lancement d’un nouveau produit, d’une nouvelle offre, ou d’un nouveau service",
+            desc: "Appuyer le lancement d’un nouveau produit, d’une nouvelle offre, ou d’un nouveau service",
             icon: <FaRocket/>
         },
         {
             title: "Collaboration",
-            desc: "Vous souhaitez soutenir vos ventes en collaborant régulièrement avec les influenceurs",
+            desc: "Soutenir vos ventes en collaborant régulièrement avec les influenceurs",
             icon: <FaHandshake/>
         },
         {
             title: "Contenus",
-            desc: "Vous souhaitez produire des contenus innovants en collaborant avec des influenceurs réputés",
+            desc: "Produire des contenus innovants en collaborant avec des influenceurs réputés",
             icon: <FaImage/>
         },
         {
             title: "Buzz",
-            desc: "Vous souhaitez lancer une nouvelle marque et intégrer un pool d’influenceurs pour générer du buzz",
+            desc: "Lancer une nouvelle marque et intégrer un pool d’influenceurs pour générer du buzz",
             icon: <FaCertificate/>
         },
     ]
     return (
         <Containt>
             <div className={"container-souhait"}>
-                <h2>Si vous souhaitez</h2>
+                <h2>Si vous souhaitez</h2> 
                 <BarSlim/><br/>
                 <div className={"card-main"}>
                     {data.map((item, i) => (

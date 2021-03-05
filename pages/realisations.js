@@ -6,13 +6,13 @@ import AllRealisations from "../components/nos-realisations/all.realisations"
 export default function Realisation (){
     return (
         <Wrapper
-            titrePage={"Nos réalisations"}
-            descriptionPage={"Nos réçentes réalisations pictogramme Rdc"}
+            titrePage={"Icônes oeuvres"}
+            descriptionPage={"Nos réçentes réalisations qu'on a produit Icônes Rdc, Nos oeuvres en quelques sorte"}
             imagePage={"/images/affiche.jpg"}
             motClePage={"Charte graphique, Logo, Site internet, Calendrier"}
         >
             <HomeOutherPage>
-                Picto oeuvres
+                Icônes oeuvres
             </HomeOutherPage>
             <Container>
                 <AllRealisations/>

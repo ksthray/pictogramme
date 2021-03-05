@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <Wrapper
       titrePage={"Pictogramme Rdc"}
-      descriptionPage={"Bienvenue dans pictogramme, agence créa et imprimerie"}
+      descriptionPage={"Bienvenue dans Icônes Rdc, agence créa et stratégie"}
       imagePage={"/images/affiche.jpg"}
       motClePage={"Agence, créa, imprimerie, webdesign ux ui, site internet, site web"}
     >

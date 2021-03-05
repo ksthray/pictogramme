@@ -95,6 +95,7 @@ const CardMag = () => {
                                     alt={magazine.alt}
                                     width={magazine.width}
                                     height={magazine.height}
+                                    quality={50}
                                 />
                                 <p className={"p1"}>
                                     {magazine.text}

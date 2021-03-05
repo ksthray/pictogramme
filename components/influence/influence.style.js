@@ -32,6 +32,16 @@ export const Containt = styled("section")`
             grid-gap: 30px;
             justify-content: center;
 
+            @media screen and (max-width: ${({theme}) => theme.tablet}){
+                grid-template-columns: repeat(3, 1fr);
+            }
+            @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @media screen and (max-width: ${({theme}) => theme.mobile}){
+                grid-template-columns: repeat(1, 1fr);
+            }
+
             .card-souhait{
                 display: flex;
                 justify-content: center;
@@ -40,8 +50,8 @@ export const Containt = styled("section")`
                 width: 100%;
                 border-radius: 20px;
                 color: ${({theme}) => theme.white};
-                background: rgb(217,20,128);
-                background: linear-gradient(170deg, rgba(217,20,128,1) 0%, rgba(167,6,94,1) 100%);
+                background: rgb(4,135,217);
+                background: linear-gradient(146deg, rgba(4,135,217,1) 0%, rgba(2,73,134,1) 100%);
                 padding: 2rem;
                 text-align: center;
 
@@ -68,6 +78,10 @@ export const Containt = styled("section")`
             grid-template-columns: repeat(2, 1fr);
             grid-gap: 30px;
             width: 100%;
+
+            @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+                grid-template-columns: repeat(1, 1fr);
+            }
 
             strong{
                 font-size: 4rem;
@@ -100,7 +114,7 @@ export const Containt = styled("section")`
 `
 
 export const BarSlim = styled("div")`
-    width: 15%;
+    width: 10%;
     height: 3px;
     background: white;
     margin: 0 auto;

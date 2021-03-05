@@ -182,8 +182,14 @@ export const AllStyle = styled("section")`
         background-color: white;
         width: 65%;
         margin: 0 auto;
-        /* border: 1px solid ${({theme}) => theme.primaryRyde}; */
         cursor: pointer;
+
+        @media screen and (max-width: ${({theme}) => theme.tabletMini}){
+            width: 85%;
+        }
+        @media screen and (max-width: ${({theme}) => theme.mobile}){
+            width: 100%;
+        }
 
         .tabs{
             width: 25%;
@@ -193,7 +199,7 @@ export const AllStyle = styled("section")`
             transition: all 0.5s ease-in-out;
 
             &:hover{
-                background-color: rgba(217,20,128,0.1);
+                background-color: rgba(4,135,217,0.1);
             }
         }
         .active-tabs{
@@ -240,6 +246,10 @@ export const Containt = styled("div")`
         grid-template-columns: 60.7% 38.4%;
         grid-gap: 20px;
 
+        @media screen and (max-width: ${({theme}) => theme.mobile}){
+            grid-template-columns: repeat(1, 1fr);
+        }
+
         video{
             width: 100%;
         }
@@ -272,9 +282,17 @@ export const Containt = styled("div")`
         grid-gap: 20px;
         height: 600px;
 
+        @media screen and (max-width: ${({theme}) => theme.mobile}){
+            grid-template-columns: repeat(1, 1fr);
+        }
+
         .atm{
             width: 100%;
             height: 600px;
+
+            @media screen and (max-width: ${({theme}) => theme.mobile}){
+                display: none;
+            }
         }
         .imgs{
             display: flex;
@@ -285,6 +303,10 @@ export const Containt = styled("div")`
                 width: 100%;
                 height: 290px;
 
+                @media screen and (max-width: ${({theme}) => theme.mobile}){
+                    width: 100%;
+                    height: auto;
+                }
             }
         }
     }
@@ -293,6 +315,10 @@ export const Containt = styled("div")`
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 20px;
         padding: 0 3rem;
+
+        @media screen and (max-width: ${({theme}) => theme.mobile}){
+            grid-template-columns: repeat(1, 1fr);
+        }
 
         img{
             width: 100%;

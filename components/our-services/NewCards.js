@@ -115,7 +115,7 @@ const NewCards = () => {
                 <div className={"card-main"}>
                     {items.map((item, i) => (
                         <div className={"card-souhait"} key={i}>
-                            <span>{item.icon}</span>
+                            <span>{item.icon}</span> 
                             <p>{item.phrase}</p>
                         </div>
                     ))}

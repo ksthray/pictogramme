@@ -15,7 +15,7 @@ const Special = () => {
     const settings = {
         dots: false,
         infinite: true,
-        slidesToShow: 1,
+        slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: false,
         speed: 1500,
@@ -23,19 +23,19 @@ const Special = () => {
             {
                 breakpoint: 1024,
                 settings: {
-                slidesToShow: 1,
+                slidesToShow: 3,
                 slidesToScroll: 1,
                 infinite: true,
-                dots: true
+                dots: false
                 }
             },
             {
                 breakpoint: 770,
                 settings: {
-                slidesToShow: 1,
+                slidesToShow: 2,
                 slidesToScroll: 1,
                 infinite: true,
-                dots: true
+                dots: false
                 }
             },
             {
@@ -61,17 +61,17 @@ const Special = () => {
             alt: "visuel blanc"
         },
         {
-            image: "/images/visuelrose.jpg",
-            alt: "visuel rose"
+            image: "/images/dame1.jpeg",
+            alt: "hortense kasa-vubu"
+        },
+        {
+            image: "/images/dame2.jpeg",
+            alt: "Marie Antoinette"
         },
         {
             image: "/images/visuelbleu.jpg",
-            alt: "visuel blue"
+            alt: "visuel bleu"
         },
-        {
-            image: "/images/visuelorange.jpg",
-            alt: "visuel orange"
-        }
     ]
     const socials = [
         {lien: "https://www.facebook.com/Ic%C3%B4nes-RDC-106087318205604/", icon: <FaFacebookSquare/>},
@@ -83,11 +83,16 @@ const Special = () => {
         <Containt>
             <Container>
                 <ContainerVisuels>
-                    <div className={"ctnt"}>
+                    <h2>Spécial mois de la femme</h2>
+                    <BarSlim/>
+                    <p>
+                        À l’occasion du mois de mars, mois dédié à la femme, Icône vous présente la campagne « 30 visages de femmes, femmes repères, femmes influentes, femmes baobabs » en RDC
+                    </p>
+                    <div className={"visuels"}>
                         <Slider {...settings}>
                             {visuels.map((image, i) => (
                                 <div className={"visuel"} key={i}>
-                                    <img    
+                                    <img     
                                         src={image.image}
                                         alt={image.alt}
                                         className={"images"}
@@ -96,24 +101,15 @@ const Special = () => {
                             ))}
                         </Slider>
                     </div>
-                    <div className={"comm"}>
-                        <h2>
-                            Spécial mois de la femme
-                        </h2>
-                        <BarSlim/>
-                        <p>
-                            À l’occasion du mois de mars, mois dédié à la femme, Icône vous présente la campagne « 30 visages de femmes, femmes repères, femmes influentes, femmes baobabs » en RDC. C’est une campagne où la femme congolaise est mise à l’honneur, quel qu’en soit le domaine dans lequel elle évolue. Nous voulons valoriser les femmes qui contribuent à leur épanouissement et à l’épanouissement de notre société.
-                        </p><br/>
-                        <span>Suivez-nous pour ne rien rater</span>
-                        <div className={"socials"}>
-                            {socials.map((social, i) => (
-                                <Link key={i} href={social.lien}>
-                                    <a style={{textDecoration: "none"}} target="_blank" rel="noopener">
-                                        {social.icon}
-                                    </a>
-                                </Link>
-                            ))}
-                        </div>
+                    <span>Suivez-nous pour ne rien rater</span>
+                    <div className={"follow"}>
+                        {socials.map((social, i) => (
+                            <Link key={i} href={social.lien}>
+                                <a style={{textDecoration: "none"}} target="_blank" rel="noopener">
+                                    {social.icon}
+                                </a>
+                            </Link>
+                        ))}
                     </div>
                 </ContainerVisuels>
             </Container>

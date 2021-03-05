@@ -140,7 +140,7 @@ const Header = () => {
                                         animate={{opacity: 1}} 
                                         transition={{delay: 1.1, duration: 1.4}}
                                     >
-                                        Picto créative
+                                        Icônes créative
                                     </motion.span>
                                 </NavLink>
                             </NavItem>
@@ -151,7 +151,7 @@ const Header = () => {
                                         animate={{opacity: 1}}
                                         transition={{delay: 1.1, duration: 1.6}}
                                     >
-                                        Picto oeuvres
+                                        Icônes oeuvres
                                     </motion.span>
                                 </NavLink>
                             </NavItem>
@@ -162,7 +162,7 @@ const Header = () => {
                                         animate={{opacity: 1}}
                                         transition={{delay: 1.1, duration: 1.6}}
                                     >
-                                        Picto influence
+                                        Icônes influence
                                     </motion.span>
                                 </NavLink>
                             </NavItem>
@@ -173,7 +173,7 @@ const Header = () => {
                                         animate={{opacity: 1}}
                                         transition={{delay: 1.1, duration: 1.7}}
                                     >
-                                        Picto team
+                                        Icônes team
                                     </motion.span>
                                 </NavLink>
                             </NavItem>

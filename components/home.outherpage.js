@@ -48,7 +48,7 @@ const Topbar = styled(motion.div)`
     }
 `
 const Bottombar = styled(motion.div)`
-    width: 15%;
+    width: 10%;
     height: 4px;
     margin: 0 auto;
     background: ${({theme}) => theme.primaryRyde};
@@ -70,11 +70,7 @@ const HomeOutherPage = ({children}) => {
                         <motion.h2
                             variants={titleAnimation} initial="hidden" animate="visible"
                         >{children}</motion.h2>
-                    <Bottombar variants={barAnimation} initial="hidden" animate="visible"/><br/>
-                    {/* <div style={{display: "flex", justifyContent: "center"}}>
-                        <Link href="/"><a>Accueil</a></Link>
-                        <Link href={namelink}><a>{namelink}</a></Link>
-                    </div> */}
+                    <Bottombar variants={barAnimation} initial="hidden" animate="visible"/>
                 </Container>
             </div>
         </StyleSection>

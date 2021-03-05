@@ -73,7 +73,7 @@ const AllRealisations = () => {
             alt: "recipiants"
         }
     ]
-    return (
+    return ( 
         <AllStyle>
             <div className={"bloc-onglets"}>
                 <div 
@@ -109,7 +109,10 @@ const AllRealisations = () => {
                     <Print/>
                 </div>
                 <div className={toggleTabs === 3 ? "contenu active-contenu" : "contenu"}>
-                    COntenue Onglet 3
+                    Pas de contenu pour l'instant
+                </div>
+                <div className={toggleTabs === 4 ? "contenu active-contenu" : "contenu"}>
+                    Pas de contenu pour l'instant
                 </div>
             </div>
         </AllStyle>

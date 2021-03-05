@@ -33,18 +33,18 @@ const Seo = ({
                     name="msapplication-config"
                 /> */}
                 <link
-                    href="/favicons/faviconicones.png"
+                    href="/favicons/faviconiconesicones.png"
                     rel="apple-touch-icon"
                     sizes="180x180"
                 />
                 <link
-                    href="/favicons/faviconicones.png"
+                    href="/favicons/faviconiconesicones.png"
                     rel="icon"
                     sizes="32x32"
                     type="image/png"
                 />
                 <link
-                    href="/favicons/faviconicones.png"
+                    href="/favicons/faviconiconesicones.png"
                     rel="icon"
                     sizes="16x16"
                     type="image/png"
@@ -101,8 +101,8 @@ const Seo = ({
                     </>
                 )} */}
                 <meta content="summary_large_image" name="twitter:card" />
-                <meta content="@pictogramme" name="twitter:site" />
-                <meta content="@pictogramme" name="twitter:creator" />
+                <meta content="@icones" name="twitter:site" />
+                <meta content="@icones" name="twitter:creator" />
             </Head>
             {/* {date && (
             <ArticleJsonLd

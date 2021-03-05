@@ -6,8 +6,8 @@ import Contact from "../components/contact/contact";
 export default function Apropos() {
     return (
         <Wrapper
-            titrePage={"Contact Pictogramme"}
-            descriptionPage={"Contactez-nous, contactez pictogramme Rdc et beneficier de ses services"}
+            titrePage={"Contact Icônes"}
+            descriptionPage={"Contactez-nous, contactez Icônes Rdc et beneficier de ses services"}
             imagePage={"/images/affiche.jpg"}
         >
             <HomeOutherPage>

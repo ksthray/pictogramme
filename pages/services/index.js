@@ -7,7 +7,7 @@ export default function Services() {
     return (
         <Wrapper
             titrePage={"Services"}
-            descriptionPage={"Les services que pictogramme Rdc vous offres"}
+            descriptionPage={"Les services que Icônes Rdc vous offres"}
             imagePage={"/images/affiche.jpg"}
             motClePage={"Création identité graphique, Impressions, Ux design, site web, marketing digital"}
         >

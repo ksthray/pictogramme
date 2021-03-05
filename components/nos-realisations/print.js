@@ -1,9 +1,6 @@
-import React, {useEffect} from "react"
-
-import {useAnimation} from "framer-motion"
-import {useInView} from "react-intersection-observer"
-
-import {cardServicesAnimation, } from "../../utils/functions"
+import React from "react"
+import Zoom from 'react-reveal/Zoom';
+import Fade from 'react-reveal/Fade';
 
 import {ContainerPrint, Magazine, Affiche} from "./nos.realisations.style"
 
@@ -80,28 +77,12 @@ const affiches = [
 ]
 
 const Print = () => {
-    const animation = useAnimation();
-    const [contentRef, inView] = useInView({
-        triggerOnce: true,
-    });
-
-    useEffect(() => {
-        if (inView) {
-            animation.start("visible");
-        }
-    }, [animation, inView]);
     return (
         <>
             <ContainerPrint>
                 {prints.map((print, i) => (
-                    <Magazine 
-                        key={i}
-                        side={print.side} back={print.back} 
-                        ref={contentRef}
-                        animate={animation}
-                        initial="hidden"
-                        variants={cardServicesAnimation}
-                    >
+                    <Zoom cascade key={i}>
+                    <Magazine side={print.side} back={print.back}>
                         <div className={"book"}>
                             <img 
                                 className={"image"}
@@ -110,6 +91,7 @@ const Print = () => {
                             />
                         </div>
                     </Magazine>
+                    </Zoom>
                 ))}
             </ContainerPrint>
             <br/><br/><br/>
@@ -119,17 +101,17 @@ const Print = () => {
 }
 
 const OutherAffiche = () => {
-    
     return (
         <Affiche>
                 {
                     affiches.map((affiche, i) => (
-                        <img
-                            key={i}
+                        <Fade bottom key={i}>
+                            <img
                             src={affiche.image}
                             alt={affiche.alt}
                             className={"img-affiche"}
-                        />
+                            />
+                        </Fade>
                     ))
                 }
         </Affiche>

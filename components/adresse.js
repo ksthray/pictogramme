@@ -52,7 +52,7 @@ const Adresse = () => {
                 </div>
                 <div className={"items"}>
                     <FaWhatsapp className={"icon"}/> 
-                    <span>+ 243 824 029 562</span> 
+                    <span>+ 243 817 187 048</span> 
                 </div>
                 <div className={"items"}>
                     <FaRegEnvelope className={"icon"}/> 

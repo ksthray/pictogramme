@@ -75,7 +75,7 @@ export const ContainerPrint = styled("section")`
     }
 `
 
-export const Magazine = styled(motion.div)`
+export const Magazine = styled("div")`
     display: flex;
     justify-content: center;
     align-items: center;

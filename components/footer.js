@@ -309,19 +309,19 @@ const Footer = () => {
                             animate={animation}
                             initial="hidden"
                             variants={cupAnimation}
-                        ><GrMail/> pictogramme@gamil.com</motion.p>
+                        ><GrMail/> Icones@contact.com</motion.p>
                         <motion.p
                             ref={refContent}
                             animate={animation}
                             initial="hidden"
                             variants={cupAnimation}
-                        ><BiMap/> Gombe, Av de la justice 30</motion.p>
+                        ><BiMap/> Gombe, Pièrre mulele N°24bus</motion.p>
                         <motion.p
                             ref={refContent}
                             animate={animation}
                             initial="hidden"
                             variants={cupAnimation}
-                        ><BiPhoneCall/> +243824029562</motion.p>
+                        ><BiPhoneCall/>+243817187048</motion.p>
                     </div>
                 </div>
                 <motion.h4

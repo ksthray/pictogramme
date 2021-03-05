@@ -4,11 +4,11 @@ const Image = (props) => {
     const {src, width, height, layout} = props;
     return (
         <Img
-            src={src}
+            src={src} 
             width={width}
             height={height}
             layout={layout}
-            quality={100}
+            quality={50}
         />
     )
 }

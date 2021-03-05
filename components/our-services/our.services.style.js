@@ -149,7 +149,7 @@ export const SlimCardContainer = styled("div")`
     }
 
 `
-export const SlimCard = styled(motion.div)`
+export const SlimCard = styled("div")`
     display: flex;
     justify-content: center;
     align-items: center;

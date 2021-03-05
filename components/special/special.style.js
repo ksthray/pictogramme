@@ -31,6 +31,10 @@ export const ContainerVisuels = styled("div")`
         color: ${({theme}) => theme.white};
         text-transform: uppercase;
         text-align: center;
+
+        @media screen and (max-width: ${({theme}) => theme.mobile}){
+            font-size: 1.1rem;
+        }
     }
     p{
         font-size: 1rem;
@@ -62,10 +66,6 @@ export const ContainerVisuels = styled("div")`
         }
     }
 
-    @media screen and (max-width: ${({theme}) => theme.mobile}){
-        
-    }
-
     .follow{
         display: flex;
         justify-content: center;
@@ -82,26 +82,6 @@ export const ContainerVisuels = styled("div")`
             }
         }
 
-    }
-
-    .social-media{
-        /* display: flex;
-        justify-content: center;
-        gap: 20px;
-        color: white; */
-        font-size: 2rem; 
-
-        /* @media screen and (max-width: ${({theme}) => theme.mobile}){
-            justify-content: center;
-        } */
-
-        a{
-            transition: all 0.3s ease-out;
-            &:hover{
-                transform: translateX(-10px);
-                color: white;
-            }
-        }
     }
     
 `

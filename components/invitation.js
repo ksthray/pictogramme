@@ -279,7 +279,7 @@ const Invitation = () => {
                                 <Link href="tel:+243824029562">
                                     <a>
                                         <button className={"button"} type="button">
-                                            <FaPhoneAlt/> +243824029562
+                                            <FaPhoneAlt/> +243817187048
                                         </button>
                                     </a>
                                 </Link>

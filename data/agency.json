@@ -6,8 +6,8 @@
         "pourcentage": 92,
         "link": "https://issuu.com/mbote-souriez/docs/mbote_bienvenue_n_3",
         "alt": "page magazine",
-        "width": "250",
-        "height": "350",
+        "width": "200",
+        "height": "300",
         "translate": "30px"
     },
     {
@@ -17,8 +17,8 @@
         "pourcentage": 100,
         "link": "https://issuu.com/mbote-souriez/docs/mbote_souriez",
         "alt": "page magazine",
-        "width": "250",
-        "height": "350",
+        "width": "200",
+        "height": "300",
         "translate": "0"
     },
     {
@@ -28,8 +28,8 @@
         "pourcentage": 93,
         "link": "https://issuu.com/mbote-souriez/docs/mbote_bienvenue_n_2",
         "alt": "page magazine",
-        "width": "250",
-        "height": "350",
+        "width": "200",
+        "height": "300",
         "translate": "30px"
     }
 ]

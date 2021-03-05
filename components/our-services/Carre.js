@@ -1,22 +1,12 @@
 import React, {useEffect} from "react"
 
-import {motion, useAnimation} from "framer-motion"
-import {useInView} from "react-intersection-observer"
+import {motion} from "framer-motion"
+import Fade from "react-reveal/Fade"
 
 import {SlimCard, BarSlim, SlimCardContainer } from "./our.services.style"
 import { Container } from "reactstrap"
 
 const Carre = ({data}) => {
-    const animation = useAnimation();
-    const [contentRef, inView] = useInView({
-        triggerOnce: true,
-    });
-
-    useEffect(() => {
-        if (inView) {
-            animation.start("visible");
-        }
-    }, [animation, inView]);
 
     const pushPage = (e, link) => {
         e.preventDefault()
@@ -30,8 +20,8 @@ const Carre = ({data}) => {
                 {data.map((element, i) => {
                     if(element.id === "3" || element.id === "4" || element.id === "5"){
                         return (
+                            <Fade key={i}>
                             <SlimCard 
-                                key={i} 
                                 size={element.size}
                                 background={element.background}
                                 shadow={element.shadow}
@@ -41,22 +31,6 @@ const Carre = ({data}) => {
                                 color={element.color}
                                 colorP={element.colorP}
                                 colorBtn={element.colorBtn}
-                                ref={contentRef}
-                                animate={animation}
-                                initial="hidden"
-                                variants={{
-                                    visible: {
-                                        opacity: 1,
-                                        transition: {
-                                        duration: 1.5,
-                                        delay: 0.3,
-                                        ease: [0.6, 0.05, -0.01, 0.9],
-                                        },
-                                    },
-                                    hidden: {
-                                        opacity: 0,
-                                    },
-                                }}
                             >
                                 <span>{element.icon}</span><br/>
                                 <h2>{element.nameService}</h2>
@@ -71,6 +45,7 @@ const Carre = ({data}) => {
                                     En savoir +
                                 </motion.button>
                             </SlimCard>
+                            </Fade>
                         )
                     }
                 })}

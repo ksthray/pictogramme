@@ -83,6 +83,14 @@ export const CadreImage = styled(motion.div)`
     flex-direction: column;
     align-items: center;
 
+    img{
+        height: 300px;
+        transition: all 0.3s ease-in;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+
 
     .p1{
         font-size: 1rem;

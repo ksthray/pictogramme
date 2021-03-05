@@ -1,15 +1,14 @@
 import React, {useEffect} from "react"
 
 import Link from "next/link"
-import {motion, useAnimation} from "framer-motion"
+import {useAnimation} from "framer-motion"
 import {useInView} from "react-intersection-observer"
+import Zoom from 'react-reveal/Zoom';
 
-import { Container } from 'reactstrap'
-import Image from '../image'
+import { Container, Progress } from 'reactstrap'
 import {SectionStyle, Cards, Title, Topbar, Bottombar, P, CadreImage} from './cards.style'
-import { Progress } from 'reactstrap';
 
-import {cardAgencyAnimation, titleAnimation, barAnimation, pAnimation} from "../../utils/functions"
+import {titleAnimation, barAnimation, pAnimation} from "../../utils/functions"
 import magazines from "../../data/agency.json"
 
 
@@ -64,47 +63,27 @@ const CardAgency = () => {
 }
 
 const CardMag = () => {
-    const animation = useAnimation();
-    const [contentRef, inView] = useInView({
-        triggerOnce: true,
-    });
-
-    useEffect(() => {
-        if (inView) {
-            animation.start("visible");
-        }
-    }, [animation, inView]);
     return (
         <Cards>
             {magazines.map((magazine) => (
                 <Link key={magazine.id} href={magazine.link}>
                     <a style={{textDecoration: "none"}} target="_blank" rel="noopener">
-                        <motion.div 
-                            className={"container-magazine"}
-                            whileHover="hover"
-                            whileTap="tap"
-                            ref={contentRef}
-                            animate={animation}
-                            initial="hidden"
-                            variants={cardAgencyAnimation}
-                        >
-                            <CadreImage>
-                                <Image
-                                    key={magazine.id}
-                                    src={magazine.image}
-                                    alt={magazine.alt}
-                                    width={magazine.width}
-                                    height={magazine.height}
-                                    quality={50}
-                                />
-                                <p className={"p1"}>
-                                    {magazine.text}
-                                </p>
-                                <Progress animated color="more-awesome" value={magazine.pourcentage}>
-                                    {magazine.pourcentage}%
-                                </Progress>
-                            </CadreImage>
-                        </motion.div>
+                        <Zoom>
+                            <div className={"container-magazine"}>
+                                <CadreImage>
+                                    <img
+                                        src={magazine.image}
+                                        alt={magazine.alt}
+                                    />
+                                    <p className={"p1"}>
+                                        {magazine.text}
+                                    </p>
+                                    <Progress animated color="more-awesome" value={magazine.pourcentage}>
+                                        {magazine.pourcentage}%
+                                    </Progress>
+                                </CadreImage>
+                            </div>
+                        </Zoom>
                     </a>
                 </Link>
             ))}

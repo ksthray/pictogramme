@@ -57,16 +57,28 @@ const Special = () => {
     };
     const visuels = [
         {
-            image: "/images/visuelblanch.jpg",
-            alt: "visuel blanc"
+            image: "/images/dame5.jpg",
+            alt: "Olive lembe"
+        },
+        {
+            image: "/images/dame4.jpg",
+            alt: "Sifa kabila"
+        },
+        {
+            image: "/images/dame3.jpg",
+            alt: "Boby la dawa"
+        },
+        {
+            image: "/images/dame2.jpeg",
+            alt: "Marie Antoinette"
         },
         {
             image: "/images/dame1.jpeg",
             alt: "hortense kasa-vubu"
         },
         {
-            image: "/images/dame2.jpeg",
-            alt: "Marie Antoinette"
+            image: "/images/visuelblanch.jpg",
+            alt: "visuel blanc"
         },
         {
             image: "/images/visuelbleu.jpg",

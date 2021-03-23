@@ -8,7 +8,7 @@ import Special from "../components/special/special";
 export default function Home() {
   return (
     <Wrapper
-      titrePage={"Pictogramme Rdc"}
+      titrePage={"Icônes Rdc"}
       descriptionPage={"Bienvenue dans Icônes Rdc, agence créa et stratégie"}
       imagePage={"/images/affiche.jpg"}
       motClePage={"Agence, créa, imprimerie, webdesign ux ui, site internet, site web"}

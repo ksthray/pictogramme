@@ -1,7 +1,7 @@
 export const theme = {
-    primaryBlue: "#235FD9",
-    secondaryBlue: "#0468BF",
-    primaryRyde: "#0487D9",
+    threemo: "#F2F2F2",
+    secondary: "#595959",
+    primaryRyde: "#A6A6A6",
     primaryGreen: "#9EBF24",
     primaryGray: "#626E73",
     primaryBlack: "#0D0D0D",

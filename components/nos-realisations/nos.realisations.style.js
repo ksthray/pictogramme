@@ -21,7 +21,7 @@ export const Button = styled(motion.button)`
     margin-left: 15px;
 
     &:hover{
-        background:  ${({theme}) => theme.primaryBlue};
+        background:  ${({theme}) => theme.secondary};
     }
 
     :focus{
@@ -199,7 +199,7 @@ export const AllStyle = styled("section")`
             transition: all 0.5s ease-in-out;
 
             &:hover{
-                background-color: rgba(4,135,217,0.1);
+                background-color: rgba(89,89,89,0.1);
             }
         }
         .active-tabs{

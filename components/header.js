@@ -121,7 +121,7 @@ const Header = () => {
                             transition={{delay: 1, duration: 1.3}}
                         >
                             <Img
-                                src={"/images/logoicones.jpg"}
+                                src={"/images/logo.png"}
                                 alt={"logo du site"}
                                 width={100}
                                 height={40}

@@ -33,18 +33,18 @@ const Seo = ({
                     name="msapplication-config"
                 /> */}
                 <link
-                    href="/favicons/faviconiconesicones.png"
+                    href="/favicons/favicones.png"
                     rel="apple-touch-icon"
                     sizes="180x180"
                 />
                 <link
-                    href="/favicons/faviconiconesicones.png"
+                    href="/favicons/favicones.png"
                     rel="icon"
                     sizes="32x32"
                     type="image/png"
                 />
                 <link
-                    href="/favicons/faviconiconesicones.png"
+                    href="/favicons/favicones.png"
                     rel="icon"
                     sizes="16x16"
                     type="image/png"
@@ -55,7 +55,7 @@ const Seo = ({
                     href="/favicons/safari-pinned-tab.svg"
                     rel="mask-icon"
                 /> */}
-                <link href="/favicons/faviconicones.ico" rel="shortcut icon" />
+                <link href="/favicons/favicones.ico" rel="shortcut icon" />
                 {/* <link
                     crossOrigin=""
                     href="https://fonts.gstatic.com/"

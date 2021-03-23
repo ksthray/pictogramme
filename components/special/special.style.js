@@ -3,8 +3,9 @@ import styled from "styled-components"
 export const Containt = styled("section")`
     width: 100%;
     padding: 1.5rem;
-    background: rgb(4,135,217);
-    background: linear-gradient(95deg, rgba(4,135,217,1) 0%, rgba(2,73,134,1) 100%);
+    /* background: rgb(4,135,217);
+    background: linear-gradient(95deg, rgba(4,135,217,1) 0%, rgba(2,73,134,1) 100%); */
+    background: ${({theme}) => theme.secondary};
 `
 export const BarSlim = styled("div")`
     width: 15%;

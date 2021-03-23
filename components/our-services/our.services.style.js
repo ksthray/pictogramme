@@ -317,8 +317,7 @@ export const NewCardStyle = styled("div")`
                 width: 100%;
                 border-radius: 20px;
                 color: ${({theme}) => theme.white};
-                background: rgb(4,135,217);
-                background: linear-gradient(146deg, rgba(4,135,217,1) 0%, rgba(2,73,134,1) 100%);
+                background: ${({theme}) => theme.secondary};
                 padding: 2rem;
                 text-align: center;
 

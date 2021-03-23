@@ -22,7 +22,7 @@ const FooterStyle = styled("footer")`
 
     .container-el{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
         grid-gap: 10px;
 
         @media screen and (max-width: ${({theme}) => theme.tabletMini}){
@@ -255,7 +255,7 @@ const Footer = () => {
                         className={"entreprise-id"}
                     >
                         <Img 
-                            src={"/images/logobg.png"}
+                            src={"/images/logoicones.jpg"}
                             width={250}
                             height={250}
                             layout={"intrinsic"}
@@ -331,7 +331,7 @@ const Footer = () => {
                     variants={titleAnimation}
                     style={{
                         textAlign: "center", 
-                        color: "#0487D9", 
+                        color: "#A6A6A6", 
                         textTransform: "uppercase",
                         marginBottom: "60px",
                         fontSize: "1.2rem"
